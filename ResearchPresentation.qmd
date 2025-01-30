@@ -1,0 +1,223 @@
+---
+title: "Optimal Control, Planning and Intelligent vehicles"
+subtitle: "From motorcycle MLT to autonomous driving and beyond"
+author: 
+  - "Mattia Piazza"
+  - " Supervisor: Prof. Francesco Biral"
+date: today
+# date-format: long
+date-format: "D MMMM YYYY"
+resources: data
+execute: 
+  enabled: true
+slide-level: 2
+format:
+  revealjs: 
+    # Output file
+    output-file: index.html
+    # Table of Contents
+    # toc: true
+    # toc_float: true
+    # toc-depth: 1
+    # toc-location: body
+    # toc-title: "Contents"
+    # Generate a self contained file
+    # self-contained: true
+    self-contained-math: true
+    # template-partials:
+    #   - title-slide.html
+    theme: [ custom.scss]
+    slideNumber: true
+    center: false 
+    transition: slide
+    # logo and footer: 
+    # logo: unitn.png
+    footer: "Mattia Piazza | University of Trento, Italy"
+    auto-play-media: true
+    width: 1920
+    height: 1080
+    html-math-method: mathjax
+    code-fold: true
+    # chalkboard: true
+---
+
+
+
+
+
+
+
+
+
+# INTRO
+
+## Myself in brief
+
+
+:::{.columns}
+::::{.column width="40%"}
+
+
+::::
+
+::::{.column width="30%"}
+:::{.team-entry}
+![](./data/people/mattia_piazza.jpeg)
+:::
+::::
+
+:::
+
+
+## Research interest and activity
+
+### Last years roadmap
+
+:::{.timeline}
+
+:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
+:::{.img-wrapper}
+![](./data/projects/Picture%201.png)
+:::
+:::{.arrow style="background-color: var(--primary-color);"}
+1996-2004
+:::
+:::{.text}
+- Minimum Lap Time motorcycles 
+- Handling & Maneuverability
+- MBD vehicles models
+:::
+:::
+
+:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
+:::{.text}
+- ADAS Curve warning & SafeSpeed Driver models
+- EU FP6 PREVENT (54M€ 60 partner)
+:::
+:::{.arrow style="background-color: var(--secondary-color);"}
+2002-2008
+:::
+:::{.img-wrapper}
+![](./data/projects/Picture%202.png)
+:::
+:::
+
+:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
+:::{.img-wrapper}
+![](./data/projects/Picture%203.png)
+:::
+:::{.arrow style="background-color: var(--primary-color);"}
+2008-2011
+:::
+:::{.text}
+- ARAS semi-active suspension modelling and control
+- EU FP7 SAFERIDER (5M€ 20 partner)
+:::
+:::
+
+:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
+:::{.text}
+- Integrated ADAS 
+- EU FP7 INTERACTIVE
+- Hybrid buses (28M€ 30 partner)
+:::
+:::{.arrow style="background-color: var(--secondary-color);"}
+2010-2013
+:::
+:::{.img-wrapper}
+![](./data/projects/Picture%204.png)
+![](./data/projects/Picture%205.png)
+:::
+:::
+
+:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
+:::{.img-wrapper}
+![](./data/projects/Picture%206.png)
+![](./data/projects/Picture%207.jpg)
+![](./data/projects/Picture%208.png)
+:::
+:::{.arrow style="background-color: var(--primary-color);"}
+2014-2017
+:::
+:::{.text}
+- Bio inspired codriver
+- Energy management for Hybrid drivelines
+- MLT racing cars
+- EU FP7 ADAPTIVE (24M€ 30 partner)
+- e2Call Industrial projects (DANA, CRF, Maserati, etc.)
+:::
+:::
+
+:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
+:::{.text}
+- Autonomous Driving, Artificial driver, 
+- MLT for racing
+- H2020 Dreams4Cars (5M€ 6 partner)
+- H2020 SAFESTRIP (5M€ 18 partner)
+- HORIZON EU SUNRISE (4M€ 16 partner)
+- Industrial Projects (Ferrari, CRF, Aprilia Racing, etc.)
+:::
+:::{.arrow style="background-color: var(--secondary-color);"} 
+2018-today
+:::
+:::{.img-wrapper}
+![](./data/projects/Picture%209.png)
+![](./data/projects/Picture%2010.png)
+![](./data/projects/Picture%2011.jpg)
+:::
+:::
+
+::: 
+<!-- timeline end -->
+
+
+# RESEARCH ACTIVITY 
+
+## Vedi2025 – Hybrid motion planner cooperative intersection {.center}
+
+:::{.columns}
+::::{.column width="58%"}
+```{=html}
+<!-- add video -->
+<div style="display: flex; justify-content: center; padding: 0px;">
+  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
+    <source src="data/Vedi2025CrossEgo00.mp4" type="video/mp4">
+  </video>
+</div>
+```
+::::
+::::{.column width="42%"}
+```{=html}
+<!-- add video -->
+<div style="display: flex; justify-content: center; padding: 0px;">
+  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
+    <source src="data/Vedi2025CrossEgo01.mp4" type="video/mp4">
+  </video>
+</div>
+```
+::::
+:::
+
+## MPTree race
+```{=html}
+<!-- add video -->
+<div style="display: flex; justify-content: center;">
+  <video width="100%" height="100%" autoplay loop muted controls>
+    <source src="data/picci.mp4" type="video/mp4">
+  </video>
+</div>
+```
+
+
+
+
+## {background-video="data/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
+
+<!-- background-color="#222222" -->
+
+
+::: {.tbbox style="text-align: center;" }
+<!-- #### Q & A -->
+##### Thank you for your attention
+:::
+

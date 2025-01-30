@@ -1,0 +1,379 @@
+/*-- scss:rules --*/
+
+/* Custom CSS for Reveal.js title slide */
+
+// .reveal .slide-background:first-of-type {
+//   background-color: #0f6e91; /* Background color (optional) */
+//   background-image: url('data/logo.png'); /* Path to your logo */
+//   background-size: 550px 550px; /* Adjust the size of the logo */
+//   // background-position: center left; /* Adjust logo position (top-right corner) */
+//   // background-position-x: 50px;
+//   background-position: center;
+//   background-position-y: 0px;
+
+//   background-repeat: no-repeat; /* Ensure the logo isn't repeated */
+// }
+
+
+:root{
+  --primary-color: #0f6e91;
+  --secondary-color: #FF9D3D;
+  --primary-color_light: #0f6e912c;
+  --secondary-color_light: #ff9e3d23;
+}
+
+
+
+/* Custom CSS for Reveal.js slides */
+
+.reveal h1 {
+  text-align: left;
+  vertical-align: top;
+  color: var(--primary-color);
+}
+
+.reveal h2 {
+  color: #0f6e91;
+}
+
+/* Define the tbbox style */
+
+.tbboxh {
+    position: relative;
+    background-color: #ffffff; /* Box background color */
+    border: 10px solid #0f6e91; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 30px; /* Space between the box and previous content */
+    margin-bottom: 40px; /* Space below the box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Title Styling */
+.tbboxh-title {
+    position: absolute;
+    top: -40px; /* Position above the border */
+    left: 20px; /* Align horizontally */
+    background-color: #0f6e91; /* Title background */
+    color: white; /* Title text color */
+    padding: 10px 10px;
+    font-weight: bold;
+    border-radius: 15px; /* Slightly rounded title corners */
+    white-space: nowrap; /* Prevent text wrapping */
+    margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+
+
+/* Define the tbbox style */
+.tbbox {
+  position: relative;
+  background-color: #ffffff; /* Box background color */
+  border: 5px solid #0f6e91; /* Border color */
+  border-radius: 25px; /* Rounded corners */
+  padding: 20px;
+  padding-top: 30px;
+  margin-top: 40px; /* Space between the box and previous content */
+  margin-bottom: 40px; /* Space below the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Title Styling */
+.tbbox h4 {
+  position: absolute;
+  top: -40px; /* Position above the border */
+  left: 20px; /* Align horizontally */
+  background-color: #0f6e91; /* Title background */
+  color: white; /* Title text color */
+  padding: 10px 10px;
+  font-weight: bold;
+  border-radius: 18px; /* Slightly rounded title corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+/* Title Styling */
+.tbbox .titlebox {
+  position: absolute;
+  top: -40px; /* Position above the border */
+  left: 20px; /* Align horizontally */
+  background-color: #0f6e91; /* Title background */
+  color: white; /* Title text color */
+  padding: 0px 20px;
+  font-weight: bold;
+  border-radius: 15px; /* Slightly rounded title corners */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
+}
+
+
+// define a stile for professr entry with picutre (circular crop with colored border) name and role
+.columns .column .team-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.columns .column .team-entry img {
+  width: 85%; /* Set width to 100% of the parent */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 50%; /* Make the image circular */
+  object-position: top;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
+  aspect-ratio: 1 / 1;
+  filter: grayscale(100%);
+  border: 5px solid #0f6e91;
+}
+
+
+.columns .column .team-entry .name {
+  width: 100%;
+  color: #0f6e91;
+  margin-bottom: 5px;
+  text-align: center; /* Center align text */
+  height: 2.8em; /* Set height to accommodate two lines */
+  line-height: 1.0em; /* Set line height */
+  overflow: hidden; /* Hide overflow text */
+  // word-wrap: break-word; /* Break long words */
+}
+
+.columns .column .team-entry p {
+  width: 100%;
+  text-align: center; /* Center align text */
+  // font-size: 10px;
+}
+
+.MJX-TEX {
+  font-family: "Arial Narrow";
+}
+
+
+.reveal .title:first-of-type {
+  text-align: right; /* Center the title */
+  width: 70%;
+  color: #0f6e91;  /* Title color */
+  // position: absolute;
+  // right: 0px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 55px;
+  padding-right: 1% !important;
+}
+
+.reveal .subtitle:first-of-type {
+  text-align: right; /* Center the title */
+  width: 70%;
+  color: #0f6e91;  /* Title color */
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  padding-right: 1% !important;
+}
+
+.reveal .quarto-title-authors {
+  width: 70%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  // padding-right: 0 !important;
+  padding-right: 1% !important;
+}
+
+.reveal .quarto-title-author {
+  text-align: right; /* Center the title */
+  color: #0f6e91;  /* Title color */
+  padding-right: 0 !important;
+  font-size: 35px;
+}
+
+
+
+.reveal .date {
+  text-align: right; /* Center the title */
+  width: 80%;
+  color: #0f6e91;  /* Title color */
+  float: right;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  padding-right: 1% !important;
+}
+
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none;
+}
+
+// .reveal .footer > p {
+//   display: none;
+// }
+
+.reveal .progress {
+  color: #0f6e91;
+}
+
+.reveal .slide-menu-button {
+  color: #0f6e91;
+}
+
+
+// .reveal .slide-menu-button > a[href*='title-slide']:first-of-type {
+//   display: none;
+// }
+
+
+// .reveal .slide-background:first-of-type {
+//   // background-color: #b0efec; /* Background color (optional) */
+//   background-image: url('data/logo.png'), url('data/tile.png'), url('data/by-nc-sa.png'); /* Path to your logo */
+//   background-size: 26%, 30%, 10%; /* Adjust the size of the logo */
+//   background-position-x:  3%, 0%, 99%;
+//   background-position-y: 50%, 0%, 99%;
+//   background-repeat: no-repeat, repeat-y, no-repeat; /* Ensure the logo isn't repeated */
+// }
+
+.reveal .slide-background:first-of-type {
+  // background-color: #b0efec; /* Background color (optional) */
+  background-image: url('../../../../../data/logo.png'), url('../../../../../data/tile.png'), url('../../../../../data/by-nc-sa.png'); /* Path to your logo */
+  background-size: 26%, 30%, 10%; /* Adjust the size of the logo */
+  background-position-x:  3%, 0%, 99%;
+  background-position-y: 50%, 0%, 99%;
+  background-repeat: no-repeat, repeat-y, no-repeat; /* Ensure the logo isn't repeated */
+}
+
+// .reveal .slide-background:first-of-type {
+//   background-color: #b0efec; /* Background color (optional) */
+//   background-image: url('data/logo.png'); /* Path to your logo */
+//   background-size: 20%; /* Adjust the size of the logo */
+//   background-position-y: 50%;
+//   background-position-x: 5%;
+//   background-repeat: no-repeat; /* Ensure the logo isn't repeated */
+// }
+
+
+// .reveal .slides:first-of-type > section{
+//   // color white with transparency (0.5)
+//   background-color: rgba(255, 255, 255, 0.7);
+// }
+
+
+.reveal ul > li > a{
+  color: #0f6e91;
+}
+
+.reveal .slide-menu-button a{
+  color: #0f6e91 !important;
+}
+
+.reveal .slide-menu-button a i{
+  color: #0f6e91 !important;
+}
+
+.reveal ul {list-style-type: square;}
+
+// // fontsize of normal text and in lists in ratio to the width and with a min and max value
+// .reveal p, .reveal ul > li, .reveal ol > li, .reveal blockquote, .reveal pre, .reveal table, .reveal th, .reveal td, .reveal code {
+//   font-size: 30px;
+//   // font-size: 3.5vw;
+// }
+
+// .reveal .footer p{
+//   font-size: 10px;
+// }
+
+.reveal .slides {
+  text-align: center;
+  align-items: center;
+  // vertical alignment
+  vertical-align: middle;
+}
+
+
+.reveal .slides .timeline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reveal .slides .timeline .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-size: smaller;
+  // background-color: var(--primary-color_light);
+}
+
+.reveal .slides .timeline .item .text{
+  width: 100%;
+  min-height: 450px;
+  font-size: x-large;
+  // align vertical in centre
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+
+.reveal .slides .timeline .item .arrow{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+}
+
+.reveal .slides .timeline .item .img-wrapper{
+  width: 90%;
+  // height: 45%;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .slides .timeline .item .img-wrapper img{
+  padding: 0%;
+}
+
+// .reveal .slides .timeline .item .img-wrapper img{
+//   border-radius: 50%;
+//   border: 5px solid #0f6e91;
+// }
+
+// .timeline {
+//   width
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .timeline-item {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   width: 80%;
+//   position: relative;
+// }
+
+// .timeline-arrow {
+//   width: 100px;
+//   height: 50px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: white;
+//   font-weight: bold;
+//   clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+// }
+
