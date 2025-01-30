@@ -383,7 +383,8 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <div class="text">
 <ul>
 <li>MSc in Mechatronics Engineering</li>
-<li>Optimal control - Minnimum Lap Time for Motorcycles</li>
+<li>Optimal control</li>
+<li>Minnimum Lap Time for Motorcycles</li>
 </ul>
 </div>
 <div class="arrow" style="background-color: var(--secondary-color);">
@@ -467,6 +468,101 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <!-- #### Q & A -->
 <h5 id="thank-you-for-your-attention">Thank you for your attention</h5>
 </div>
+<!-- 
+1. Introduction (3-5 min)
+✅ Goal: Establish credibility, provide context, and connect with their research.
+
+Quick self-introduction (your background, relevant experience, and motivation for the visit).
+Brief overview of your research trajectory (motorsport → optimal control → planning for AVs).
+Mention your goal for this visit: Collaboration on planners or working with F1tenth.
+Ask a rhetorical question or reference their work in RL and planning to set the stage for engagement.
+📌 Slide Layout:
+
+Title slide with your name, affiliation, and talk title.
+Timeline/flowchart of your research journey.
+A visual that connects optimal control in motorsports to autonomous planning.
+2. Optimal Control for Minimum Lap Time (5 min)
+✅ Goal: Show your experience in optimal control & transition to AV planning.
+
+Explain the problem statement: Why is lap time optimization important?
+Key methodology: Briefly discuss symbolic manipulation, optimal control, and numerical solutions.
+Results: Show a lap time comparison, trajectory optimization, or simulation vs. real data.
+Connection to AVs: "Now, what if instead of optimizing for a single fastest lap, we optimized paths in real-time for an autonomous vehicle?"
+📌 Slide Layout:
+
+Graphs of optimized trajectories vs. real-world data.
+GIF/video of a simulated optimal trajectory.
+Transition slide connecting optimal control to real-time planning.
+3. Planning and Control for Autonomous Vehicles (12-15 min)
+✅ Goal: Showcase your framework & implementation, leading into discussion on potential improvements.
+
+3.1 Framework & Approach (5 min)
+Problem statement: What are we solving? (Path planning for AVs in dynamic environments).
+Framework overview: Mockup in MATLAB → C++ integration in CarMaker → real-car tests.
+Challenges faced & trade-offs in computational efficiency, accuracy, and feasibility.
+📌 Slide Layout:
+
+Diagram showing your pipeline (MATLAB → C++ → CarMaker → real car).
+Screenshot of code/architecture (brief, not overwhelming).
+Some performance results (timing, accuracy, etc.).
+3.2 New Planner: Monte Carlo Tree Search (7-8 min)
+Why evolve from the previous approach? Computational efficiency and behavior improvement.
+How does it work? Brief MCTS explanation (contrast with their sampling-based methods).
+Results: Performance improvement and where the approach still has limitations.
+Potential for collaboration: "This could benefit from further tuning, alternative heuristics, or RL integration—something your lab has expertise in."
+📌 Slide Layout:
+
+Comparison table: Old planner vs. MCTS (e.g., runtime, convergence, behavior).
+GIF/video of planner in action.
+A slide with open-ended questions about potential refinements (prompting discussion).
+4. Evaluating Planner Performance with NN Interpolation (5 min)
+✅ Goal: Introduce your novel evaluation approach & invite feedback.
+
+Why standard evaluation metrics may be limiting.
+How your NN-based approach offers better interpretability.
+A sample visualization of how different planners behave across various scenarios.
+Ask: "How do you currently benchmark your planners?" → Engage the audience
+📌 Slide Layout:
+
+Example plots of different planners on the same scenario.
+Heatmap or other visual representation of NN-interpolated performance.
+Slide prompting discussion: “How would this compare with your RL-based methods?”
+5. Side Project: Smooth Trajectory Fitting for OC Enhancement (3 min, optional)
+✅ Goal: Show a related but lightweight topic that could trigger quick discussion.
+
+Problem statement: Why is smooth trajectory fitting important?
+Key approach: Mathematical details in brief.
+Quick results + how this could be useful for both my work and theirs.
+📌 Slide Layout:
+
+Side-by-side comparison of before/after optimization.
+A fun/quick example to keep engagement.
+6. Closing: Call for Collaboration (3-4 min)
+✅ Goal: Explicitly invite discussion & potential collaboration.
+
+Recap key points in one summary slide.
+Restate why you’re visiting: potential to collaborate on planners or F1tenth.
+“Based on your experience with RL-based planning, how do you see MCTS fitting in?”
+Open floor for Q&A and deeper technical discussion.
+📌 Slide Layout:
+
+One slide with key points as takeaways.
+Collaboration slide: “Potential directions” with a list of open questions.
+Final slide: Contact info, open-ended thank-you note (“Looking forward to discussions!”).
+Additional Recommendations
+💡 Engagement Strategies:
+
+Instead of waiting until the end, sprinkle in moments to trigger discussion (e.g., “I know your lab works on X, how does it compare?”).
+If possible, add 1-2 transition slides referencing their work to make the talk more interactive.
+📌 Visual Style:
+
+Use animations sparingly (e.g., step-by-step build-up for complex equations).
+Keep equations minimal—use only one or two per concept, paired with a visual.
+For implementation slides, focus on flowcharts and architecture over code snippets.
+Use GIFs/videos where possible to illustrate planner behavior.
+This structure ensures that your planning focus gets maximum attention, while also showcasing your background in optimal control and opening up areas for discussion. It naturally builds toward your collaboration goal, making it clear why working together would be valuable.
+
+Let me know if you’d like adjustments or more details! 🚀 -->
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Mattia Piazza | University of Trento, Italy</p>

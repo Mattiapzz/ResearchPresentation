@@ -3,3 +3,7 @@ data/videos/*.mov
 data/videos/*.avi
 data/videos/*.m4v
 ResearchPresentation_files/
+
+data/img_ODD/
+data/MPT_Piazza
+data/MPT_Piccinini
