@@ -69,101 +69,66 @@ format:
 :::
 
 
+
 ## Research interest and activity
 
 ### Last years roadmap
 
 :::{.timeline}
 
-:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
-:::{.img-wrapper}
-![](./data/projects/Picture%201.png)
+:::{.item style="width: 22%; background-color: var(--secondary-color_light);"}
+:::{.img-wrapper style="width: 80%;"}
+![](./data/logos/uniud.png)
 :::
+
 :::{.arrow style="background-color: var(--primary-color);"}
-1996-2004
+2013-2017
 :::
 :::{.text}
-- Minimum Lap Time motorcycles 
-- Handling & Maneuverability
-- MBD vehicles models
+- BSc in Mechanical Engineering 
 :::
 :::
 
-:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
+:::{.item style="width: 22%; background-color: var(--primary-color_light);"}
 :::{.text}
-- ADAS Curve warning & SafeSpeed Driver models
-- EU FP6 PREVENT (54M€ 60 partner)
+- MSc in Mechatronics Engineering
+- Optimal control - Minnimum Lap Time for Motorcycles
 :::
 :::{.arrow style="background-color: var(--secondary-color);"}
-2002-2008
+2017-2020
 :::
-:::{.img-wrapper}
-![](./data/projects/Picture%202.png)
+:::{.img-wrapper style="width: 80%;"}
+![](./data/logos/logo.png)
 :::
 :::
 
-:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
+:::{.item style="width: 22%; background-color: var(--secondary-color_light);"}
 :::{.img-wrapper}
 ![](./data/projects/Picture%203.png)
 :::
 :::{.arrow style="background-color: var(--primary-color);"}
-2008-2011
+2020-2022
 :::
 :::{.text}
-- ARAS semi-active suspension modelling and control
-- EU FP7 SAFERIDER (5M€ 20 partner)
+- Research Fellowship
+- MLT for MotoGP Racing Team
+- Optimal control
 :::
 :::
 
-:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
+:::{.item style="width: 22%; background-color: var(--primary-color_light);"}
 :::{.text}
-- Integrated ADAS 
-- EU FP7 INTERACTIVE
-- Hybrid buses (28M€ 30 partner)
+- PhD in Materials, Mechatronics and Systems Engineering
+- Optimal control, Planning and Intelligent vehicles
+- Industrial collaborations
+- MISE and Horizon Europe projects
 :::
 :::{.arrow style="background-color: var(--secondary-color);"}
-2010-2013
+2022-now
 :::
 :::{.img-wrapper}
 ![](./data/projects/Picture%204.png)
 ![](./data/projects/Picture%205.png)
-:::
-:::
-
-:::{.item style="width: 18%; background-color: var(--secondary-color_light);"}
-:::{.img-wrapper}
-![](./data/projects/Picture%206.png)
-![](./data/projects/Picture%207.jpg)
-![](./data/projects/Picture%208.png)
-:::
-:::{.arrow style="background-color: var(--primary-color);"}
-2014-2017
-:::
-:::{.text}
-- Bio inspired codriver
-- Energy management for Hybrid drivelines
-- MLT racing cars
-- EU FP7 ADAPTIVE (24M€ 30 partner)
-- e2Call Industrial projects (DANA, CRF, Maserati, etc.)
-:::
-:::
-
-:::{.item style="width: 18%; background-color: var(--primary-color_light);"}
-:::{.text}
-- Autonomous Driving, Artificial driver, 
-- MLT for racing
-- H2020 Dreams4Cars (5M€ 6 partner)
-- H2020 SAFESTRIP (5M€ 18 partner)
-- HORIZON EU SUNRISE (4M€ 16 partner)
-- Industrial Projects (Ferrari, CRF, Aprilia Racing, etc.)
-:::
-:::{.arrow style="background-color: var(--secondary-color);"} 
-2018-today
-:::
-:::{.img-wrapper}
-![](./data/projects/Picture%209.png)
-![](./data/projects/Picture%2010.png)
-![](./data/projects/Picture%2011.jpg)
 :::
 :::
 
@@ -181,7 +146,7 @@ format:
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
   <video width="100%" height="100%" autoplay loop muted controls padding="0px">
-    <source src="data/Vedi2025CrossEgo00.mp4" type="video/mp4">
+    <source src="data/videos/Vedi2025CrossEgo00.mp4" type="video/mp4">
   </video>
 </div>
 ```
@@ -191,7 +156,7 @@ format:
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
   <video width="100%" height="100%" autoplay loop muted controls padding="0px">
-    <source src="data/Vedi2025CrossEgo01.mp4" type="video/mp4">
+    <source src="data/videos/Vedi2025CrossEgo01.mp4" type="video/mp4">
   </video>
 </div>
 ```
@@ -203,7 +168,7 @@ format:
 <!-- add video -->
 <div style="display: flex; justify-content: center;">
   <video width="100%" height="100%" autoplay loop muted controls>
-    <source src="data/picci.mp4" type="video/mp4">
+    <source src="data/videos/picci.mp4" type="video/mp4">
   </video>
 </div>
 ```
@@ -211,7 +176,7 @@ format:
 
 
 
-## {background-video="data/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
+## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
 
 <!-- background-color="#222222" -->
 
