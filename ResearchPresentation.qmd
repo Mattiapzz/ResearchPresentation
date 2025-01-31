@@ -41,38 +41,16 @@ format:
     # chalkboard: true
 ---
 
+## My Background 
 
+### Personal experience and research activity
 
-
-
-
-
-
-
-# INTRO
-
-## Myself in brief
-
-
-:::{.columns}
-::::{.column width="40%"}
-
-
-::::
-
-::::{.column width="30%"}
-:::{.team-entry}
+:::{.round-img-gray style="width: 20%; position: absolute; top: -10%; left: 80%;"}
 ![](./data/people/mattia_piazza.jpeg)
 :::
-::::
 
-:::
-
-
-
-## Research interest and activity
-
-### Last years roadmap
+<br>
+<br>
 
 :::{.timeline}
 
@@ -151,6 +129,254 @@ now-future
 ::: 
 <!-- timeline end -->
 
+
+## VeDi 2025 and SUNRISE
+
+### Goals 
+
+::: {.columns}
+:::: {.column width="75%"}
+**CCAVs manouvrenegotiation** through **V2X**:
+
+- Develop a **real-time local planner** for autonomous driving.
+  - **Dynamic** obstacle avoidance.
+  - Cooperation and **negotiation**.
+- **Validate** the planner with real-world testing.
+
+::::
+<!--- end column -->
+:::: {.column width="25%"}
+![](./data/third_party/VeDi2025-logo.png)
+![](./data/third_party/StellantisLogoshort.png)
+::::
+
+::: 
+<!-- end columns -->
+
+::: {.columns}
+:::: {.column width="25%" align-item="center" justify-content="center"}
+![](./data/third_party/SunriseHD.png)
+::::
+:::: {.column width="75%"}
+Safety Assurance Framework for the test and safety validation of CCAM systems.
+
+- Identify logical scenarios and KPIs
+- Run simulations collect results.
+- Propose a method to **evaluate and rank** autonomous agents.
+::::
+<!--- end column -->
+
+::: 
+<!-- end columns -->
+
+
+
+# Research motivations and contributions
+
+## Autonomous Driving
+
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Safety Motivation
+:::
+
+- Improve **safety** and sustainability.
+- 90\% of road accidents are due to **human errors**.
+- EU target: zero road fatalities by 2050.
+- Decrease traffic congestion and others.
+:::
+::::
+
+:::: {.column width="50%"}
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Open Challenges
+:::
+
+- Safe and robust **planning** and control.
+- Operation in **emergency** scenarios.
+- **Human-like** driving behavior.
+- **Cooperation** and **negotiation** with other agents.
+:::
+::::
+:::
+
+:::{.columns}
+:::: {.column width="50%"}
+![](./data/intro_phd_Piccinini/occurrences_autonomous_driving.png)
+::::
+
+:::: {.column width="50%"}
+![](./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png)
+::::
+:::
+
+## Contributions
+
+### Semi-structured RRT* planner
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+MPTree
+:::
+
+:::{.columns}
+
+:::: {.column width="80%"}
+
+Given a simple set of constraints the planner is able to
+
+- compute feasible and optimal trajectory.
+- handle dynamic obstacles.
+- provide finite time guarantees.
+
+::::
+
+:::: {.column width="20%"}
+![](./data/logos/MPTree_logo.png)
+::::
+:::
+
+:::
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titleboxL}
+Specialized Framework
+:::
+- **Autonomous Racing** MPTreeRace
+- **Urban Driving** UrbanMPTree
+:::
+
+#### FIGURES
+
+## Contributions
+### C++ implementation and commercial sofware integration, SIL and HIL testing
+
+:::{.columns}
+:::: {.column width="70%"}
+
+- Fast **C++** implementation of the planner.
+- Integration with **IPG CarMaker**.
+- Integration inside **RTMaps** and **dSpace** authera.
+- Real-world testing with **Stellantis**.
+
+::::
+:::: {.column width="30%"}
+
+![](./data/third_party/IPG-Automotive-logo.png)
+![](./data/third_party/dSpace_logo.png)
+![](./data/third_party/StellantisLogoshort.png)
+
+::::
+:::
+
+
+#### FIGURES
+
+
+# MPTree framework
+
+## State-of-the-Art 
+### Planning Approaches
+
+
+
+|                   | In Optimization-based planning | Sampling/Graph-based planning |
+|-------------------+--------------------------------+-------------------------------|
+| Optimum           | Local                          | Global                        |
+| Time              | Fast                           | Slow                          |
+| Dynamics          | Accurate                       | Limited                       |
+| Obstacles         | Limited                        | Flexible                      |
+| Guarantees        | No finite-time                 | Anytime                       |
+| Continuity        | Recursive                      | Limited                       |
+
+
+
+<!-- \begin{frame}{State-of-the-Art}{Planning Approaches}
+  \small
+  \begin{table}[]
+  \centering
+    \begin{tabular}{c|cc}
+      \toprule
+      & \textbf{Optimization-based planning}  & \textbf{Sampling/Graph-based planning} \\
+      \midrule
+      \textbf{Optimum}    & \textbfr{Local}          & \textbfg{Global}   \\ 
+      \textbf{Time}       & \textbfg{Fast}           & \textbfr{Slow}     \\ 
+      \textbf{Dynamics}   & \textbfg{Accurate}       & \textbfr{Limited}  \\ 
+      \textbf{Obstacles}  & \textbfr{Limited}        & \textbfg{Flexible} \\ 
+      \textbf{Guarantees} & \textbfr{No finite-time} & \textbfg{Anytime}  \\ 
+      \textbf{Continuity} & \textbfg{Recursive}      & \textbfr{Limited}  \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table} -->
+
+
+
+<!-- \begin{frame}
+
+
+
+
+
+% --------------------------
+% Artificial Drivers: Specialization
+% --------------------------
+\begin{frame}
+  \frametitle{Artificial Driver: Specialization}
+  \centering
+  \includegraphics[scale=0.40]{figures/intro/artificial_driver_race_and_park}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \hspace{1cm}Autonomous Racing
+      % \begin{block}{\textcolor{green}{Autonomous Racing}} %and Motorsport
+      %   \begin{itemize}
+      %     \item Rapidly eval. the \textbf{max performance}
+      %     % \begin{itemize}
+      %     %   \setlength{\itemindent}{-1em}
+      %     %   \footnotesize
+      %     %   % \item Closed-loop min-time maneuvers
+      %     %   \item New circuits and vehicle setups
+      %     %   %\item Digital twin of professional drivers
+      %     % \end{itemize}
+      %     \item \textbf{Compete} in adversarial scenarios
+      %   \end{itemize}
+      % \end{block}   
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \hspace{1.68cm}Autonomous Parking
+      % \begin{block}{\textcolor{Orange}{Autonomous Parking}}
+      %   \begin{itemize}
+      %     \item Execute \textbf{complex} parking maneuvers %in real-world scenarios
+      %     \item \textbf{Adapt} to new conditions / scenarios
+      %   \end{itemize}
+      % \end{block}   
+    \end{column}
+  \end{columns}
+
+  \vfill
+
+  \onslide<2>{
+    %\textcolor{blue}{\textbf{Common goal}}: 
+    Learn from \textbf{limited data} and \textbf{\textcolor{blue}{generalize}}
+  }
+\end{frame}
+
+
+
+\end{frame} -->
+
+
+
+
+# RESEARCH ACTIVITY 
+
 # Projects
 
 ## VeDi 2025 and SUNRISE
@@ -181,40 +407,11 @@ Goals
 ![](./data/third_party/Sunrise-Logo.jpeg)
 ::::
 
-
 ::: 
 <!-- end columns -->
-
-
 :::
 
-<!-- \begin{frame}{Research Interest}{And applications}
-  \begin{bbox}[Goals]
-    \begin{minipage}{0.75\textwidth}
-      \begin{itemize}
-        \item Develop a \textbfb{real-time local planner} for autonomous driving.
-        \begin{itemize}
-          \item \textbfb{Dynamic} obstacle avoidance.
-          \item \textbfb{Safety} and optimality of manouvre.
-          \item Cooperation and \textbfb{negotiation}.
-        \end{itemize}
-        \item Specialize the planner for urban and racing scenarios.
-        \item \textbfb{Validate} the planner with real-world testing.
-        \item Test vehicle cooperation and \textbfb{negotiation with CCAV} and V2X.
-        \item Propose a method to \textbfb{evaluate and rank} autonomous agents.
-      \end{itemize}
-    \end{minipage}
-    \begin{minipage}{0.24\textwidth}
-      \centering 
-      \includegraphics[width=0.98\linewidth]{External_logos/VeDi2025-logo.png}\\
-      \includegraphics[width=0.98\linewidth]{External_logos/StellantisLogo.png}\\
-      \includegraphics[width=0.98\linewidth]{External_logos/Sunrise-Logo.png}
-      
-    \end{minipage}
-  \end{bbox}
-\end{frame} -->
 
-# RESEARCH ACTIVITY 
 
 ## Vedi2025 – Hybrid motion planner cooperative intersection {.center}
 
@@ -242,26 +439,16 @@ Goals
 :::
 
 ## MPTree race
-```{=html}
-<!-- add video -->
-<div style="display: flex; justify-content: center;">
-  <video width="100%" height="100%" autoplay loop muted controls>
-    <source src="data/videos/picci.mp4" type="video/mp4">
-  </video>
-</div>
-```
+
+{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
 
 
-## Test video unlisted
-
+## MPTree C++ integration
 
 {{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
 
 ## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
-
-<!-- background-color="#222222" -->
-
 
 ::: {.tbbox style="text-align: center;" }
 <!-- #### Q & A -->

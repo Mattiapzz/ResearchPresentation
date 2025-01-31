@@ -349,31 +349,20 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
 <ul>
-<li><a href="#/intro" id="/toc-intro">INTRO</a></li>
-<li><a href="#/projects" id="/toc-projects">Projects</a></li>
+<li><a href="#/research-motivations-and-contributions" id="/toc-research-motivations-and-contributions">Research motivations and contributions</a></li>
+<li><a href="#/mptree-framework" id="/toc-mptree-framework">MPTree framework</a></li>
 <li><a href="#/research-activity" id="/toc-research-activity">RESEARCH ACTIVITY</a></li>
+<li><a href="#/projects" id="/toc-projects">Projects</a></li>
 </ul>
 </nav>
 </section>
-<section>
-<section id="intro" class="title-slide slide level1 center">
-<h1>INTRO</h1>
-
-</section>
-<section id="myself-in-brief" class="slide level2">
-<h2>Myself in brief</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-
-</div><div class="column" style="width:30%;">
-<div class="team-entry">
+<section id="my-background" class="slide level2">
+<h2>My Background</h2>
+<h3 id="personal-experience-and-research-activity">Personal experience and research activity</h3>
+<div class="round-img-gray" style="width: 20%; position: absolute; top: -10%; left: 80%;">
 <p><img data-src="./data/people/mattia_piazza.jpeg"></p>
 </div>
-</div></div>
-</section>
-<section id="research-interest-and-activity" class="slide level2">
-<h2>Research interest and activity</h2>
-<h3 id="last-years-roadmap">Last years roadmap</h3>
+<p><br> <br></p>
 <div class="timeline">
 <div class="item" style="width: 20%; background-color: var(--secondary-color_light);">
 <div class="img-wrapper" style="width: 95%;">
@@ -450,13 +439,267 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div>
 </div>
 <!-- timeline end -->
+</section>
+<section id="vedi-2025-and-sunrise" class="slide level2">
+<h2>VeDi 2025 and SUNRISE</h2>
+<h3 id="goals">Goals</h3>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><strong>CCAVs manouvrenegotiation</strong> through <strong>V2X</strong>:</p>
+<ul>
+<li>Develop a <strong>real-time local planner</strong> for autonomous driving.
+<ul>
+<li><strong>Dynamic</strong> obstacle avoidance.</li>
+<li>Cooperation and <strong>negotiation</strong>.</li>
+</ul></li>
+<li><strong>Validate</strong> the planner with real-world testing.</li>
+</ul>
+</div><!--- end column --><div class="column" style="width:25%;">
+<p><img data-src="./data/third_party/VeDi2025-logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
+</div></div>
+<!-- end columns -->
+<div class="columns">
+<div class="column" data-align-item="center" data-justify-content="center" style="width:25%;">
+<p><img data-src="./data/third_party/SunriseHD.png"></p>
+</div><div class="column" style="width:75%;">
+<p>Safety Assurance Framework for the test and safety validation of CCAM systems.</p>
+<ul>
+<li>Identify logical scenarios and KPIs</li>
+<li>Run simulations collect results.</li>
+<li>Propose a method to <strong>evaluate and rank</strong> autonomous agents.</li>
+</ul>
+</div><!--- end column -->
+</div>
+<!-- end columns -->
+</section>
+<section>
+<section id="research-motivations-and-contributions" class="title-slide slide level1 center">
+<h1>Research motivations and contributions</h1>
+
+</section>
+<section id="autonomous-driving" class="slide level2">
+<h2>Autonomous Driving</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Safety Motivation</p>
+</div>
+<ul>
+<li>Improve <strong>safety</strong> and sustainability.</li>
+<li>90% of road accidents are due to <strong>human errors</strong>.</li>
+<li>EU target: zero road fatalities by 2050.</li>
+<li>Decrease traffic congestion and others.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Open Challenges</p>
+</div>
+<ul>
+<li>Safe and robust <strong>planning</strong> and control.</li>
+<li>Operation in <strong>emergency</strong> scenarios.</li>
+<li><strong>Human-like</strong> driving behavior.</li>
+<li><strong>Cooperation</strong> and <strong>negotiation</strong> with other agents.</li>
+</ul>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./data/intro_phd_Piccinini/occurrences_autonomous_driving.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png"></p>
+</div></div>
+</section>
+<section id="contributions" class="slide level2">
+<h2>Contributions</h2>
+<h3 id="semi-structured-rrt-planner">Semi-structured RRT* planner</h3>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>MPTree</p>
+</div>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Given a simple set of constraints the planner is able to</p>
+<ul>
+<li>compute feasible and optimal trajectory.</li>
+<li>handle dynamic obstacles.</li>
+<li>provide finite time guarantees.</li>
+</ul>
+</div><div class="column" style="width:20%;">
+<p><img data-src="./data/logos/MPTree_logo.png"></p>
+</div></div>
+</div>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titleboxL">
+<p>Specialized Framework</p>
+</div>
+<ul>
+<li><strong>Autonomous Racing</strong> MPTreeRace</li>
+<li><strong>Urban Driving</strong> UrbanMPTree</li>
+</ul>
+</div>
+<h4 id="figures">FIGURES</h4>
+</section>
+<section id="contributions-1" class="slide level2">
+<h2>Contributions</h2>
+<h3 id="c-implementation-and-commercial-sofware-integration-sil-and-hil-testing">C++ implementation and commercial sofware integration, SIL and HIL testing</h3>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Fast <strong>C++</strong> implementation of the planner.</li>
+<li>Integration with <strong>IPG CarMaker</strong>.</li>
+<li>Integration inside <strong>RTMaps</strong> and <strong>dSpace</strong> authera.</li>
+<li>Real-world testing with <strong>Stellantis</strong>.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="./data/third_party/IPG-Automotive-logo.png"> <img data-src="./data/third_party/dSpace_logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
+</div></div>
+<h4 id="figures-1">FIGURES</h4>
 </section></section>
+<section>
+<section id="mptree-framework" class="title-slide slide level1 center">
+<h1>MPTree framework</h1>
+
+</section>
+<section id="state-of-the-art" class="slide level2">
+<h2>State-of-the-Art</h2>
+<h3 id="planning-approaches">Planning Approaches</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 39%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>In Optimization-based planning</th>
+<th>Sampling/Graph-based planning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Optimum</td>
+<td>Local</td>
+<td>Global</td>
+</tr>
+<tr class="even">
+<td>Time</td>
+<td>Fast</td>
+<td>Slow</td>
+</tr>
+<tr class="odd">
+<td>Dynamics</td>
+<td>Accurate</td>
+<td>Limited</td>
+</tr>
+<tr class="even">
+<td>Obstacles</td>
+<td>Limited</td>
+<td>Flexible</td>
+</tr>
+<tr class="odd">
+<td>Guarantees</td>
+<td>No finite-time</td>
+<td>Anytime</td>
+</tr>
+<tr class="even">
+<td>Continuity</td>
+<td>Recursive</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="table" class="slide level2">
+<h2>table</h2>
+<!-- \begin{frame}{State-of-the-Art}{Planning Approaches}
+  \small
+  \begin{table}[]
+  \centering
+    \begin{tabular}{c|cc}
+      \toprule
+      & \textbf{Optimization-based planning}  & \textbf{Sampling/Graph-based planning} \\
+      \midrule
+      \textbf{Optimum}    & \textbfr{Local}          & \textbfg{Global}   \\ 
+      \textbf{Time}       & \textbfg{Fast}           & \textbfr{Slow}     \\ 
+      \textbf{Dynamics}   & \textbfg{Accurate}       & \textbfr{Limited}  \\ 
+      \textbf{Obstacles}  & \textbfr{Limited}        & \textbfg{Flexible} \\ 
+      \textbf{Guarantees} & \textbfr{No finite-time} & \textbfg{Anytime}  \\ 
+      \textbf{Continuity} & \textbfg{Recursive}      & \textbfr{Limited}  \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table} -->
+<!-- \begin{frame}
+
+
+
+
+
+% --------------------------
+% Artificial Drivers: Specialization
+% --------------------------
+\begin{frame}
+  \frametitle{Artificial Driver: Specialization}
+  \centering
+  \includegraphics[scale=0.40]{figures/intro/artificial_driver_race_and_park}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \hspace{1cm}Autonomous Racing
+      % \begin{block}{\textcolor{green}{Autonomous Racing}} %and Motorsport
+      %   \begin{itemize}
+      %     \item Rapidly eval. the \textbf{max performance}
+      %     % \begin{itemize}
+      %     %   \setlength{\itemindent}{-1em}
+      %     %   \footnotesize
+      %     %   % \item Closed-loop min-time maneuvers
+      %     %   \item New circuits and vehicle setups
+      %     %   %\item Digital twin of professional drivers
+      %     % \end{itemize}
+      %     \item \textbf{Compete} in adversarial scenarios
+      %   \end{itemize}
+      % \end{block}   
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \hspace{1.68cm}Autonomous Parking
+      % \begin{block}{\textcolor{Orange}{Autonomous Parking}}
+      %   \begin{itemize}
+      %     \item Execute \textbf{complex} parking maneuvers %in real-world scenarios
+      %     \item \textbf{Adapt} to new conditions / scenarios
+      %   \end{itemize}
+      % \end{block}   
+    \end{column}
+  \end{columns}
+
+  \vfill
+
+  \onslide<2>{
+    %\textcolor{blue}{\textbf{Common goal}}: 
+    Learn from \textbf{limited data} and \textbf{\textcolor{blue}{generalize}}
+  }
+\end{frame}
+
+
+
+\end{frame} -->
+</section></section>
+<section id="research-activity" class="title-slide slide level1 center">
+<h1>RESEARCH ACTIVITY</h1>
+
+</section>
+
 <section>
 <section id="projects" class="title-slide slide level1 center">
 <h1>Projects</h1>
 
 </section>
-<section id="vedi-2025-and-sunrise" class="slide level2">
+<section id="vedi-2025-and-sunrise-1" class="slide level2">
 <h2>VeDi 2025 and SUNRISE</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
@@ -482,36 +725,6 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div></div>
 <!-- end columns -->
 </div>
-<!-- \begin{frame}{Research Interest}{And applications}
-  \begin{bbox}[Goals]
-    \begin{minipage}{0.75\textwidth}
-      \begin{itemize}
-        \item Develop a \textbfb{real-time local planner} for autonomous driving.
-        \begin{itemize}
-          \item \textbfb{Dynamic} obstacle avoidance.
-          \item \textbfb{Safety} and optimality of manouvre.
-          \item Cooperation and \textbfb{negotiation}.
-        \end{itemize}
-        \item Specialize the planner for urban and racing scenarios.
-        \item \textbfb{Validate} the planner with real-world testing.
-        \item Test vehicle cooperation and \textbfb{negotiation with CCAV} and V2X.
-        \item Propose a method to \textbfb{evaluate and rank} autonomous agents.
-      \end{itemize}
-    \end{minipage}
-    \begin{minipage}{0.24\textwidth}
-      \centering 
-      \includegraphics[width=0.98\linewidth]{External_logos/VeDi2025-logo.png}\\
-      \includegraphics[width=0.98\linewidth]{External_logos/StellantisLogo.png}\\
-      \includegraphics[width=0.98\linewidth]{External_logos/Sunrise-Logo.png}
-      
-    \end{minipage}
-  \end{bbox}
-\end{frame} -->
-</section></section>
-<section>
-<section id="research-activity" class="title-slide slide level1 center">
-<h1>RESEARCH ACTIVITY</h1>
-
 </section>
 <section id="vedi2025-hybrid-motion-planner-cooperative-intersection" class="slide level2 center">
 <h2>Vedi2025 – Hybrid motion planner cooperative intersection</h2>
@@ -534,20 +747,14 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </section>
 <section id="mptree-race" class="slide level2">
 <h2>MPTree race</h2>
-<!-- add video -->
-<div style="display: flex; justify-content: center;">
-  <video width="100%" height="100%" autoplay="" loop="" muted="" controls="">
-    <source src="data/videos/picci.mp4" type="video/mp4">
-  </video>
-</div>
+<iframe data-external="1" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw" width="95%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
-<section id="test-video-unlisted" class="slide level2">
-<h2>Test video unlisted</h2>
+<section id="mptree-c-integration" class="slide level2">
+<h2>MPTree C++ integration</h2>
 <iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM" width="100%" height="93%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
 <section id="section" class="slide level2" data-background-video="data/third_party/end.mov" data-background-video-loop="true" data-background-video-muted="true" data-background-video-autoplay="true">
 <h2></h2>
-<!-- background-color="#222222" -->
 <div class="tbbox" style="text-align: center;">
 <!-- #### Q & A -->
 <h5 id="thank-you-for-your-attention">Thank you for your attention</h5>
