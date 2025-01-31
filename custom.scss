@@ -1,25 +1,14 @@
 /*-- scss:rules --*/
 
-/* Custom CSS for Reveal.js title slide */
-
-// .reveal .slide-background:first-of-type {
-//   background-color: #0f6e91; /* Background color (optional) */
-//   background-image: url('data/logo.png'); /* Path to your logo */
-//   background-size: 550px 550px; /* Adjust the size of the logo */
-//   // background-position: center left; /* Adjust logo position (top-right corner) */
-//   // background-position-x: 50px;
-//   background-position: center;
-//   background-position-y: 0px;
-
-//   background-repeat: no-repeat; /* Ensure the logo isn't repeated */
-// }
-
-
 :root{
   --primary-color: #0f6e91;
   --secondary-color: #FF9D3D;
   --primary-color_light: #0f6e912c;
   --secondary-color_light: #ff9e3d23;
+  --highlight-color_green: #03d103;
+  --highlight-color_red: #ff0000;
+  --highlight-color_yellow: #f2ff00;
+  --highlight-color_blue: #00a2ff;
 }
 
 
@@ -221,44 +210,14 @@
   color: #0f6e91;
 }
 
-
-// .reveal .slide-menu-button > a[href*='title-slide']:first-of-type {
-//   display: none;
-// }
-
-
-// .reveal .slide-background:first-of-type {
-//   // background-color: #b0efec; /* Background color (optional) */
-//   background-image: url('data/logo.png'), url('data/tile.png'), url('data/by-nc-sa.png'); /* Path to your logo */
-//   background-size: 26%, 30%, 10%; /* Adjust the size of the logo */
-//   background-position-x:  3%, 0%, 99%;
-//   background-position-y: 50%, 0%, 99%;
-//   background-repeat: no-repeat, repeat-y, no-repeat; /* Ensure the logo isn't repeated */
-// }
-
 .reveal .slide-background:first-of-type {
   // background-color: #b0efec; /* Background color (optional) */
-  background-image: url('../../../../../data/logos/logo.png'), url('../../../../../data/logos/tile.png'), url('../../../../../data/logos/by-nc-sa.png'); /* Path to your logo */
+  background-image: url('../../../../../data/logos/Unitn_logos/UniTrento_logo_only_white.png'), url('../../../../../data/logos/tile.png'), url('../../../../../data/logos/by-nc-sa.png'); /* Path to your logo */
   background-size: 26%, 30%, 10%; /* Adjust the size of the logo */
   background-position-x:  3%, 0%, 99%;
   background-position-y: 50%, 0%, 99%;
   background-repeat: no-repeat, repeat-y, no-repeat; /* Ensure the logo isn't repeated */
 }
-
-// .reveal .slide-background:first-of-type {
-//   background-color: #b0efec; /* Background color (optional) */
-//   background-image: url('data/logo.png'); /* Path to your logo */
-//   background-size: 20%; /* Adjust the size of the logo */
-//   background-position-y: 50%;
-//   background-position-x: 5%;
-//   background-repeat: no-repeat; /* Ensure the logo isn't repeated */
-// }
-
-
-// .reveal .slides:first-of-type > section{
-//   // color white with transparency (0.5)
-//   background-color: rgba(255, 255, 255, 0.7);
-// }
 
 
 .reveal ul > li > a{
@@ -275,18 +234,8 @@
 
 .reveal ul {list-style-type: square;}
 
-// // fontsize of normal text and in lists in ratio to the width and with a min and max value
-// .reveal p, .reveal ul > li, .reveal ol > li, .reveal blockquote, .reveal pre, .reveal table, .reveal th, .reveal td, .reveal code {
-//   font-size: 30px;
-//   // font-size: 3.5vw;
-// }
-
-// .reveal .footer p{
-//   font-size: 10px;
-// }
-
 .reveal .slides {
-  text-align: center;
+  text-align: left;
   align-items: center;
   // vertical alignment
   vertical-align: middle;
@@ -311,13 +260,13 @@
 
 .reveal .slides .timeline .item .text{
   width: 100%;
-  min-height: 450px;
+  min-height: 250px;
   font-size: x-large;
   // align vertical in centre
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  // align-items: center;
+  // justify-content: center;
+  text-align: left;
 
 }
 
@@ -340,40 +289,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .reveal .slides .timeline .item .img-wrapper img{
   padding: 0%;
 }
 
-// .reveal .slides .timeline .item .img-wrapper img{
-//   border-radius: 50%;
-//   border: 5px solid #0f6e91;
-// }
-
-// .timeline {
-//   width
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// .timeline-item {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 80%;
-//   position: relative;
-// }
-
-// .timeline-arrow {
-//   width: 100px;
-//   height: 50px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   color: white;
-//   font-weight: bold;
-//   clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
-// }
 

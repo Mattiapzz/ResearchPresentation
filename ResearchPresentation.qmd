@@ -16,11 +16,11 @@ format:
     # Output file
     output-file: index.html
     # Table of Contents
-    # toc: true
-    # toc_float: true
-    # toc-depth: 1
-    # toc-location: body
-    # toc-title: "Contents"
+    toc: true
+    toc_float: true
+    toc-depth: 1
+    toc-location: body
+    toc-title: "Contents"
     # Generate a self contained file
     # self-contained: true
     self-contained-math: true
@@ -76,9 +76,9 @@ format:
 
 :::{.timeline}
 
-:::{.item style="width: 22%; background-color: var(--secondary-color_light);"}
-:::{.img-wrapper style="width: 80%;"}
-![](./data/logos/uniud.png)
+:::{.item style="width: 20%; background-color: var(--secondary-color_light);"}
+:::{.img-wrapper style="width: 95%;"}
+![](./data/logos/UniudDPIA.png)
 :::
 
 :::{.arrow style="background-color: var(--primary-color);"}
@@ -89,23 +89,24 @@ format:
 :::
 :::
 
-:::{.item style="width: 22%; background-color: var(--primary-color_light);"}
-:::{.text}
-- MSc in Mechatronics Engineering
-- Optimal control 
-- Minnimum Lap Time for Motorcycles
+:::{.item style="width: 20%; background-color: var(--primary-color_light);"}
+:::{.img-wrapper style="width: 100%;"}
+![](./data/logos/Unitn_logos/Dip_Ing_Industriale_col.png)
 :::
 :::{.arrow style="background-color: var(--secondary-color);"}
 2017-2020
 :::
-:::{.img-wrapper style="width: 80%;"}
-![](./data/logos/logo.png)
+:::{.text}
+- MSc in Mechatronics Engineering
+- Optimal control 
+- MLT for Motorcycles
 :::
 :::
 
-:::{.item style="width: 22%; background-color: var(--secondary-color_light);"}
+:::{.item style="width: 20%; background-color: var(--secondary-color_light);"}
 :::{.img-wrapper}
-![](./data/projects/Picture%203.png)
+![](./data/logos/Unitn_logos/UniTrento_logo_ENG_colore.png){width=120%}
+![](./data/third_party/Aprilia_Racing_Logo.png){width=70%}
 :::
 :::{.arrow style="background-color: var(--primary-color);"}
 2020-2022
@@ -113,29 +114,105 @@ format:
 :::{.text}
 - Research Fellowship
 - MLT for MotoGP Racing Team
-- Optimal control
 :::
 :::
 
-:::{.item style="width: 22%; background-color: var(--primary-color_light);"}
-:::{.text}
-- PhD in Materials, Mechatronics and Systems Engineering
-- Optimal control, Planning and Intelligent vehicles
-- Industrial collaborations
-- MISE and Horizon Europe projects
+:::{.item style="width: 20%; background-color: var(--primary-color_light);"}
+:::{.img-wrapper}
+![](./data/third_party/VeDi2025-logo.png){width=80%}
+![](./data/third_party/StellantisLogoshort.png){width=80%}
+![](./data/third_party/SunriseHD.png){width=80%}
 :::
 :::{.arrow style="background-color: var(--secondary-color);"}
 2022-now
 :::
+:::{.text}
+- PhD in Mechatronics and Systems Engineering
+- OCP, Planning and AD
+- Industrial collaborations
+- MISE and Horizon Europe projects
+:::
+:::
+
+:::{.item style="width: 20%; background-color: var(--secondary-color_light);"}
 :::{.img-wrapper}
-![](./data/projects/Picture%204.png)
-![](./data/projects/Picture%205.png)
+![](./data/third_party/StellantisLogoshort.png){width=70%}
+:::
+:::{.arrow style="background-color: var(--primary-color);"}
+now-future
+:::
+:::{.text}
+- Finish my PhD 
+- Spend a period abroad
+- Start some fruitfull collaborations
 :::
 :::
 
 ::: 
 <!-- timeline end -->
 
+# Projects
+
+## VeDi 2025 and SUNRISE
+
+::: {.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Goals 
+:::
+
+::: {.columns}
+:::: {.column width="70%"}
+
+- Develop a **real-time local planner** for autonomous driving.
+  - **Dynamic** obstacle avoidance.
+  - **Safety** and optimality of manouvre.
+  - Cooperation and **negotiation**.
+- Specialize the planner for urban and racing scenarios.
+- **Validate** the planner with real-world testing.
+- Test vehicle cooperation and **negotiation with CCAV** and V2X.
+- Propose a method to **evaluate and rank** autonomous agents.
+
+::::
+<!--- end column -->
+:::: {.column width="28%"}
+![](./data/third_party/VeDi2025-logo.png)
+![](./data/third_party/StellantisLogoshort.png)
+![](./data/third_party/Sunrise-Logo.jpeg)
+::::
+
+
+::: 
+<!-- end columns -->
+
+
+:::
+
+<!-- \begin{frame}{Research Interest}{And applications}
+  \begin{bbox}[Goals]
+    \begin{minipage}{0.75\textwidth}
+      \begin{itemize}
+        \item Develop a \textbfb{real-time local planner} for autonomous driving.
+        \begin{itemize}
+          \item \textbfb{Dynamic} obstacle avoidance.
+          \item \textbfb{Safety} and optimality of manouvre.
+          \item Cooperation and \textbfb{negotiation}.
+        \end{itemize}
+        \item Specialize the planner for urban and racing scenarios.
+        \item \textbfb{Validate} the planner with real-world testing.
+        \item Test vehicle cooperation and \textbfb{negotiation with CCAV} and V2X.
+        \item Propose a method to \textbfb{evaluate and rank} autonomous agents.
+      \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.24\textwidth}
+      \centering 
+      \includegraphics[width=0.98\linewidth]{External_logos/VeDi2025-logo.png}\\
+      \includegraphics[width=0.98\linewidth]{External_logos/StellantisLogo.png}\\
+      \includegraphics[width=0.98\linewidth]{External_logos/Sunrise-Logo.png}
+      
+    \end{minipage}
+  \end{bbox}
+\end{frame} -->
 
 # RESEARCH ACTIVITY 
 
@@ -175,6 +252,10 @@ format:
 ```
 
 
+## Test video unlisted
+
+
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
 
 ## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
