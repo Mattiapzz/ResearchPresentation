@@ -1,6 +1,8 @@
 ---
 title: "Optimal Control, Planning and Intelligent vehicles"
 subtitle: "From motorcycle MLT to autonomous driving and beyond"
+bibliography: bibliography.bib
+cls: IEEEtran.cls
 author: 
   - "Mattia Piazza"
   - " Supervisor: Prof. Francesco Biral"
@@ -97,10 +99,11 @@ format:
 
 :::{.item style="width: 20%; background-color: var(--primary-color_light);"}
 :::{.img-wrapper}
-![](./data/third_party/VeDi2025-logo.png){width=80%}
 ![](./data/third_party/StellantisLogoshort.png){width=80%}
+![](./data/third_party/VeDi2025-logo.png){width=80%}
 ![](./data/third_party/SunriseHD.png){width=80%}
 :::
+
 :::{.arrow style="background-color: var(--secondary-color);"}
 2022-now
 :::
@@ -114,7 +117,8 @@ format:
 
 :::{.item style="width: 20%; background-color: var(--secondary-color_light);"}
 :::{.img-wrapper}
-![](./data/third_party/StellantisLogoshort.png){width=70%}
+![](./data/logos/Unitn_logos/UniTrento_logo_ENG_colore.png){width=120%}
+![](./data/third_party/Logo.png){width=70%}
 :::
 :::{.arrow style="background-color: var(--primary-color);"}
 now-future
@@ -278,6 +282,11 @@ Specialized Framework
 :::
 
 
+## MLT for MotoGP
+
+
+
+
 #### FIGURES
 
 
@@ -286,42 +295,78 @@ Specialized Framework
 ## State-of-the-Art 
 ### Planning Approaches
 
+|                   | Optimization-based planning              | Sampling/Graph-based planning        |
+|-------------------|------------------------------------------|--------------------------------------|
+| Optimum           | [**Local**]{style="color:red;"}          | [**Global**]{style="color:green;"}   |
+| Time              | [**Fast**]{style="color:green;"}         | [**Slow**]{style="color:red;"}       |
+| Dynamics          | [**Accurate**]{style="color:green;"}     | [**Limited**]{style="color:red;"}    |
+| Obstacles         | [**Limited**]{style="color:red;"}        | [**Flexible**]{style="color:green;"} |
+| Guarantees        | [**No finite-time**]{style="color:red;"} | [**Anytime**]{style="color:green;"}  |
+| Continuity        | [**Recursive**]{style="color:green;"}    | [**Limited**]{style="color:red;"}    |
 
 
-|                   | In Optimization-based planning | Sampling/Graph-based planning |
-|-------------------+--------------------------------+-------------------------------|
-| Optimum           | Local                          | Global                        |
-| Time              | Fast                           | Slow                          |
-| Dynamics          | Accurate                       | Limited                       |
-| Obstacles         | Limited                        | Flexible                      |
-| Guarantees        | No finite-time                 | Anytime                       |
-| Continuity        | Recursive                      | Limited                       |
+## Planner idea
+### Combine the best of both worlds
+
+Combine **OC** and **sampling-based** methods ensuring **dynamic obstacle avoidance**.
+
+- RRT $^*$ with semi-structured tree exploration (sampling)
+- MP (OC sulutions) \cite{piazza2024mptree} [@piazza2024mptree]
+
+Flexible approach, specialized for **autonomous urban** and **racing** scenarios.
+
+## Framkeork overview
+
+<!-- ```{dot}
+digraph finite_state_machine {
+	fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"
+	node [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
+	edge [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
+	rankdir=LR;
+  subgraph cluster_plan {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		update -> prediction -> RRT -> OptimalTrajectory;
+		label = "Planning";
+	}
+
+  subgraph cluster_RRT {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		RRT -> sample -> chooseParent -> rewire -> sample;
+		label = "RRT*";
+	}
+	node [shape = doublecircle]; Perceive LowLevel Environment;
+	node [shape = circle];
+	Perceive -> update [label = "SS(B)"];
+	OptimalTrajectory -> LowLevel [label = "SS(S)"];
+	LowLevel -> Environment [label = "SS(b)"];
+	Environment -> Perceive [label = "SS(a)"];
+}
+``` -->
+
+<br>
+![](./data/Diagrams/fig-MPTree-architecture.png)
+<!-- {style="position: absolute; top: 40%;"} -->
 
 
+## Mesh environment
 
-<!-- \begin{frame}{State-of-the-Art}{Planning Approaches}
-  \small
-  \begin{table}[]
-  \centering
-    \begin{tabular}{c|cc}
-      \toprule
-      & \textbf{Optimization-based planning}  & \textbf{Sampling/Graph-based planning} \\
-      \midrule
-      \textbf{Optimum}    & \textbfr{Local}          & \textbfg{Global}   \\ 
-      \textbf{Time}       & \textbfg{Fast}           & \textbfr{Slow}     \\ 
-      \textbf{Dynamics}   & \textbfg{Accurate}       & \textbfr{Limited}  \\ 
-      \textbf{Obstacles}  & \textbfr{Limited}        & \textbfg{Flexible} \\ 
-      \textbf{Guarantees} & \textbfr{No finite-time} & \textbfg{Anytime}  \\ 
-      \textbf{Continuity} & \textbfg{Recursive}      & \textbfr{Limited}  \\ 
-      \bottomrule
-    \end{tabular}
-  \end{table} -->
+:::{.columns}
+:::: {.column width="50%"}
+
+::::
+:::: {.column width="50%"}
+
+
+::::
+:::
 
 
 
 <!-- \begin{frame}
-
-
 
 
 
@@ -446,6 +491,12 @@ Goals
 ## MPTree C++ integration
 
 {{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+
+
+## References
+
+::: {#refs}
+:::
 
 
 ## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
