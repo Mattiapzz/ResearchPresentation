@@ -745,7 +745,7 @@ Goals
 :::: {.column width="25%"}
 ::::
 :::: {.column width="50%" text-align= "center"}
-{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0 width="100%" height=500 autoplay="true" loop="true" muted="true">}} 
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0 width="100%" height=506 autoplay="true" loop="true" muted="true">}} 
 ::::
 :::: {.column width="25%"}
 ::::
@@ -792,7 +792,7 @@ Goals
 
 ### VIL velocity profiles
 
-![](./data/Vadena/VadenaIntersection_traj_crop.png){width=70% fig-align="center"}
+![](./data/Vadena/VadenaIntersection_traj_crop.png){width=50% fig-align="center"}
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -828,10 +828,10 @@ V2X
 
 # Other projects
 
-## SUNRISE - Safety Assurance Framework
+<!-- ## SUNRISE - Safety Assurance Framework
 
 ::: {.tbbox}
-<!-- #### My Custom Title -->
+
 ::: {.titlebox}
 Goals 
 :::
@@ -844,18 +844,17 @@ Goals
 - Propose a method to **evaluate and rank** autonomous agents.
 
 ::::
-<!--- end column -->
+
 :::: {.column width="28%"}
 ![](./data/third_party/Sunrise-Logo.jpeg)
 ::::
 
 ::: 
-<!-- end columns -->
-:::
 
-#### FIGURES
+::: -->
 
-## SUNRISE 
+
+## SUNRISE - Safety Assurance Framework 
 ### Agents comparison and evaluation [@cherubini2024bootstrapped]
 
 :::{.tbbox}
@@ -864,11 +863,17 @@ Goals
 Logical scenario
 :::
 :::{.columns}
-:::: {.column width="50%"}
-![](./data/img_ODD/ODD_highway_v2.png)
+:::: {.column width="30%"}
+![](./data/img_ODD/ODD_highway_v2.png){width=100% fig-align="center"}
 ::::
-:::: {.column width="50%"}
-![](./data/img_ODD/exit.png){width=100% fig-align="center"}
+:::: {.column width="70%"}
+
+- Test vehicle **CCAM** and applications.
+- Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
+- Propose a method to **evaluate and rank** autonomous agents.
+  
+
+![](./data/img_ODD/exit.png){width=70% fig-align="center"}
 ::::
 :::
 :::
@@ -876,29 +881,29 @@ Logical scenario
 ## SUNRISE 
 ### Agents comparison [@cherubini2024bootstrapped]
 
-![](./data/img_ODD/slices.png)
+![](./data/img_ODD/slices.png){width=70% fig-align="center"}
 
 ## SUNRISE
 ### Possible usage
 
 :::{.columns}
 :::: {.column width="50%"}
-![](./data/img_ODD/Stochastic model.pdf)
+![](./data/img_ODD/Stochastic model.png){width=100% fig-align="center"}
 ::::
 :::: {.column width="50%"}
-![](./data/img_ODD/consensus_data_1.png)
+![](./data/img_ODD/consensus_data_1.png){width=80% fig-align="center"}
 ::::
 :::
 
 ## SUNRISE
 ### Suggested distance 
 
-![](./data/img_ODD/safe_charts.png)
+![](./data/img_ODD/safe_charts.png){width=70% fig-align="center"}
 
 ## SUNRISE
 ### Suggested speed
 
-![](./data/img_ODD/safe_speed.png)
+![](./data/img_ODD/safe_speed.png){width=70% fig-align="center"}
 
 
 ## MLT for MotoGP
@@ -906,9 +911,46 @@ Logical scenario
 #### FIGURES
 
 
-## 3 Points Dubins Path
-@piazza2024efficient @piazza2024non
-#### FIGURES
+## 3 Points Dubins Path [@piazza2024efficient;@piazza2024non]
+
+:::{.columns}
+:::: {.column width="50%"}
+Efficient algorithm to solve 3PDP problem.
+
+| Algorithm | Iterations | Time ($ms$) | N. Dubins calls |
+|-----------|------------|-------------|-----------------|
+| PS        | 88.35      | 0.217       | $\sim$ 176       |
+| PS + 748  | 77.70      | 0.187       | $\sim$ 155       |
+| PT        | 74.78      | 0.179       | $\sim$ 149       |
+| [PT + 748]{style="color: red;"}  | [68.54]{style="color: red;"}      | 0.163       | $\sim$ 137       |
+| DBM       | 360        | 55.577      | 720             |
+| iDPP      | 128        | 19.720      | 256             |
+::::
+:::: {.column width="50%"}
+![](./data/Tikz/onepoint_final_rev.png){width=70% fig-align="center"}
+::::
+:::
+
+<!-- \begin{table}
+  \centering
+  \caption{Evaluation of the proposed algorithms with the benchmark test with mean $\mu$ and standard deviation $\sigma$ of iterations and computational times for the sampling in \eqref{eq:second_sample}}
+  \label{tab:results2}
+  \begin{tabular}{lccccc}
+    \toprule
+    % iterations, time \multicolumn{8}{|c|}{Sets}
+    Algorithm & \multicolumn{2}{c}{Iter number} & \multicolumn{2}{c}{Time ($ms$)} & \multirow{2}{*}{N. Dubins calls} \\
+     &  $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & \\
+    \midrule
+    Pattern search             & 88.35 & 20.57 &  0.217 & 0.047 & $\sim$176 \\
+    Pattern search + 748       & 77.70 & 23.55 &  0.187 & 0.031 & $\sim$155 \\
+    Pattern trichotomy         & 74.78 & 13.34 &  0.179 & 0.032 & $\sim$149 \\
+    Pattern trichotomy + 748   & 68.54 & 14.81 &  0.163 & 0.034 & $\sim$137 \\
+    \midrule
+    DBM -- Alg.~\ref{alg:DBM}  & 360   &  0.0  & 55.577 & 3.357 & 720 \\
+    iDPP~\cite{Dubins:MP}      & 128   &  0.0  & 19.720 & 0.845 & 256 \\
+    \bottomrule 
+  \end{tabular}
+\end{table} -->
 
 
 ## References
@@ -925,7 +967,8 @@ Logical scenario
 
 ::: {.tbbox style="text-align: center;" }
 <!-- #### Q & A -->
-##### Thank you for your attention
+##### Thank you for your attention!
+<!-- ##### Danke für Ihre Aufmerksamkeit! -->
 :::
 
 
