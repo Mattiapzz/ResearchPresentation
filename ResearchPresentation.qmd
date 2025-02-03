@@ -829,9 +829,49 @@ Goals
 #### FIGURES
 
 ## SUNRISE 
-### Agents comparison and evaluation
+### Agents comparison and evaluation [@cherubini2024bootstrapped]
 
-@cherubini2024bootstrapped
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Logical scenario
+:::
+:::{.columns}
+:::: {.column width="50%"}
+![](./data/img_ODD/ODD_highway_v2.png)
+::::
+:::: {.column width="50%"}
+![](./data/img_ODD/exit.png){width=100% fig-align="center"}
+::::
+:::
+:::
+
+## SUNRISE 
+### Agents comparison [@cherubini2024bootstrapped]
+
+![](./data/img_ODD/slices.png)
+
+## SUNRISE
+### Possible usage
+
+:::{.columns}
+:::: {.column width="50%"}
+![](./data/img_ODD/Stochastic model.pdf)
+::::
+:::: {.column width="50%"}
+![](./data/img_ODD/consensus_data_1.png)
+::::
+:::
+
+## SUNRISE
+### Suggested distance 
+
+![](./data/img_ODD/safe_charts.png)
+
+## SUNRISE
+### Suggested speed
+
+![](./data/img_ODD/safe_speed.png)
 
 
 ## MLT for MotoGP
