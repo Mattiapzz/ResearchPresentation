@@ -145,16 +145,14 @@ Ask a rhetorical question or reference their work in RL and planning to set the 
 :::
 
 
-## VeDi2025 and SUNRISE
-
-### Goals 
+## VeDi2025 and SUNRISE Goals 
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
 VeDi2025
 :::
 ::: {.columns}
-:::: {.column width="75%"}
+:::: {.column width="80%"}
 **CCAVs manouvre negotiation** through **V2X**:
 
 - Develop a **real-time local planner** for autonomous driving.
@@ -164,7 +162,7 @@ VeDi2025
 
 ::::
 <!--- end column -->
-:::: {.column width="25%"}
+:::: {.column width="20%"}
 ![](./data/third_party/VeDi2025-logo.png)
 ![](./data/third_party/StellantisLogoshort.png)
 ::::
@@ -179,7 +177,7 @@ VeDi2025
 SUNRISE
 :::
 ::: {.columns}
-:::: {.column width="25%" align-item="center" justify-content="center"}
+:::: {.column width="25%" align-items="center" justify-content="center"}
 ![](./data/third_party/SunriseHD.png)
 ::::
 :::: {.column width="75%"}
@@ -233,11 +231,11 @@ Open Challenges
 
 :::{.columns}
 :::: {.column width="50%"}
-![](./data/intro_phd_Piccinini/occurrences_autonomous_driving.png)
+![](./data/intro_phd_Piccinini/occurrences_autonomous_driving.png){width=70% fig-align="center"}
 ::::
 
 :::: {.column width="50%"}
-![](./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png)
+![](./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png){width=70% fig-align="center"}
 ::::
 :::
 
@@ -272,35 +270,40 @@ Given a simple set of constraints the planner is able to
 
 :::{.tbbox}
 <!-- #### My Custom Title -->
-::: {.titleboxL}
+::: {.titlebox}
 Specialized Framework
 :::
 - **Autonomous Racing** MPTreeRace
 - **Urban Driving** UrbanMPTree
 :::
 
-#### FIGURES
 
 ## Contributions
 ### C++ implementation and commercial sofware integration, SIL and HIL testing
 :::{.tbbox}
-:::{.columns style='display: flex !important; height: 100%;'}
+:::{.columns}
 :::: {.column width="70%"}
-
 - Fast **C++** implementation of the planner.
 - Integration with **IPG CarMaker**.
 - Integration inside **RTMaps** and **dSpace** authera.
 - Real-world testing with **Stellantis**.
-
 ::::
-:::: {.column width="30%" }
-
-![](./data/third_party/IPG-Automotive-logo.png)
-![](./data/third_party/dSpace_logo.png)
-![](./data/third_party/StellantisLogoshort.png)
-
+:::: {.column width="30%"}
 ::::
 :::
+
+:::{.columns}
+:::: {.column width="33%"}
+![](./data/third_party/IPG-Automotive-logo.png){width=90% fig-align="center"}
+::::
+:::: {.column width="33%"}
+![](./data/third_party/dSpace_logo.png){width=90% fig-align="center"}
+::::
+:::: {.column width="33%" }
+![](./data/third_party/StellantisLogoshort.png){width=90% fig-align="center"}
+::::
+:::
+
 :::
 
 # MPTree framework
@@ -587,10 +590,10 @@ $$
 ### Urban multi-objective + negotiation
 
 :::{.columns}
-:::: {.column width="40%"}
+:::: {.column width="35%"}
 ![](./data/MPT_Piazza/Cooperative_approach.png)
 ::::
-:::: {.column width="59%"}
+:::: {.column width="65%"}
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
@@ -659,13 +662,13 @@ $$
 
 ### MPTree race
 
-{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&rel=0  width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
 
 ## Simulation results
 
 ### MPTree urban (Matlab)
 
-{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr width="90%" height="95%" autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr&rel=0  width="90%" height="95%" autoplay="true" loop="true" muted="true">}}
 
 ## Projects VeDi 2025
 
@@ -698,41 +701,65 @@ Goals
 
 ### MPTree urban uncooperative negotiation (Matlab)
 
-{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="95%" height=80% autoplay="true" loop="true" muted="true">}} 
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr&rel=0  width="95%" height=80% autoplay="true" loop="true" muted="true">}} 
 
 ## Simulation results 
 
 ### MPTree urban cooperative negotiation (Matlab)
 
-{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="95%" height=80% autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="95%" height=80% autoplay="true" loop="true" muted="true">}}
 
-## Simulation results 
+<!-- 
+## Simulation results  
 
 ### MPTree urban uncooperative VS cooperative negotiation  (Matlab)
 
 :::{.columns style='display: flex !important; height: 100%;'}
 :::: {.column width="50%"}
-{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="98%" height=400 autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="98%" height=400 autoplay="true" loop="true" muted="true">}}
 ::::
 ::::{.column width="50%"}
-{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="98%" height=400 autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr&rel=0  width="98%" height=400 autoplay="true" loop="true" muted="true">}}
+::::
+::: 
+-->
+
+## C++ integration and closed loop testing
+
+<!-- ### Single track model + C++ library
+
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0  width="100%" height="93%" autoplay="true" loop="true" muted="true">}} -->
+
+### Single track model and C++ library
+
+<!-- average number of iteration average explored nodes with with one obstacle two or 3 -->
+
+| Obstacles | N. Iterations | N. Explored nodes |
+|-----------|---------------|-------------------|
+| Free      | ~800          | ~TBD              |
+| 1         | ~600          | ~TBD              |
+| 2         | ~500          | ~TBD              |
+| 3         | ~400          | ~TBD              |
+
+:::{.columns}
+:::: {.column width="25%"}
+::::
+:::: {.column width="50%" text-align= "center"}
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0 width="100%" height=500 autoplay="true" loop="true" muted="true">}} 
+::::
+:::: {.column width="25%"}
 ::::
 :::
 
 
 
 
-## C++ integration and closed loop testing
-
-### Single track model + C++ library
-
-{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
 ## Integration in CarMaker
 
 ### SIL testing in IPG CarMaker and validated vehicle model
 
-{{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz&rel=0  width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
 ## Integration in carmaker
 
@@ -740,10 +767,10 @@ Goals
 
 :::{.columns}
 :::: {.column width="58.5%"}
-{{< video https://www.youtube.com/embed/R3iCVDXGoao?si=4-bhO2pobLjrP23k width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/R3iCVDXGoao?si=4-bhO2pobLjrP23k&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
 ::::
 ::::{.column width="41.5%"}
-{{< video https://www.youtube.com/embed/5qmvcFmvGVE?si=9R9tDc0CZ2Hwebj_ width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+{{< video https://www.youtube.com/embed/5qmvcFmvGVE?si=9R9tDc0CZ2Hwebj_&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
 ::::
 :::
 

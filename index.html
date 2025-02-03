@@ -279,16 +279,15 @@ Supervisor: Prof.&nbsp;Francesco Biral
           display:block!important;
       }</style></aside>
 </section>
-<section id="vedi2025-and-sunrise" class="slide level2">
-<h2>VeDi2025 and SUNRISE</h2>
-<h3 id="goals">Goals</h3>
+<section id="vedi2025-and-sunrise-goals" class="slide level2">
+<h2>VeDi2025 and SUNRISE Goals</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
 <div class="titlebox">
 <p>VeDi2025</p>
 </div>
 <div class="columns">
-<div class="column" style="width:75%;">
+<div class="column" style="width:80%;">
 <p><strong>CCAVs manouvre negotiation</strong> through <strong>V2X</strong>:</p>
 <ul>
 <li>Develop a <strong>real-time local planner</strong> for autonomous driving.
@@ -298,7 +297,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </ul></li>
 <li><strong>Validate</strong> the planner with real-world testing.</li>
 </ul>
-</div><!--- end column --><div class="column" style="width:25%;">
+</div><!--- end column --><div class="column" style="width:20%;">
 <p><img data-src="./data/third_party/VeDi2025-logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
 </div></div>
 <!-- end columns -->
@@ -309,7 +308,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <p>SUNRISE</p>
 </div>
 <div class="columns">
-<div class="column" data-align-item="center" data-justify-content="center" style="width:25%;">
+<div class="column" data-align-items="center" data-justify-content="center" style="width:25%;">
 <p><img data-src="./data/third_party/SunriseHD.png"></p>
 </div><div class="column" style="width:75%;">
 <p>Safety Assurance Framework for the test and safety validation of CCAM systems.</p>
@@ -360,9 +359,17 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div></div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="./data/intro_phd_Piccinini/occurrences_autonomous_driving.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/intro_phd_Piccinini/occurrences_autonomous_driving.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/intro_phd_Piccinini/waymo_IPACE_3_resized.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="contributions" class="slide level2">
@@ -387,7 +394,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div>
 <div class="tbbox">
 <!-- #### My Custom Title -->
-<div class="titleboxL">
+<div class="titlebox">
 <p>Specialized Framework</p>
 </div>
 <ul>
@@ -395,13 +402,12 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <li><strong>Urban Driving</strong> UrbanMPTree</li>
 </ul>
 </div>
-<h4 id="figures">FIGURES</h4>
 </section>
 <section id="contributions-1" class="slide level2">
 <h2>Contributions</h2>
 <h3 id="c-implementation-and-commercial-sofware-integration-sil-and-hil-testing">C++ implementation and commercial sofware integration, SIL and HIL testing</h3>
 <div class="tbbox">
-<div class="columns" style="display: flex !important; height: 100%;">
+<div class="columns">
 <div class="column" style="width:70%;">
 <ul>
 <li>Fast <strong>C++</strong> implementation of the planner.</li>
@@ -410,7 +416,27 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <li>Real-world testing with <strong>Stellantis</strong>.</li>
 </ul>
 </div><div class="column" style="width:30%;">
-<p><img data-src="./data/third_party/IPG-Automotive-logo.png"> <img data-src="./data/third_party/dSpace_logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
+
+</div></div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/third_party/IPG-Automotive-logo.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/third_party/dSpace_logo.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/third_party/StellantisLogoshort.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
 </div></div>
 </div>
 </section></section>
@@ -701,9 +727,9 @@ digraph finite_state_machine {
 <h2>Cost Function</h2>
 <h3 id="urban-multi-objective-negotiation">Urban multi-objective + negotiation</h3>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:35%;">
 <p><img data-src="./data/MPT_Piazza/Cooperative_approach.png"></p>
-</div><div class="column" style="width:59%;">
+</div><div class="column" style="width:65%;">
 <div class="tbbox">
 <!-- #### My Custom Title -->
 <div class="titlebox">
@@ -795,21 +821,67 @@ digraph finite_state_machine {
 <h2>Simulation results</h2>
 <h3 id="mptree-urban-cooperative-negotiation-matlab">MPTree urban cooperative negotiation (Matlab)</h3>
 <iframe data-external="1" src="https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps" width="95%" height="80%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</section>
-<section id="simulation-results-4" class="slide level2">
-<h2>Simulation results</h2>
-<h3 id="mptree-urban-uncooperative-vs-cooperative-negotiation-matlab">MPTree urban uncooperative VS cooperative negotiation (Matlab)</h3>
-<div class="columns" style="display: flex !important; height: 100%;">
-<div class="column" style="width:50%;">
-<iframe data-external="1" src="https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps" width="98%" height="400" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</div><div class="column" style="width:50%;">
-<iframe data-external="1" src="https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr" width="98%" height="400" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</div></div>
+<!-- 
+## Simulation results  
+
+### MPTree urban uncooperative VS cooperative negotiation  (Matlab)
+
+:::{.columns style='display: flex !important; height: 100%;'}
+:::: {.column width="50%"}
+
+::::
+::::{.column width="50%"}
+
+::::
+::: 
+-->
 </section>
 <section id="c-integration-and-closed-loop-testing" class="slide level2">
 <h2>C++ integration and closed loop testing</h2>
-<h3 id="single-track-model-c-library">Single track model + C++ library</h3>
-<iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM" width="100%" height="93%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<!-- ### Single track model + C++ library
+
+ -->
+<h3 id="single-track-model-and-c-library">Single track model and C++ library</h3>
+<!-- average number of iteration average explored nodes with with one obstacle two or 3 -->
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Obstacles</th>
+<th>N. Iterations</th>
+<th>N. Explored nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Free</td>
+<td>~800</td>
+<td>~TBD</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>~600</td>
+<td>~TBD</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>~500</td>
+<td>~TBD</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>~400</td>
+<td>~TBD</td>
+</tr>
+</tbody>
+</table>
+<div class="columns">
+<div class="column" style="width:25%;">
+
+</div><div class="column" data-text-align="center" style="width:50%;">
+<iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&amp;rel=0&amp;loop=1" width="100%" height="500" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div><div class="column" style="width:25%;">
+
+</div></div>
 </section>
 <section id="integration-in-carmaker" class="slide level2">
 <h2>Integration in CarMaker</h2>
@@ -895,7 +967,7 @@ digraph finite_state_machine {
 </div></div>
 <!-- end columns -->
 </div>
-<h4 id="figures-1">FIGURES</h4>
+<h4 id="figures">FIGURES</h4>
 </section>
 <section id="sunrise" class="slide level2">
 <h2>SUNRISE</h2>
@@ -944,7 +1016,7 @@ digraph finite_state_machine {
 <img data-src="./data/img_ODD/safe_speed.png" class="r-stretch"></section>
 <section id="mlt-for-motogp" class="slide level2">
 <h2>MLT for MotoGP</h2>
-<h4 id="figures-2">FIGURES</h4>
+<h4 id="figures-1">FIGURES</h4>
 </section>
 <section id="points-dubins-path" class="slide level2">
 <h2>3 Points Dubins Path</h2>
