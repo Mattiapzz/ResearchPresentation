@@ -11,7 +11,7 @@
 
   <meta name="author" content="Mattia Piazza">
   <meta name="author" content="Supervisor: Prof.&nbsp;Francesco Biral">
-  <meta name="dcterms.date" content="2025-02-01">
+  <meta name="dcterms.date" content="2025-02-03">
   <title>Optimal Control, Planning and Intelligent vehicles</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -165,17 +165,25 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div>
 </div>
 
-  <p class="date">1 February 2025</p>
+  <p class="date">3 February 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
 <ul>
+<li><a href="#/background" id="/toc-background">Background</a></li>
 <li><a href="#/research-motivations-and-contributions" id="/toc-research-motivations-and-contributions">Research motivations and contributions</a></li>
 <li><a href="#/mptree-framework" id="/toc-mptree-framework">MPTree framework</a></li>
+<li><a href="#/results-framework" id="/toc-results-framework">Results Framework</a></li>
 <li><a href="#/research-activity" id="/toc-research-activity">RESEARCH ACTIVITY</a></li>
 <li><a href="#/projects" id="/toc-projects">Projects</a></li>
+<li><a href="#/other-projects" id="/toc-other-projects">Other projects</a></li>
 </ul>
 </nav>
+</section>
+<section>
+<section id="background" class="title-slide slide level1 center">
+<h1>Background</h1>
+
 </section>
 <section id="my-background" class="slide level2">
 <h2>My Background</h2>
@@ -260,13 +268,31 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div>
 </div>
 <!-- timeline end -->
+<aside class="notes">
+<p>Quick self-introduction (your background, relevant experience, and motivation for the visit). Brief overview of your research trajectory (motorsport → optimal control → planning for AVs). Mention your goal for this visit: Collaboration on planners or working with F1tenth. Ask a rhetorical question or reference their work in RL and planning to set the stage for engagement.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="vedi-2025-and-sunrise" class="slide level2">
-<h2>VeDi 2025 and SUNRISE</h2>
+<section id="vedi2025-and-sunrise" class="slide level2">
+<h2>VeDi2025 and SUNRISE</h2>
 <h3 id="goals">Goals</h3>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>VeDi2025</p>
+</div>
 <div class="columns">
 <div class="column" style="width:75%;">
-<p><strong>CCAVs manouvrenegotiation</strong> through <strong>V2X</strong>:</p>
+<p><strong>CCAVs manouvre negotiation</strong> through <strong>V2X</strong>:</p>
 <ul>
 <li>Develop a <strong>real-time local planner</strong> for autonomous driving.
 <ul>
@@ -279,6 +305,12 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <p><img data-src="./data/third_party/VeDi2025-logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
 </div></div>
 <!-- end columns -->
+</div>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>SUNRISE</p>
+</div>
 <div class="columns">
 <div class="column" data-align-item="center" data-justify-content="center" style="width:25%;">
 <p><img data-src="./data/third_party/SunriseHD.png"></p>
@@ -292,7 +324,8 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div><!--- end column -->
 </div>
 <!-- end columns -->
-</section>
+</div>
+</section></section>
 <section>
 <section id="research-motivations-and-contributions" class="title-slide slide level1 center">
 <h1>Research motivations and contributions</h1>
@@ -370,7 +403,8 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <section id="contributions-1" class="slide level2">
 <h2>Contributions</h2>
 <h3 id="c-implementation-and-commercial-sofware-integration-sil-and-hil-testing">C++ implementation and commercial sofware integration, SIL and HIL testing</h3>
-<div class="columns">
+<div class="tbbox">
+<div class="columns" style="display: flex !important; height: 100%;">
 <div class="column" style="width:70%;">
 <ul>
 <li>Fast <strong>C++</strong> implementation of the planner.</li>
@@ -381,10 +415,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div><div class="column" style="width:30%;">
 <p><img data-src="./data/third_party/IPG-Automotive-logo.png"> <img data-src="./data/third_party/dSpace_logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
 </div></div>
-</section>
-<section id="mlt-for-motogp" class="slide level2">
-<h2>MLT for MotoGP</h2>
-<h4 id="figures-1">FIGURES</h4>
+</div>
 </section></section>
 <section>
 <section id="mptree-framework" class="title-slide slide level1 center">
@@ -453,218 +484,332 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </section>
 <section id="framkeork-overview" class="slide level2">
 <h2>Framkeork overview</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<svg width="960" height="480" viewbox="0.00 0.00 1090.57 311.28" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 307.28)">
-<title>finite_state_machine</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-307.28 1086.57,-307.28 1086.57,4 -4,4"></polygon>
-<g id="clust1" class="cluster">
-<title>cluster_plan</title>
-<polygon fill="lightgrey" stroke="lightgrey" points="8,-99.28 8,-176.28 534.36,-176.28 534.36,-99.28 8,-99.28"></polygon>
-<text text-anchor="middle" x="271.18" y="-159.68" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">Planning</text>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_RRT</title>
-<polygon fill="lightgrey" stroke="lightgrey" points="397.07,-198.28 397.07,-295.28 897.14,-295.28 897.14,-198.28 397.07,-198.28"></polygon>
-<text text-anchor="middle" x="647.11" y="-278.68" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">RRT*</text>
-</g>
-<!-- update -->
-<g id="node1" class="node">
-<title>update</title>
-<ellipse fill="white" stroke="white" cx="52.78" cy="-125.28" rx="36.56" ry="18"></ellipse>
-<text text-anchor="middle" x="52.78" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">update</text>
-</g>
-<!-- prediction -->
-<g id="node2" class="node">
-<title>prediction</title>
-<ellipse fill="white" stroke="white" cx="176.74" cy="-125.28" rx="50.38" ry="18"></ellipse>
-<text text-anchor="middle" x="176.74" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">prediction</text>
-</g>
-<!-- update&#45;&gt;prediction -->
-<g id="edge1" class="edge">
-<title>update-&gt;prediction</title>
-<path fill="none" stroke="black" d="M89.71,-125.28C98.08,-125.28 107.22,-125.28 116.31,-125.28"></path>
-<polygon fill="black" stroke="black" points="116.51,-128.78 126.51,-125.28 116.51,-121.78 116.51,-128.78"></polygon>
-</g>
-<!-- RRT -->
-<g id="node3" class="node">
-<title>RRT</title>
-<ellipse fill="white" stroke="white" cx="293.75" cy="-125.28" rx="29.64" ry="18"></ellipse>
-<text text-anchor="middle" x="293.75" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">RRT</text>
-</g>
-<!-- prediction&#45;&gt;RRT -->
-<g id="edge2" class="edge">
-<title>prediction-&gt;RRT</title>
-<path fill="none" stroke="black" d="M227.18,-125.28C236.1,-125.28 245.28,-125.28 253.84,-125.28"></path>
-<polygon fill="black" stroke="black" points="253.92,-128.78 263.92,-125.28 253.92,-121.78 253.92,-128.78"></polygon>
-</g>
-<!-- OptimalTrajectory -->
-<g id="node4" class="node">
-<title>OptimalTrajectory</title>
-<ellipse fill="white" stroke="white" cx="443.46" cy="-125.28" rx="82.8" ry="18"></ellipse>
-<text text-anchor="middle" x="443.46" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">OptimalTrajectory</text>
-</g>
-<!-- RRT&#45;&gt;OptimalTrajectory -->
-<g id="edge3" class="edge">
-<title>RRT-&gt;OptimalTrajectory</title>
-<path fill="none" stroke="black" d="M323.58,-125.28C331.56,-125.28 340.66,-125.28 350.21,-125.28"></path>
-<polygon fill="black" stroke="black" points="350.29,-128.78 360.29,-125.28 350.29,-121.78 350.29,-128.78"></polygon>
-</g>
-<!-- sample -->
-<g id="node5" class="node">
-<title>sample</title>
-<ellipse fill="white" stroke="white" cx="443.46" cy="-224.28" rx="38.28" ry="18"></ellipse>
-<text text-anchor="middle" x="443.46" y="-220.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">sample</text>
-</g>
-<!-- RRT&#45;&gt;sample -->
-<g id="edge4" class="edge">
-<title>RRT-&gt;sample</title>
-<path fill="none" stroke="black" d="M310.78,-140.27C323.68,-151.92 342.56,-168.1 360.57,-180.28 375.04,-190.07 391.93,-199.45 406.59,-207.01"></path>
-<polygon fill="black" stroke="black" points="405.35,-210.31 415.86,-211.71 408.52,-204.07 405.35,-210.31"></polygon>
-</g>
-<!-- LowLevel -->
-<g id="node9" class="node">
-<title>LowLevel</title>
-<ellipse fill="none" stroke="black" cx="657.57" cy="-125.28" rx="50.93" ry="50.93"></ellipse>
-<ellipse fill="none" stroke="black" cx="657.57" cy="-125.28" rx="54.94" ry="54.94"></ellipse>
-<text text-anchor="middle" x="657.57" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">LowLevel</text>
-</g>
-<!-- OptimalTrajectory&#45;&gt;LowLevel -->
-<g id="edge9" class="edge">
-<title>OptimalTrajectory-&gt;LowLevel</title>
-<path fill="none" stroke="black" d="M526.47,-125.28C548.31,-125.28 571.58,-125.28 592.32,-125.28"></path>
-<polygon fill="black" stroke="black" points="592.59,-128.78 602.59,-125.28 592.59,-121.78 592.59,-128.78"></polygon>
-<text text-anchor="middle" x="560.7" y="-129.48" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">SS(S)</text>
-</g>
-<!-- chooseParent -->
-<g id="node6" class="node">
-<title>chooseParent</title>
-<ellipse fill="white" stroke="white" cx="657.57" cy="-224.28" rx="62.55" ry="18"></ellipse>
-<text text-anchor="middle" x="657.57" y="-220.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">chooseParent</text>
-</g>
-<!-- sample&#45;&gt;chooseParent -->
-<g id="edge5" class="edge">
-<title>sample-&gt;chooseParent</title>
-<path fill="none" stroke="black" d="M481.89,-224.28C510.36,-224.28 550.39,-224.28 584.95,-224.28"></path>
-<polygon fill="black" stroke="black" points="585,-227.78 595,-224.28 585,-220.78 585,-227.78"></polygon>
-</g>
-<!-- rewire -->
-<g id="node7" class="node">
-<title>rewire</title>
-<ellipse fill="white" stroke="white" cx="853.44" cy="-235.28" rx="35.9" ry="18"></ellipse>
-<text text-anchor="middle" x="853.44" y="-231.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">rewire</text>
-</g>
-<!-- chooseParent&#45;&gt;rewire -->
-<g id="edge6" class="edge">
-<title>chooseParent-&gt;rewire</title>
-<path fill="none" stroke="black" d="M719.11,-227.71C747.75,-229.34 781.35,-231.25 807.66,-232.74"></path>
-<polygon fill="black" stroke="black" points="807.53,-236.24 817.72,-233.31 807.93,-229.25 807.53,-236.24"></polygon>
-</g>
-<!-- rewire&#45;&gt;sample -->
-<g id="edge7" class="edge">
-<title>rewire-&gt;sample</title>
-<path fill="none" stroke="black" d="M819.09,-240.44C792.39,-244.3 753.94,-249.24 720.09,-251.28 664.61,-254.62 650.4,-256.2 595.04,-251.28 558.84,-248.06 518.3,-240.56 488.42,-234.29"></path>
-<polygon fill="black" stroke="black" points="488.83,-230.8 478.32,-232.13 487.37,-237.64 488.83,-230.8"></polygon>
-</g>
-<!-- Perceive -->
-<g id="node8" class="node">
-<title>Perceive</title>
-<ellipse fill="none" stroke="black" cx="1034.29" cy="-48.28" rx="44.08" ry="44.08"></ellipse>
-<ellipse fill="none" stroke="black" cx="1034.29" cy="-48.28" rx="48.06" ry="48.06"></ellipse>
-<text text-anchor="middle" x="1034.29" y="-44.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">Perceive</text>
-</g>
-<!-- Perceive&#45;&gt;update -->
-<g id="edge8" class="edge">
-<title>Perceive-&gt;update</title>
-<path fill="none" stroke="black" d="M986.32,-41.77C950.31,-37.34 899.33,-32.28 854.44,-32.28 175.74,-32.28 175.74,-32.28 175.74,-32.28 130.86,-32.28 92.2,-72.6 71.03,-100.14"></path>
-<polygon fill="black" stroke="black" points="68.19,-98.11 65.04,-108.22 73.81,-102.28 68.19,-98.11"></polygon>
-<text text-anchor="middle" x="443.46" y="-36.48" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">SS(B)</text>
-</g>
-<!-- Environment -->
-<g id="node10" class="node">
-<title>Environment</title>
-<ellipse fill="none" stroke="black" cx="853.44" cy="-125.28" rx="61.42" ry="61.42"></ellipse>
-<ellipse fill="none" stroke="black" cx="853.44" cy="-125.28" rx="65.41" ry="65.41"></ellipse>
-<text text-anchor="middle" x="853.44" y="-121.08" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">Environment</text>
-</g>
-<!-- LowLevel&#45;&gt;Environment -->
-<g id="edge10" class="edge">
-<title>LowLevel-&gt;Environment</title>
-<path fill="none" stroke="black" d="M712.31,-125.28C732.53,-125.28 755.9,-125.28 777.69,-125.28"></path>
-<polygon fill="black" stroke="black" points="777.91,-128.78 787.91,-125.28 777.91,-121.78 777.91,-128.78"></polygon>
-<text text-anchor="middle" x="754.04" y="-129.48" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">SS(b)</text>
-</g>
-<!-- Environment&#45;&gt;Perceive -->
-<g id="edge11" class="edge">
-<title>Environment-&gt;Perceive</title>
-<path fill="none" stroke="black" d="M914,-99.64C935.41,-90.42 959.4,-80.09 980.23,-71.12"></path>
-<polygon fill="black" stroke="black" points="981.75,-74.28 989.55,-67.11 978.98,-67.85 981.75,-74.28"></polygon>
-<text text-anchor="middle" x="952.46" y="-92.48" font-family="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif" font-size="14.00">SS(a)</text>
-</g>
-</g>
-</svg>
+<!-- ```{dot}
+digraph finite_state_machine {
+    fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"
+    node [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
+    edge [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
+    // rankdir=LR;
+  node [shape=box];
+    Environment -> Perceive [label = "SS(a)"];
+
+  subgraph cluster_plan {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white];
+        update -> prediction -> RRT -> OptimalTrajectory;
+        label = "Planning";
+    }
+
+  subgraph cluster_int_update {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white];
+        prediction_obs -> road -> mesh;
+        label = "Update";
+    }
+
+  subgraph cluster_RRT {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white];
+        RRT -> sample -> chooseParent -> rewire -> sample;
+        label = "RRT*";
+    }
+    // node [shape = doublecircle]; Perceive LowLevel Environment;
+    // node [shape = circle];
+  update -> prediction_obs [label = "SS(a)"];
+    Perceive -> update [label = "SS(B)"];
+    OptimalTrajectory -> LowLevel [label = "SS(S)"];
+    LowLevel -> Environment [label = "SS(b)"];
+}
+``` -->
+<p><br> <img data-src="./data/Diagrams/fig-MPTree-architecture.png"></p>
+</section>
+<section id="mesh-environment" class="slide level2">
+<h2>Mesh environment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./data/Diagrams/fig-MPTree-map.png"></p>
+</div><div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Road Representation</p>
 </div>
-<p></p></figure><p></p>
+<ul>
+<li><strong>Curvilinear coordinates:</strong> employ clothoid (Frénet frame).</li>
+<li><strong>Waylines:</strong> road cross section.</li>
+<li><strong>Waypoints:</strong> sampled in the waylines.</li>
+<li><strong>Topology aware meshing</strong></li>
+</ul>
 </div>
+</div></div>
+</section>
+<section id="obstacle-handling" class="slide level2">
+<h2>Obstacle Handling</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./data/Diagrams//fig-Obs-VRU-02.png"></p>
+</div><div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Obstacle Prediction</p>
 </div>
+<ul>
+<li><strong>Urban:</strong> constant velocity model or minimum-time trajectory.</li>
+<li><strong>Additional waylines</strong> at intersection.</li>
+<li><strong>Waypoints</strong> in inhibited regions discarded.</li>
+</ul>
 </div>
-<p><br> <img data-src="./data/Diagrams/fig-MPTree-architecture.png"> <!-- {style="position: absolute; top: 40%;"} --></p>
-<!-- \begin{frame}
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titleboxL">
+<p>Semi-structured RRT*</p>
+</div>
+<ul>
+<li><strong>Anytime approach:</strong> finite-time solution.</li>
+<li><strong>Mixed sampling:</strong> <strong>Warm start</strong>, <strong>Structured</strong> and <strong>Random</strong></li>
+<li><strong>Connections</strong> with optimal motion primitives.</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="motion-primitives" class="slide level2">
+<h2>Motion Primitives</h2>
+<h3 id="common-lateral">Common Lateral</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Formulation</p>
+</div>
+<p><strong><span class="math inline">\(G^2\)</span> clothoids</strong> and <strong>Continuous curvature</strong> MP (closed-form solution).</p>
+<p><span class="math display">\[
+\begin{array}{r@{~}c@{~}l}
+  &amp;\displaystyle \min_{c(s)}&amp; \; L\\
+  &amp;\mathrm{s.t}.&amp;\left\{
+  \begin{aligned}
+    x^\prime(s)&amp;=\cos{\theta}(s)\\
+    y^\prime(s)&amp;=\sin{\theta}(s)\\
+    \theta^\prime(s)&amp;=\kappa(s)\\
+    \kappa^\prime(s)&amp;=c(s)
+  \end{aligned}
+  \right. \\
+  &amp;\mathrm{b.c.}&amp; \left\{
+  \begin{aligned}
+    x(0) &amp;= x_0, \; \\
+    \theta(0) &amp;= \theta_0, \; \\
+    x(L) &amp;= x_L, \; \\
+    \theta(L) &amp;= \theta_L, \;
+  \end{aligned}
+  \begin{aligned}
+    y(0) &amp;= y_0, \\
+    \kappa(0) &amp;= \kappa_0\\
+    y(L) &amp;= y_L, \\
+    \kappa(L) &amp;= \kappa_L
+  \end{aligned}
+  \right.
+\end{array}
+\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br> <br></p>
+<p><img data-src="./data/MP/CLOTH_N_road_K_road.png"></p>
+</div></div>
+</section>
+<section id="motion-primitives-1" class="slide level2">
+<h2>Motion Primitives</h2>
+<h3 id="urban-longitudinal-analytical">Urban longitudinal (Analytical)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Formulation</p>
+</div>
+<p><span class="math display">\[
+  \begin{array}{r@{~}c@{~}l}
+    &amp;\displaystyle \min_{j_x(t)}&amp; \; {\displaystyle \int_{0}^{T}{\big(w_T+j_x(t)^2\big)\,\mathrm{d} t}}  \\ \\
+    &amp;\mathrm{s.t.}&amp; \left\{
+    \begin{aligned}
+      \dot{s}(t)&amp;=v_x(t)\\
+      \dot{v}_x(t)&amp;=a_x(t)\\
+      \dot{a}_x(t)&amp;=j_x(t)
+    \end{aligned}
+    \right.\\
+    &amp;\mathrm{b.c.}&amp; \left\{
+    \begin{aligned}
+      s(0)&amp;=\ 0, \;\\
+      v_x(0)&amp;=v_0,\;\\
+      a_x(0)&amp;=a_0\;,
+    \end{aligned}
+    \begin{aligned}
+      s(T)&amp;=L\\
+      v_x(T)&amp;=v_T\\
+      a_x(T)&amp;=a_T
+    \end{aligned}
+    \right.\\
+    \;
+  \end{array}
+\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br> <br></p>
+<p><img data-src="./data/MP/MP_1020_space.png"></p>
+</div></div>
+</section>
+<section id="motion-primitives-2" class="slide level2">
+<h2>Motion Primitives</h2>
+<h3 id="racing-longitudinal-forward-backward">Racing longitudinal (Forward-Backward)</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Formulation</p>
+</div>
+<p><span class="math display">\[
+  \begin{array}{r@{~}c@{~}l}
+    &amp;\displaystyle \min_{a_x \in \mathbb A}&amp; \; T \\
+    &amp;\mathrm{s.t.}&amp; \left\{
+    \begin{aligned}
+      \dot{s}&amp;=v_x\\
+      \dot{v}_x&amp;=a_x - c\,v_x - d\,v_x^2\\
+      a_{x_{\mathrm{min}}} &amp;\leq a_x \leq a_{x_{\mathrm{max}}}\\
+      % |a_y| &amp;\leq&amp; a_{y_{\mathrm{max}}}
+      a_{y_{\mathrm{max}}} &amp;\geq |a_y| = \kappa~v_x^2
+    \end{aligned}
+    \right.\;\\
+    \\
+    &amp;\mathrm{b.c.}&amp; \left\{
+    \begin{aligned}
+      s(0)&amp;=0\\
+      s(T)&amp;=L\\
+      v_x(0)&amp;=v_0\\
+      v_x(T)&amp;=v_T
+    \end{aligned}
+    \right.
+  \end{array}
+\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br> <br></p>
+<p><img data-src="./data/MP/MP_FWBW_space.png"></p>
+</div></div>
+</section>
+<section id="cost-function" class="slide level2">
+<h2>Cost Function</h2>
+<h3 id="urban-multi-objective-negotiation">Urban multi-objective + negotiation</h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="./data/MPT_Piazza/Cooperative_approach.png"></p>
+</div><div class="column" style="width:59%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Urban multi-objective</p>
+</div>
+<p><span class="math display">\[
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} \left(W_T~ J_T^i + W_L~ J_L^i + W_V~ J_{v_{x}}^i + W_{j_x}~ J_{j_x}^i + W_{a_y}~ J_{a_y}^i\right)
+\]</span></p>
+</div>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>+ negotiation</p>
+</div>
+<p><span class="math display">\[
+  J=J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ J_{\mathrm{Neg}}} \right)
+\]</span> <span class="citation" data-cites="piazza2025emergent">(<a href="#/references" role="doc-biblioref" onclick="">Piazza et al. 2025</a>)</span></p>
+</div>
+</div></div>
+<p><span class="math display">\[
+  J_{\mathrm{Neg}}= \displaystyle\int_0^T (\mathrm{Act}(\Gamma_{\mathrm{obj_{des}}}(t) - \Gamma_{\mathrm{ego_{plan}}}(t),d_{th}))^2 \, \mathrm{d}t
+\]</span></p>
+</section>
+<section id="cost-function-1" class="slide level2">
+<h2>Cost Function</h2>
+<h3 id="racing">Racing</h3>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br> <br> <br></p>
+<p><img data-src="./data/Diagrams/MPT_PistaAzzurra_scenario_1_plot_2_thicker.png"></p>
+</div><div class="column" style="width:59%;">
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Minimum Travel Time + Penalities</p>
+</div>
+<p><span class="math display">\[
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} W_T~ J_T^i
+\]</span></p>
+<p>Where <span class="math inline">\(J_T^i\)</span> depend only on the travel time.</p>
+<p>Of course we can integrate other cost functions to improve safety, robustness and continuity with the prevuois solutiuon.</p>
+<p><span class="math display">\[
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} \left( W_T~ J_T^i + W_C J_C^i + W_{\mathrm{pen}} J_{\mathrm{pen}}^i + \dots{} \right)
+\]</span></p>
+</div>
+</div></div>
+</section>
+<section id="simulation-results" class="slide level2">
+<h2>Simulation results</h2>
+<h3 id="mptree-race">MPTree race</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw" width="95%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section></section>
+<section>
+<section id="results-framework" class="title-slide slide level1 center">
+<h1>Results Framework</h1>
 
-
-
-
-
-% --------------------------
-% Artificial Drivers: Specialization
-% --------------------------
-\begin{frame}
-  \frametitle{Artificial Driver: Specialization}
-  \centering
-  \includegraphics[scale=0.40]{figures/intro/artificial_driver_race_and_park}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \hspace{1cm}Autonomous Racing
-      % \begin{block}{\textcolor{green}{Autonomous Racing}} %and Motorsport
-      %   \begin{itemize}
-      %     \item Rapidly eval. the \textbf{max performance}
-      %     % \begin{itemize}
-      %     %   \setlength{\itemindent}{-1em}
-      %     %   \footnotesize
-      %     %   % \item Closed-loop min-time maneuvers
-      %     %   \item New circuits and vehicle setups
-      %     %   %\item Digital twin of professional drivers
-      %     % \end{itemize}
-      %     \item \textbf{Compete} in adversarial scenarios
-      %   \end{itemize}
-      % \end{block}   
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \hspace{1.68cm}Autonomous Parking
-      % \begin{block}{\textcolor{Orange}{Autonomous Parking}}
-      %   \begin{itemize}
-      %     \item Execute \textbf{complex} parking maneuvers %in real-world scenarios
-      %     \item \textbf{Adapt} to new conditions / scenarios
-      %   \end{itemize}
-      % \end{block}   
-    \end{column}
-  \end{columns}
-
-  \vfill
-
-  \onslide<2>{
-    %\textcolor{blue}{\textbf{Common goal}}: 
-    Learn from \textbf{limited data} and \textbf{\textcolor{blue}{generalize}}
-  }
-\end{frame}
-
-
-
-\end{frame} -->
+</section>
+<section id="simulation-results-1" class="slide level2">
+<h2>Simulation results</h2>
+<h3 id="mptree-urban-matlab">MPTree urban (Matlab)</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr" width="95%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="projects-vedi-2025" class="slide level2">
+<h2>Projects VeDi 2025</h2>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Goals</p>
+</div>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Develop a <strong>real-time local planner</strong> for autonomous driving.
+<ul>
+<li><strong>Dynamic</strong> obstacle avoidance.</li>
+<li><strong>Safety</strong> and optimality of manouvre.</li>
+<li>Cooperation and <strong>negotiation</strong>.</li>
+</ul></li>
+<li>Specialize the planner for urban collaborative scenarios.</li>
+<li><strong>Validate</strong> the planner with real-world testing.</li>
+<li>Test vehicle cooperation and <strong>negotiation with CCAV</strong> and V2X.</li>
+</ul>
+</div><!--- end column --><div class="column" style="width:28%;">
+<p><img data-src="./data/third_party/VeDi2025-logo.png"> <img data-src="./data/third_party/StellantisLogoshort.png"></p>
+</div></div>
+</div>
+<h3 id="mptree-urban-cooperative-negotiation-matlab">MPTree urban cooperative negotiation (Matlab)</h3>
+<div class="columns" style="display: flex !important; height: 100%;">
+<div class="column" height="100%" style="width:50%;">
+<iframe data-external="1" src="https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps" width="98%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div><div class="column" height="50%" style="width:50%;">
+<iframe data-external="1" src="https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr" width="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div></div>
+</section>
+<section id="c-integration-and-closed-loop-testing" class="slide level2">
+<h2>C++ integration and closed loop testing</h2>
+<h3 id="single-track-model-c-library">Single track model + C++ library</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM" width="100%" height="93%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="integration-in-carmaker" class="slide level2">
+<h2>Integration in carmaker</h2>
+<h3 id="sil-testing-in-ipg-carmaker-and-validated-vehicle-model">SIL testing in IPG CarMaker and validated vehicle model</h3>
+<iframe data-external="1" src="https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz" width="100%" height="93%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section></section>
 <section id="research-activity" class="title-slide slide level1 center">
 <h1>RESEARCH ACTIVITY</h1>
@@ -676,7 +821,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <h1>Projects</h1>
 
 </section>
-<section id="vedi-2025-and-sunrise-1" class="slide level2">
+<section id="vedi-2025-and-sunrise" class="slide level2">
 <h2>VeDi 2025 and SUNRISE</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
@@ -721,18 +866,30 @@ Supervisor: Prof.&nbsp;Francesco Biral
   </video>
 </div>
 </div></div>
+</section></section>
+<section>
+<section id="other-projects" class="title-slide slide level1 center">
+<h1>Other projects</h1>
+
 </section>
-<section id="mptree-race" class="slide level2">
-<h2>MPTree race</h2>
-<iframe data-external="1" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw" width="95%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<section id="sunrise---safety-assurance-framework" class="slide level2">
+<h2>SUNRISE - Safety Assurance Framework</h2>
+<h4 id="figures-1">FIGURES</h4>
 </section>
-<section id="mptree-c-integration" class="slide level2">
-<h2>MPTree C++ integration</h2>
-<iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM" width="100%" height="93%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<section id="mlt-for-motogp" class="slide level2">
+<h2>MLT for MotoGP</h2>
+<h4 id="figures-2">FIGURES</h4>
+</section>
+<section id="points-dubins-path" class="slide level2">
+<h2>3 Points Dubins Path</h2>
+<h4 id="figures-3">FIGURES</h4>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-piazza2025emergent" class="csl-entry" role="listitem">
+Piazza, Mattia, Antonello Cherubini, Angela Giugliano, and Francesco Biral. 2025. <span>“Emergent Negotiation with Cooperative Decentralized V2X Manure Communication: Road Intersection Application.”</span>
+</div>
 <div id="ref-piazza2024mptree" class="csl-entry" role="listitem">
 Piazza, Mattia, Mattia Piccinini, Sebastiano Taddei, and Francesco Biral. 2024. <span>“MPTree: A Sampling-Based Vehicle Motion Planner for Real-Time Obstacle Avoidance.”</span> <em>IFAC-PapersOnLine</em> 58 (10): 146–53. <a href="https://doi.org/10.1016/j.ifacol.2024.07.332">https://doi.org/10.1016/j.ifacol.2024.07.332</a>.
 </div>
@@ -740,24 +897,14 @@ Piazza, Mattia, Mattia Piccinini, Sebastiano Taddei, and Francesco Biral. 2024. 
 </section>
 <section id="section" class="slide level2" data-background-video="data/third_party/end.mov" data-background-video-loop="true" data-background-video-muted="true" data-background-video-autoplay="true">
 <h2></h2>
+<p><br> <br> <br></p>
 <div class="tbbox" style="text-align: center;">
 <!-- #### Q & A -->
 <h5 id="thank-you-for-your-attention">Thank you for your attention</h5>
 </div>
 <!-- 
-1. Introduction (3-5 min)
-✅ Goal: Establish credibility, provide context, and connect with their research.
 
-Quick self-introduction (your background, relevant experience, and motivation for the visit).
-Brief overview of your research trajectory (motorsport → optimal control → planning for AVs).
-Mention your goal for this visit: Collaboration on planners or working with F1tenth.
-Ask a rhetorical question or reference their work in RL and planning to set the stage for engagement.
-📌 Slide Layout:
-
-Title slide with your name, affiliation, and talk title.
-Timeline/flowchart of your research journey.
-A visual that connects optimal control in motorsports to autonomous planning.
-2. Optimal Control for Minimum Lap Time (5 min)
+1. Optimal Control for Minimum Lap Time (5 min)
 ✅ Goal: Show your experience in optimal control & transition to AV planning.
 
 Explain the problem statement: Why is lap time optimization important?
@@ -769,6 +916,8 @@ Connection to AVs: "Now, what if instead of optimizing for a single fastest lap,
 Graphs of optimized trajectories vs. real-world data.
 GIF/video of a simulated optimal trajectory.
 Transition slide connecting optimal control to real-time planning.
+
+
 3. Planning and Control for Autonomous Vehicles (12-15 min)
 ✅ Goal: Showcase your framework & implementation, leading into discussion on potential improvements.
 
@@ -1030,7 +1179,7 @@ Let me know if you’d like adjustments or more details! 🚀 -->
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

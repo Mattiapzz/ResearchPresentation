@@ -38,10 +38,14 @@ format:
     auto-play-media: true
     width: 1920
     height: 1080
-    html-math-method: mathjax
+    # html-math-method: katex #mathjax
+    html-math-method: 
+      method: mathjax
     code-fold: true
     # chalkboard: true
 ---
+
+# Background
 
 ## My Background 
 
@@ -133,14 +137,25 @@ now-future
 ::: 
 <!-- timeline end -->
 
+::: {.notes}
+Quick self-introduction (your background, relevant experience, and motivation for the visit).
+Brief overview of your research trajectory (motorsport → optimal control → planning for AVs).
+Mention your goal for this visit: Collaboration on planners or working with F1tenth.
+Ask a rhetorical question or reference their work in RL and planning to set the stage for engagement.
+:::
 
-## VeDi 2025 and SUNRISE
+
+## VeDi2025 and SUNRISE
 
 ### Goals 
-
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+VeDi2025
+:::
 ::: {.columns}
 :::: {.column width="75%"}
-**CCAVs manouvrenegotiation** through **V2X**:
+**CCAVs manouvre negotiation** through **V2X**:
 
 - Develop a **real-time local planner** for autonomous driving.
   - **Dynamic** obstacle avoidance.
@@ -156,7 +171,13 @@ now-future
 
 ::: 
 <!-- end columns -->
+:::
 
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+SUNRISE
+:::
 ::: {.columns}
 :::: {.column width="25%" align-item="center" justify-content="center"}
 ![](./data/third_party/SunriseHD.png)
@@ -172,7 +193,7 @@ Safety Assurance Framework for the test and safety validation of CCAM systems.
 
 ::: 
 <!-- end columns -->
-
+:::
 
 
 # Research motivations and contributions
@@ -262,8 +283,8 @@ Specialized Framework
 
 ## Contributions
 ### C++ implementation and commercial sofware integration, SIL and HIL testing
-
-:::{.columns}
+:::{.tbbox}
+:::{.columns style='display: flex !important; height: 100%;'}
 :::: {.column width="70%"}
 
 - Fast **C++** implementation of the planner.
@@ -272,7 +293,7 @@ Specialized Framework
 - Real-world testing with **Stellantis**.
 
 ::::
-:::: {.column width="30%"}
+:::: {.column width="30%" }
 
 ![](./data/third_party/IPG-Automotive-logo.png)
 ![](./data/third_party/dSpace_logo.png)
@@ -280,15 +301,7 @@ Specialized Framework
 
 ::::
 :::
-
-
-## MLT for MotoGP
-
-
-
-
-#### FIGURES
-
+:::
 
 # MPTree framework
 
@@ -322,13 +335,24 @@ digraph finite_state_machine {
 	fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"
 	node [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
 	edge [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
-	rankdir=LR;
+	// rankdir=LR;
+  node [shape=box];
+	Environment -> Perceive [label = "SS(a)"];
+
   subgraph cluster_plan {
 		style=filled;
 		color=lightgrey;
 		node [style=filled,color=white];
 		update -> prediction -> RRT -> OptimalTrajectory;
 		label = "Planning";
+	}
+
+  subgraph cluster_int_update {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		prediction_obs -> road -> mesh;
+		label = "Update";
 	}
 
   subgraph cluster_RRT {
@@ -338,84 +362,368 @@ digraph finite_state_machine {
 		RRT -> sample -> chooseParent -> rewire -> sample;
 		label = "RRT*";
 	}
-	node [shape = doublecircle]; Perceive LowLevel Environment;
-	node [shape = circle];
+	// node [shape = doublecircle]; Perceive LowLevel Environment;
+	// node [shape = circle];
+  update -> prediction_obs [label = "SS(a)"];
 	Perceive -> update [label = "SS(B)"];
 	OptimalTrajectory -> LowLevel [label = "SS(S)"];
 	LowLevel -> Environment [label = "SS(b)"];
-	Environment -> Perceive [label = "SS(a)"];
 }
 ``` -->
 
 <br>
 ![](./data/Diagrams/fig-MPTree-architecture.png)
-<!-- {style="position: absolute; top: 40%;"} -->
+
 
 
 ## Mesh environment
 
 :::{.columns}
 :::: {.column width="50%"}
-
+![](./data/Diagrams/fig-MPTree-map.png)
 ::::
 :::: {.column width="50%"}
 
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Road Representation
+:::
+
+- **Curvilinear coordinates:** employ clothoid (Frénet frame).
+- **Waylines:** road cross section.
+- **Waypoints:** sampled in the waylines.
+- **Topology aware meshing**
+:::
 
 ::::
 :::
 
 
+## Obstacle Handling
 
-<!-- \begin{frame}
+:::{.columns}
+:::: {.column width="50%"}
+![](./data/Diagrams//fig-Obs-VRU-02.png)
+::::
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Obstacle Prediction
+:::
 
-
-
-% --------------------------
-% Artificial Drivers: Specialization
-% --------------------------
-\begin{frame}
-  \frametitle{Artificial Driver: Specialization}
-  \centering
-  \includegraphics[scale=0.40]{figures/intro/artificial_driver_race_and_park}
-  \begin{columns}
-    \begin{column}{0.48\textwidth}
-      \hspace{1cm}Autonomous Racing
-      % \begin{block}{\textcolor{green}{Autonomous Racing}} %and Motorsport
-      %   \begin{itemize}
-      %     \item Rapidly eval. the \textbf{max performance}
-      %     % \begin{itemize}
-      %     %   \setlength{\itemindent}{-1em}
-      %     %   \footnotesize
-      %     %   % \item Closed-loop min-time maneuvers
-      %     %   \item New circuits and vehicle setups
-      %     %   %\item Digital twin of professional drivers
-      %     % \end{itemize}
-      %     \item \textbf{Compete} in adversarial scenarios
-      %   \end{itemize}
-      % \end{block}   
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \hspace{1.68cm}Autonomous Parking
-      % \begin{block}{\textcolor{Orange}{Autonomous Parking}}
-      %   \begin{itemize}
-      %     \item Execute \textbf{complex} parking maneuvers %in real-world scenarios
-      %     \item \textbf{Adapt} to new conditions / scenarios
-      %   \end{itemize}
-      % \end{block}   
-    \end{column}
-  \end{columns}
-
-  \vfill
-
-  \onslide<2>{
-    %\textcolor{blue}{\textbf{Common goal}}: 
-    Learn from \textbf{limited data} and \textbf{\textcolor{blue}{generalize}}
-  }
-\end{frame}
+- **Urban:** constant velocity model or minimum-time trajectory.
+- **Additional waylines** at intersection.
+- **Waypoints** in inhibited regions discarded.
+:::
 
 
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titleboxL}
+Semi-structured RRT*
+:::
 
-\end{frame} -->
+- **Anytime approach:** finite-time solution.
+- **Mixed sampling:** **Warm start**, **Structured** and **Random**
+- **Connections** with optimal motion primitives.
+:::
+
+::::
+:::
+
+
+## Motion Primitives
+
+### Common Lateral
+
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Formulation
+:::
+
+**$G^2$ clothoids** and **Continuous curvature** MP (closed-form solution).
+
+
+$$
+\begin{array}{r@{~}c@{~}l}
+  &\displaystyle \min_{c(s)}& \; L\\
+  &\mathrm{s.t}.&\left\{
+  \begin{aligned}
+    x^\prime(s)&=\cos{\theta}(s)\\
+    y^\prime(s)&=\sin{\theta}(s)\\
+    \theta^\prime(s)&=\kappa(s)\\
+    \kappa^\prime(s)&=c(s) 
+  \end{aligned}
+  \right. \\
+  &\mathrm{b.c.}& \left\{
+  \begin{aligned}
+    x(0) &= x_0, \; \\
+    \theta(0) &= \theta_0, \; \\
+    x(L) &= x_L, \; \\ 
+    \theta(L) &= \theta_L, \; 
+  \end{aligned}
+  \begin{aligned}
+    y(0) &= y_0, \\
+    \kappa(0) &= \kappa_0\\
+    y(L) &= y_L, \\ 
+    \kappa(L) &= \kappa_L
+  \end{aligned}
+  \right.
+\end{array}
+$$
+
+:::
+::::
+:::: {.column width="50%"}
+<br>
+<br>
+<br>
+
+![](./data/MP/CLOTH_N_road_K_road.png)
+::::
+:::
+
+## Motion Primitives
+### Urban longitudinal (Analytical)
+
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Formulation
+:::
+
+$$
+  \begin{array}{r@{~}c@{~}l}
+    &\displaystyle \min_{j_x(t)}& \; {\displaystyle \int_{0}^{T}{\big(w_T+j_x(t)^2\big)\,\mathrm{d} t}}  \\ \\
+    &\mathrm{s.t.}& \left\{
+    \begin{aligned}
+      \dot{s}(t)&=v_x(t)\\
+      \dot{v}_x(t)&=a_x(t)\\
+      \dot{a}_x(t)&=j_x(t)
+    \end{aligned}
+    \right.\\
+    &\mathrm{b.c.}& \left\{
+    \begin{aligned}
+      s(0)&=\ 0, \;\\
+      v_x(0)&=v_0,\;\\
+      a_x(0)&=a_0\;,
+    \end{aligned}
+    \begin{aligned}
+      s(T)&=L\\
+      v_x(T)&=v_T\\
+      a_x(T)&=a_T
+    \end{aligned}
+    \right.\\
+    \;
+  \end{array}
+$$
+:::
+::::
+:::: {.column width="50%"}
+<br>
+<br>
+<br>
+
+![](./data/MP/MP_1020_space.png)
+::::
+:::
+
+## Motion Primitives
+### Racing longitudinal (Forward-Backward)
+
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Formulation
+:::
+
+$$
+  \begin{array}{r@{~}c@{~}l}
+    &\displaystyle \min_{a_x \in \mathbb A}& \; T \\
+    &\mathrm{s.t.}& \left\{
+    \begin{aligned}
+      \dot{s}&=v_x\\
+      \dot{v}_x&=a_x - c\,v_x - d\,v_x^2\\
+      a_{x_{\mathrm{min}}} &\leq a_x \leq a_{x_{\mathrm{max}}}\\
+      % |a_y| &\leq& a_{y_{\mathrm{max}}} 
+      a_{y_{\mathrm{max}}} &\geq |a_y| = \kappa~v_x^2
+    \end{aligned}
+    \right.\;\\
+    \\
+    &\mathrm{b.c.}& \left\{
+    \begin{aligned}
+      s(0)&=0\\
+      s(T)&=L\\
+      v_x(0)&=v_0\\
+      v_x(T)&=v_T
+    \end{aligned}
+    \right.
+  \end{array}
+$$
+:::
+::::
+:::: {.column width="50%"}
+<br>
+<br>
+<br>
+
+![](./data/MP/MP_FWBW_space.png)
+::::
+:::
+
+
+
+## Cost Function
+
+### Urban multi-objective + negotiation
+
+:::{.columns}
+:::: {.column width="40%"}
+![](./data/MPT_Piazza/Cooperative_approach.png)
+::::
+:::: {.column width="59%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Urban multi-objective
+:::
+$$
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} \left(W_T~ J_T^i + W_L~ J_L^i + W_V~ J_{v_{x}}^i + W_{j_x}~ J_{j_x}^i + W_{a_y}~ J_{a_y}^i\right)
+$$
+:::
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+\+ negotiation 
+:::
+
+$$
+  J=J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ J_{\mathrm{Neg}}} \right)
+$$
+[@piazza2025emergent]
+:::
+
+::::
+:::
+$$
+  J_{\mathrm{Neg}}= \displaystyle\int_0^T (\mathrm{Act}(\Gamma_{\mathrm{obj_{des}}}(t) - \Gamma_{\mathrm{ego_{plan}}}(t),d_{th}))^2 \, \mathrm{d}t
+$$
+
+## Cost Function
+
+### Racing
+
+:::{.columns}
+:::: {.column width="40%"}
+<br>
+<br>
+<br>
+
+![](./data/Diagrams/MPT_PistaAzzurra_scenario_1_plot_2_thicker.png)
+::::
+:::: {.column width="59%"}
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Minimum Travel Time + Penalities
+:::
+
+$$
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} W_T~ J_T^i
+$$
+
+Where $J_T^i$ depend only on the travel time.
+
+Of course we can integrate other cost functions to improve safety, robustness and continuity with the prevuois solutiuon.
+
+$$
+  J_{MO}={ \displaystyle\sum_{i=1}^{N_s}} \left( W_T~ J_T^i + W_C J_C^i + W_{\mathrm{pen}} J_{\mathrm{pen}}^i + \dots{} \right)
+$$
+:::
+
+::::
+:::
+
+## Simulation results
+
+### MPTree race
+
+{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
+
+# Results Framework
+
+## Simulation results
+
+### MPTree urban (Matlab)
+
+{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
+
+
+## Projects VeDi 2025
+
+::: {.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Goals 
+:::
+::: {.columns}
+:::: {.column width="70%"}
+
+- Develop a **real-time local planner** for autonomous driving.
+  - **Dynamic** obstacle avoidance.
+  - **Safety** and optimality of manouvre.
+  - Cooperation and **negotiation**.
+- Specialize the planner for urban collaborative scenarios.
+- **Validate** the planner with real-world testing.
+- Test vehicle cooperation and **negotiation with CCAV** and V2X.
+
+::::
+<!--- end column -->
+:::: {.column width="28%"}
+![](./data/third_party/VeDi2025-logo.png)
+![](./data/third_party/StellantisLogoshort.png)
+::::
+:::
+:::
+
+
+### MPTree urban cooperative negotiation (Matlab)
+
+:::{.columns style='display: flex !important; height: 100%;'}
+:::: {.column width="50%" height="100%"}
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="98%" autoplay="true" loop="true" muted="true">}}
+::::
+::::{.column width="50%" height="50%"}
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="95%" autoplay="true" loop="true" muted="true">}}
+::::
+:::
+
+## C++ integration and closed loop testing
+
+### Single track model + C++ library
+
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+
+## Integration in carmaker
+
+### SIL testing in IPG CarMaker and validated vehicle model
+
+{{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+
+
+
+
 
 
 
@@ -483,14 +791,23 @@ Goals
 ::::
 :::
 
-## MPTree race
-
-{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
 
 
-## MPTree C++ integration
 
-{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+# Other projects
+
+## SUNRISE - Safety Assurance Framework
+
+#### FIGURES
+
+## MLT for MotoGP
+
+#### FIGURES
+
+
+## 3 Points Dubins Path
+
+#### FIGURES
 
 
 ## References
@@ -501,6 +818,10 @@ Goals
 
 ## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
 
+<br>
+<br>
+<br>
+
 ::: {.tbbox style="text-align: center;" }
 <!-- #### Q & A -->
 ##### Thank you for your attention
@@ -508,19 +829,8 @@ Goals
 
 
 <!-- 
-1. Introduction (3-5 min)
-✅ Goal: Establish credibility, provide context, and connect with their research.
 
-Quick self-introduction (your background, relevant experience, and motivation for the visit).
-Brief overview of your research trajectory (motorsport → optimal control → planning for AVs).
-Mention your goal for this visit: Collaboration on planners or working with F1tenth.
-Ask a rhetorical question or reference their work in RL and planning to set the stage for engagement.
-📌 Slide Layout:
-
-Title slide with your name, affiliation, and talk title.
-Timeline/flowchart of your research journey.
-A visual that connects optimal control in motorsports to autonomous planning.
-2. Optimal Control for Minimum Lap Time (5 min)
+1. Optimal Control for Minimum Lap Time (5 min)
 ✅ Goal: Show your experience in optimal control & transition to AV planning.
 
 Explain the problem statement: Why is lap time optimization important?
@@ -532,6 +842,8 @@ Connection to AVs: "Now, what if instead of optimizing for a single fastest lap,
 Graphs of optimized trajectories vs. real-world data.
 GIF/video of a simulated optimal trajectory.
 Transition slide connecting optimal control to real-time planning.
+
+
 3. Planning and Control for Autonomous Vehicles (12-15 min)
 ✅ Goal: Showcase your framework & implementation, leading into discussion on potential improvements.
 
