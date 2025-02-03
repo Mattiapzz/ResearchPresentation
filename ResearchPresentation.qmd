@@ -661,14 +661,11 @@ $$
 
 {{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
 
-# Results Framework
-
 ## Simulation results
 
 ### MPTree urban (Matlab)
 
-{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
-
+{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr width="90%" height="95%" autoplay="true" loop="true" muted="true">}}
 
 ## Projects VeDi 2025
 
@@ -697,17 +694,33 @@ Goals
 :::
 :::
 
+## Simulation results 
+
+### MPTree urban uncooperative negotiation (Matlab)
+
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="95%" height=80% autoplay="true" loop="true" muted="true">}} 
+
+## Simulation results 
 
 ### MPTree urban cooperative negotiation (Matlab)
 
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="95%" height=80% autoplay="true" loop="true" muted="true">}}
+
+## Simulation results 
+
+### MPTree urban uncooperative VS cooperative negotiation  (Matlab)
+
 :::{.columns style='display: flex !important; height: 100%;'}
-:::: {.column width="50%" height="100%"}
-{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="98%" autoplay="true" loop="true" muted="true">}}
+:::: {.column width="50%"}
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps width="98%" height=400 autoplay="true" loop="true" muted="true">}}
 ::::
-::::{.column width="50%" height="50%"}
-{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="95%" autoplay="true" loop="true" muted="true">}}
+::::{.column width="50%"}
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr width="98%" height=400 autoplay="true" loop="true" muted="true">}}
 ::::
 :::
+
+
+
 
 ## C++ integration and closed loop testing
 
@@ -715,24 +728,80 @@ Goals
 
 {{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
-## Integration in carmaker
+## Integration in CarMaker
 
 ### SIL testing in IPG CarMaker and validated vehicle model
 
 {{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
 
+## Integration in carmaker
+
+### SIL testing for negotiation
+
+:::{.columns}
+:::: {.column width="58.5%"}
+{{< video https://www.youtube.com/embed/R3iCVDXGoao?si=4-bhO2pobLjrP23k width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+::::
+::::{.column width="41.5%"}
+{{< video https://www.youtube.com/embed/5qmvcFmvGVE?si=9R9tDc0CZ2Hwebj_ width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+::::
+:::
+
+## Real vehicle testing 
+
+### VIL testing
+
+```{=html}
+<!-- add video -->
+<div style="display: flex; justify-content: center; padding: 0px;">
+  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
+    <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
+  </video>
+</div>
+```
+
+
+## Real vehicle testing 
+
+### VIL velocity profiles
+
+![](./data/Vadena/VadenaIntersection_traj_crop.png){width=70% fig-align="center"}
+
+:::{.columns}
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Camera
+:::
+![](./data/Figures_UniTN_onlyCAM/speed_vs_dist_at30kmh.png)
+:::
+::::
+:::: {.column width="50%"}
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titleboxL}
+V2X
+:::
+![](./data/Figures_UniTN_onlyV2X/speed_vs_dist_at30kmh.png)
+:::
+::::
+:::
+
+
+## PROS and CONS
+### adv and disadv
+
+## Limits and future works
+### Monte Carlo Tree Search
 
 
 
 
 
+# Other projects
 
-
-# RESEARCH ACTIVITY 
-
-# Projects
-
-## VeDi 2025 and SUNRISE
+## SUNRISE - Safety Assurance Framework
 
 ::: {.tbbox}
 <!-- #### My Custom Title -->
@@ -743,20 +812,13 @@ Goals
 ::: {.columns}
 :::: {.column width="70%"}
 
-- Develop a **real-time local planner** for autonomous driving.
-  - **Dynamic** obstacle avoidance.
-  - **Safety** and optimality of manouvre.
-  - Cooperation and **negotiation**.
-- Specialize the planner for urban and racing scenarios.
-- **Validate** the planner with real-world testing.
-- Test vehicle cooperation and **negotiation with CCAV** and V2X.
+- Test vehicle **CCAM** and applications.
+- Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
 - Propose a method to **evaluate and rank** autonomous agents.
 
 ::::
 <!--- end column -->
 :::: {.column width="28%"}
-![](./data/third_party/VeDi2025-logo.png)
-![](./data/third_party/StellantisLogoshort.png)
 ![](./data/third_party/Sunrise-Logo.jpeg)
 ::::
 
@@ -764,41 +826,13 @@ Goals
 <!-- end columns -->
 :::
 
-
-
-## Vedi2025 – Hybrid motion planner cooperative intersection {.center}
-
-:::{.columns}
-::::{.column width="58%"}
-```{=html}
-<!-- add video -->
-<div style="display: flex; justify-content: center; padding: 0px;">
-  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
-    <source src="data/videos/Vedi2025CrossEgo00.mp4" type="video/mp4">
-  </video>
-</div>
-```
-::::
-::::{.column width="42%"}
-```{=html}
-<!-- add video -->
-<div style="display: flex; justify-content: center; padding: 0px;">
-  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
-    <source src="data/videos/Vedi2025CrossEgo01.mp4" type="video/mp4">
-  </video>
-</div>
-```
-::::
-:::
-
-
-
-
-# Other projects
-
-## SUNRISE - Safety Assurance Framework
-
 #### FIGURES
+
+## SUNRISE 
+### Agents comparison and evaluation
+
+@cherubini2024bootstrapped
+
 
 ## MLT for MotoGP
 
@@ -806,7 +840,7 @@ Goals
 
 
 ## 3 Points Dubins Path
-
+@piazza2024efficient @piazza2024non
 #### FIGURES
 
 
