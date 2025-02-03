@@ -5,5 +5,7 @@ data/videos/*.m4v
 # ResearchPresentation_files/
 
 data/img_ODD/
-data/MPT_Piazza
+data/MPT_Piazza/sim
+data/MPT_Piazza/Obst
+
 data/MPT_Piccinini
