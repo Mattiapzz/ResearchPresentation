@@ -672,7 +672,9 @@ $$
 
 ### MPTree urban (Matlab)
 
-{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr&rel=0  width="90%" height="95%" autoplay="true" loop="true" muted="true">}}
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+{{< video https://www.youtube.com/embed/pt_zcB4BlT4?si=Gs3zYvAGOMcZfSjr&rel=0  width="90%" height="94.45%" autoplay="true" loop="true" muted="true">}}
+</div>
 
 ## Projects VeDi 2025
 
@@ -705,13 +707,17 @@ Goals
 
 ### MPTree urban uncooperative negotiation (Matlab)
 
-{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr&rel=0  width="95%" height=80% autoplay="true" loop="true" muted="true">}} 
+<div id="contentframe" style="position:relative; left: 2.5%; width: 100%; height: 90%">
+{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr&rel=0  width="100%" height=90.40% autoplay="true" loop="true" muted="true">}} 
+</div>
 
 ## Simulation results 
 
 ### MPTree urban cooperative negotiation (Matlab)
 
-{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="95%" height=80% autoplay="true" loop="true" muted="true">}}
+<div id="contentframe" style="position:relative; left: 2.5%; width: 100%; height: 90%">
+{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="100%" height=90.40% autoplay="true" loop="true" muted="true">}}
+</div>
 
 
 ## C++ integration and closed loop testing
@@ -727,15 +733,11 @@ Goals
 | 2         | ~500          | ~TBD              |
 | 3         | ~400          | ~TBD              |
 
-:::{.columns}
-:::: {.column width="25%"}
-::::
-:::: {.column width="50%" text-align= "center"}
-{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0 width="100%" height=506 autoplay="true" loop="true" muted="true">}} 
-::::
-:::: {.column width="25%"}
-::::
-:::
+<div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
+{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0 width="100%" height=100% autoplay="true" loop="true" muted="true">}} 
+</div>
+
+
 
 
 
@@ -745,20 +747,31 @@ Goals
 
 ### SIL testing in IPG CarMaker and validated vehicle model
 
-{{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz&rel=0  width="100%" height="93%" autoplay="true" loop="true" muted="true">}}
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+{{< video https://www.youtube.com/embed/xxCWsTfNBKY?si=qsoQPL7PYiNxrKAz&rel=0  width="100%" height="95%" autoplay="true" loop="true" muted="true">}}
+</div>
 
 ## Integration in carmaker
 
 ### SIL testing for negotiation
 
 :::{.columns}
-:::: {.column width="58.5%"}
+:::: {.column width="58.4%"}
 {{< video https://www.youtube.com/embed/R3iCVDXGoao?si=4-bhO2pobLjrP23k&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
 ::::
-::::{.column width="41.5%"}
+::::{.column width="41.6%"}
 {{< video https://www.youtube.com/embed/5qmvcFmvGVE?si=9R9tDc0CZ2Hwebj_&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
 ::::
 :::
+
+
+<!-- <div id="contentframe" style="position:relative; left: 0%; width: 60%; height: 90%">
+{{< video https://www.youtube.com/embed/R3iCVDXGoao?si=4-bhO2pobLjrP23k&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+</div>
+<div id="contentframe" style="position:relative; left: 60%; width: 40%; height: 90%">
+{{< video https://www.youtube.com/embed/5qmvcFmvGVE?si=9R9tDc0CZ2Hwebj_&rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+</div> -->
+
 
 ## Real vehicle testing 
 
@@ -767,7 +780,7 @@ Goals
 ```{=html}
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
-  <video width="100%" height="100%" autoplay loop muted controls padding="0px">
+  <video width="80%" height="70%" autoplay loop muted controls padding="0px">
     <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
   </video>
 </div>
@@ -777,8 +790,6 @@ Goals
 ## Real vehicle testing 
 
 ### VIL velocity profiles
-
-![](./data/Vadena/VadenaIntersection_traj_crop.png){width=50% fig-align="center"}
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -801,9 +812,31 @@ V2X
 ::::
 :::
 
+![](./data/Vadena/VadenaIntersection_traj_crop.png){width=50% fig-align="center"}
 
-## PROS and CONS
-### adv and disadv
+
+## Performance and limits
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Performance
+:::
+
+- **Asimptotic** optimality.
+
+:::
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Limits
+:::
+
+- **Computational** time.
+- **Quality** of the solution **highly** depends on the harware (Processor frequency).
+- Time lost to evaluate useless solutions (No information cost forward).
+:::
 
 ## Limits and future works
 ### Monte Carlo Tree Search
@@ -922,7 +955,8 @@ Efficient algorithm to solve 3PDP problem.
 
 ## Sampling based initialization of MPC
 
-## MLT Motorcyle with free rider position, gearbox and CFD aerodynamic maps
+## MLT Motorcyle 
+### Free rider position, gearbox and CFD aerodynamic maps
 
 
 ## References
