@@ -11,7 +11,7 @@
 
   <meta name="author" content="Mattia Piazza">
   <meta name="author" content="Supervisor: Prof.&nbsp;Francesco Biral">
-  <meta name="dcterms.date" content="2025-02-03">
+  <meta name="dcterms.date" content="2025-02-04">
   <title>Optimal Control, Planning and Intelligent vehicles</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -165,7 +165,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </div>
 </div>
 
-  <p class="date">3 February 2025</p>
+  <p class="date">4 February 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
@@ -174,6 +174,7 @@ Supervisor: Prof.&nbsp;Francesco Biral
 <li><a href="#/research-motivations-and-contributions" id="/toc-research-motivations-and-contributions">Research motivations and contributions</a></li>
 <li><a href="#/mptree-framework" id="/toc-mptree-framework">MPTree framework</a></li>
 <li><a href="#/other-projects" id="/toc-other-projects">Other projects</a></li>
+<li><a href="#/future-works" id="/toc-future-works">Future works</a></li>
 </ul>
 </nav>
 </section>
@@ -780,7 +781,11 @@ digraph finite_state_machine {
 <section id="simulation-results" class="slide level2">
 <h2>Simulation results</h2>
 <h3 id="mptree-race">MPTree race</h3>
-<iframe data-external="1" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&amp;rel=0" width="95%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+<!-- <iframe width="90%" height="90%" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<iframe data-external="1" src="https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&amp;rel=0" width="90%" height="90%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+<!--  -->
 </section>
 <section id="simulation-results-1" class="slide level2">
 <h2>Simulation results</h2>
@@ -821,26 +826,9 @@ digraph finite_state_machine {
 <h2>Simulation results</h2>
 <h3 id="mptree-urban-cooperative-negotiation-matlab">MPTree urban cooperative negotiation (Matlab)</h3>
 <iframe data-external="1" src="https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&amp;rel=0" width="95%" height="80%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<!-- 
-## Simulation results  
-
-### MPTree urban uncooperative VS cooperative negotiation  (Matlab)
-
-:::{.columns style='display: flex !important; height: 100%;'}
-:::: {.column width="50%"}
-
-::::
-::::{.column width="50%"}
-
-::::
-::: 
--->
 </section>
 <section id="c-integration-and-closed-loop-testing" class="slide level2">
 <h2>C++ integration and closed loop testing</h2>
-<!-- ### Single track model + C++ library
-
- -->
 <h3 id="single-track-model-and-c-library">Single track model and C++ library</h3>
 <!-- average number of iteration average explored nodes with with one obstacle two or 3 -->
 <table class="caption-top">
@@ -1103,26 +1091,17 @@ Goals
 </figure>
 </div>
 </div></div>
-<!-- \begin{table}
-  \centering
-  \caption{Evaluation of the proposed algorithms with the benchmark test with mean $\mu$ and standard deviation $\sigma$ of iterations and computational times for the sampling in \eqref{eq:second_sample}}
-  \label{tab:results2}
-  \begin{tabular}{lccccc}
-    \toprule
-    % iterations, time \multicolumn{8}{|c|}{Sets}
-    Algorithm & \multicolumn{2}{c}{Iter number} & \multicolumn{2}{c}{Time ($ms$)} & \multirow{2}{*}{N. Dubins calls} \\
-     &  $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & \\
-    \midrule
-    Pattern search             & 88.35 & 20.57 &  0.217 & 0.047 & $\sim$176 \\
-    Pattern search + 748       & 77.70 & 23.55 &  0.187 & 0.031 & $\sim$155 \\
-    Pattern trichotomy         & 74.78 & 13.34 &  0.179 & 0.032 & $\sim$149 \\
-    Pattern trichotomy + 748   & 68.54 & 14.81 &  0.163 & 0.034 & $\sim$137 \\
-    \midrule
-    DBM -- Alg.~\ref{alg:DBM}  & 360   &  0.0  & 55.577 & 3.357 & 720 \\
-    iDPP~\cite{Dubins:MP}      & 128   &  0.0  & 19.720 & 0.845 & 256 \\
-    \bottomrule 
-  \end{tabular}
-\end{table} -->
+</section></section>
+<section>
+<section id="future-works" class="title-slide slide level1 center">
+<h1>Future works</h1>
+
+</section>
+<section id="sampling-based-initialization-of-mpc" class="slide level2">
+<h2>Sampling based initialization of MPC</h2>
+</section>
+<section id="mlt-motorcyle-with-free-rider-position-gearbox-and-cfd-aerodynamic-maps" class="slide level2">
+<h2>MLT Motorcyle with free rider position, gearbox and CFD aerodynamic maps</h2>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -1134,7 +1113,7 @@ Cherubini, Antonello, Gastone Pietro Rosati Papini, Alice Plebe, Mattia Piazza, 
 Piazza, Mattia, Enrico Bertolazzi, and Marco Frego. 2024a. <span>“A Non-Smooth Numerical Optimization Approach to the Three-Point Dubins Problem (3PDP).”</span> <em>Algorithms</em> 17 (8): 350. <a href="https://doi.org/10.3390/a17080350">https://doi.org/10.3390/a17080350</a>.
 </div>
 <div id="ref-piazza2024efficient" class="csl-entry" role="listitem">
-———. 2024b. <span>“<a href="">Efficient Path Planning Solutions for the Three Point Dubins Problem Using Non-Smooth Optimization</a>.”</span> <em>Automatica.it 2024 Bolzano</em>.
+———. 2024b. <span>“<a href="">Efficient Path Planning Solutions for the Three Point Dubins Problem Using Non-Smooth Optimization</a>.”</span> In <em>Automatica.it 2024 Bolzano</em>.
 </div>
 <div id="ref-piazza2025emergent" class="csl-entry" role="listitem">
 Piazza, Mattia, Antonello Cherubini, Angela Giugliano, and Francesco Biral. 2025. <span>“Emergent Negotiation with Cooperative Decentralized V2X Manure Communication: Road Intersection Application.”</span> <em>IN WRITING</em>.

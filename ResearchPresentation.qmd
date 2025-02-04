@@ -658,11 +658,15 @@ $$
 ::::
 :::
 
-## Simulation results
+## Simulation results 
 
 ### MPTree race
 
-{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&rel=0  width="95%" height="95%" autoplay="true" loop="true" muted="true">}}
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+{{< video https://www.youtube.com/embed/INeFcYHTh58?si=jHE0v7ALi1OF1Osw&rel=0  width="90%" height="90%" autoplay="true" loop="true" muted="true">}}
+</div>
+
+
 
 ## Simulation results
 
@@ -709,26 +713,8 @@ Goals
 
 {{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="95%" height=80% autoplay="true" loop="true" muted="true">}}
 
-<!-- 
-## Simulation results  
-
-### MPTree urban uncooperative VS cooperative negotiation  (Matlab)
-
-:::{.columns style='display: flex !important; height: 100%;'}
-:::: {.column width="50%"}
-{{< video https://www.youtube.com/embed/2HqBKIeUNFc?si=TPiLanGOz25I_gps&rel=0  width="98%" height=400 autoplay="true" loop="true" muted="true">}}
-::::
-::::{.column width="50%"}
-{{< video https://www.youtube.com/embed/ZGPrtMU95nA?si=ZfiGBva70f3MD3yr&rel=0  width="98%" height=400 autoplay="true" loop="true" muted="true">}}
-::::
-::: 
--->
 
 ## C++ integration and closed loop testing
-
-<!-- ### Single track model + C++ library
-
-{{< video https://www.youtube.com/embed/K4SPfdwC154?si=ADVeYbHugSoP0jpM&rel=0  width="100%" height="93%" autoplay="true" loop="true" muted="true">}} -->
 
 ### Single track model and C++ library
 
