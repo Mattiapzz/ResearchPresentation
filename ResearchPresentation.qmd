@@ -931,26 +931,12 @@ Efficient algorithm to solve 3PDP problem.
 ::::
 :::
 
-<!-- \begin{table}
-  \centering
-  \caption{Evaluation of the proposed algorithms with the benchmark test with mean $\mu$ and standard deviation $\sigma$ of iterations and computational times for the sampling in \eqref{eq:second_sample}}
-  \label{tab:results2}
-  \begin{tabular}{lccccc}
-    \toprule
-    % iterations, time \multicolumn{8}{|c|}{Sets}
-    Algorithm & \multicolumn{2}{c}{Iter number} & \multicolumn{2}{c}{Time ($ms$)} & \multirow{2}{*}{N. Dubins calls} \\
-     &  $\mu$ & $\sigma$ & $\mu$ & $\sigma$ & \\
-    \midrule
-    Pattern search             & 88.35 & 20.57 &  0.217 & 0.047 & $\sim$176 \\
-    Pattern search + 748       & 77.70 & 23.55 &  0.187 & 0.031 & $\sim$155 \\
-    Pattern trichotomy         & 74.78 & 13.34 &  0.179 & 0.032 & $\sim$149 \\
-    Pattern trichotomy + 748   & 68.54 & 14.81 &  0.163 & 0.034 & $\sim$137 \\
-    \midrule
-    DBM -- Alg.~\ref{alg:DBM}  & 360   &  0.0  & 55.577 & 3.357 & 720 \\
-    iDPP~\cite{Dubins:MP}      & 128   &  0.0  & 19.720 & 0.845 & 256 \\
-    \bottomrule 
-  \end{tabular}
-\end{table} -->
+
+# Future works
+
+## Sampling based initialization of MPC
+
+## MLT Motorcyle with free rider position, gearbox and CFD aerodynamic maps
 
 
 ## References
