@@ -1,11 +1,18 @@
 ---
-title: "Optimal Control, Planning and Intelligent vehicles"
-subtitle: "From motorcycle MLT to autonomous driving and beyond"
+title: "Optimal Control, Planning, and Intelligent Vehicles"
+subtitle: "Leveraging optimal control and sampling-based methods for motion planning in autonomous driving"
 bibliography: bibliography.bib
 cls: IEEEtran.cls
 author: 
-  - "Mattia Piazza"
-  - " Supervisor: Prof. Francesco Biral"
+  - name: "Mattia Piazza"
+    email: "mattia.piazza@unitn.it"
+    affiliation: "PhD Candidate"
+  - name: "Prof. Francesco Biral"
+    email: "francesco.biral@unitn.it"
+    affiliation: "Supervisor"
+  - name: "Prof. Mauro Da Lio"
+    email: "mauro.dalio@unitn.it"
+    affiliation: "Co-supervisor"
 date: today
 # date-format: long
 date-format: "D MMMM YYYY"
@@ -331,7 +338,7 @@ Combine **OC** and **sampling-based** methods ensuring **dynamic obstacle avoida
 
 Flexible approach, specialized for **autonomous urban** and **racing** scenarios.
 
-## Framkeork overview
+## Framework overview
 
 <!-- ```{dot}
 digraph finite_state_machine {
@@ -787,7 +794,7 @@ Goals
 ```
 
 
-## Real vehicle testing 
+## Real vehicle testing {background-color="var(--secondary-color)"}
 
 ### VIL velocity profiles
 
@@ -815,7 +822,7 @@ V2X
 ![](./data/Vadena/VadenaIntersection_traj_crop.png){width=50% fig-align="center"}
 
 
-## Performance and limits
+## Performance and limits {background-color="var(--secondary-color)"}
 
 :::{.tbbox}
 <!-- #### My Custom Title -->
@@ -838,7 +845,7 @@ Limits
 - Time lost to evaluate useless solutions (No information cost forward).
 :::
 
-## Limits and future works
+## Limits and future works {background-color="var(--secondary-color)"}
 ### Monte Carlo Tree Search
 
 
@@ -846,32 +853,6 @@ Limits
 
 
 # Other projects
-
-<!-- ## SUNRISE - Safety Assurance Framework
-
-::: {.tbbox}
-
-::: {.titlebox}
-Goals 
-:::
-
-::: {.columns}
-:::: {.column width="70%"}
-
-- Test vehicle **CCAM** and applications.
-- Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
-- Propose a method to **evaluate and rank** autonomous agents.
-
-::::
-
-:::: {.column width="28%"}
-![](./data/third_party/Sunrise-Logo.jpeg)
-::::
-
-::: 
-
-::: -->
-
 
 ## SUNRISE - Safety Assurance Framework 
 ### Agents comparison and evaluation [@cherubini2024bootstrapped]
@@ -886,13 +867,21 @@ Logical scenario
 ![](./data/img_ODD/ODD_highway_v2.png){width=100% fig-align="center"}
 ::::
 :::: {.column width="70%"}
+<!-- ![](./data/img_ODD/exit.png){width=50% fig-align="center"} -->
 
 - Test vehicle **CCAM** and applications.
 - Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
 - Propose a method to **evaluate and rank** autonomous agents.
-  
 
-![](./data/img_ODD/exit.png){width=70% fig-align="center"}
+
+| Variable    | min     | max    | unit    |
+|:-----------:|--------:|-------:|:--------|
+| $v_0$       | $10.0$  | $25.0$ | $m/s$   |
+| $v_1 - v_0$ | $-5.0$  | $7.0$  | $m/s$   |
+| $T$         | $1.5$   | $7.5$  | $s$     |
+| $a_1$       | $-6.0$  | $3.0$  | $m/s^2$ |
+| $d$         | $-20.0$ | $40.0$ | $m$     |
+
 ::::
 :::
 :::
@@ -925,9 +914,145 @@ Logical scenario
 ![](./data/img_ODD/safe_speed.png){width=70% fig-align="center"}
 
 
-## MLT for MotoGP
+## MLT for MotoGP {background-image="data/MLT/Moto/MotoLeanSimple.png" background-opacity="0.08"}
+### Problem statement
 
-#### FIGURES
+<!-- {.background-image="data/MLT/Moto/MotoLeanSimple.png"} -->
+:::{.columns}
+
+:::: {.column width="40%"}
+:::{.tbbox}
+::: {.titlebox}
+OCP
+:::
+$$
+  \begin{aligned}
+    \min \; T & = \min \int_0^L \frac{w_T}{\dot{s}} \, \mathrm{d}\zeta \\
+    \mathrm{s.t.} \quad &\mathbf{A}(\mathbf{x},\mathbf{u}) \, \mathbf{\dot{x}} = \mathbf{b}(\mathbf{x},\mathbf{u}) \\
+    \mathrm{Cyclic} \; \mathrm{b.c.} \quad &\mathbf{x}(0) = \mathbf{x}(L)\\
+    % &\dot{s}(\zeta) = \frac{u(\zeta) \cos(\xi(\zeta)) - v(\zeta) \sin(\xi(\zeta))}{1-\kappa(\zeta) n(\zeta)} )
+  \end{aligned}
+$$
+:::
+::::
+
+:::: {.column width="60%"}
+:::{.tbbox}
+::: {.titlebox}
+Vehicle Dynamics
+:::
+- Rigid body model, internal DoF, slip dynamics ($30$ states).
+- Engine torque envelope + chain tensioning effect.
+- Soft penetration (tyre ground).
+- Full tyre model (MF-MCTyre 1.1).
+- Aerodynamic maps for drag lift and application point.
+:::
+::::
+
+:::
+
+:::{.notes}
+(suspensions, steer, rider body position, wheels).
+:::
+
+## MLT for MotoGP {background-image="data/MLT/Moto/bikestraigth_flank.png" background-opacity="0.05"}
+### How to initialize the problem 
+
+:::{.notes}
+Everithyng work right out of the box? No, for sure this is a perfect recipe for a disaster.
+So, Idea...
+Solve a similar problem more threatable (less complex), convex and quadratic.
+Then solve iteratively a problem converging to the original one.
+:::
+
+:::{.columns}
+:::: {.column width="40%"}
+:::{.tbbox}
+::: {.titlebox}
+Initialization
+:::
+
+- **Convex** and **quadratic** problem
+- **Simple** and **fast** solution
+- **Iterative** solution
+- **Convergence** to the original problem
+- **Warm start** for the original problem
+
+:::
+::::
+:::: {.column width="60%"} 
+$$
+  \min \int_0^L \frac{w_T}{\dot{s}} \, \mathrm{d}\zeta
+$$
+
+Tranformed into a "more" **quadratic** problem
+
+:::{.notes}
+Other terms might be added
+:::
+
+$$
+  \min \int_0^L \left( \frac{w_T}{\dot{s}} + (\mathbf{x}-\mathbf{x_{qss}})^T \mathbf{W_{qss}}  (\mathbf{x}-\mathbf{x_{qss}})  \right) \, \mathrm{d}\zeta 
+$$
+::::
+:::
+
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+### Continuation - Homotopy
+
+Start by taking $w_T$ small and $\mathbf{W_{qss}}$ big (Constant linear velocity). 
+Fixed initial conditions and free final conditions
+
+![](./data/MLT/OCI/Track_Problem0.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+### Continuation - Homotopy
+
+Increase $w_T$ to 1 small and decrese $\mathbf{W_{qss}}$ to $0$.
+Fixed initial conditions and free final conditions
+
+![](./data/MLT/OCI/Track_Problem1.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Fixed initial conditions and final conditions equal to the initial conditions.
+
+![](./data/MLT/OCI/Track_Problem2.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Cyclic conditions (Initial and final conditions are the same).
+
+![](./data/MLT/OCI/Track_Problem3.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Cyclic conditions (Initial and final conditions are the same).
+Push the penality values on constraints.
+
+![](./data/MLT/OCI/Track_Problem4.png){width=100% fig-align="center"}
+
+
+## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out" auto-animate-duration=1.0}
+### Continuation - Homotopy
+
+Compare solutions
+
+![](./data/MLT/OCI/Track_problemCompare.png){width=100% fig-align="center"}
+
+## MLT for MotoGP
+### Solution example Catalunya RSV1000
+
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+{{< video https://www.youtube.com/embed/b1tqsGL5tgA?rel=0  width="100%" height="87%" autoplay="true" loop="true" muted="true">}}
+</div>
 
 
 ## 3 Points Dubins Path [@piazza2024efficient;@piazza2024non]
@@ -951,11 +1076,13 @@ Efficient algorithm to solve 3PDP problem.
 :::
 
 
-# Future works
+# Future works {background-color="var(--secondary-color)"}
 
-## Sampling based initialization of MPC
+## Monte Carlo Tree Search on scale vehicles {background-color="var(--secondary-color)"}
 
-## MLT Motorcyle 
+## Sampling based initialization of MPC {background-color="var(--secondary-color)"}
+
+## MLT Motorcyle {background-color="var(--secondary-color)"}
 ### Free rider position, gearbox and CFD aerodynamic maps
 
 

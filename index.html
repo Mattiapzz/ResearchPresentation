@@ -10,9 +10,10 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Mattia Piazza">
-  <meta name="author" content="Supervisor: Prof.&nbsp;Francesco Biral">
-  <meta name="dcterms.date" content="2025-02-04">
-  <title>Optimal Control, Planning and Intelligent vehicles</title>
+  <meta name="author" content="Prof.&nbsp;Francesco Biral">
+  <meta name="author" content="Prof.&nbsp;Mauro Da Lio">
+  <meta name="dcterms.date" content="2025-02-05">
+  <title>Optimal Control, Planning, and Intelligent Vehicles</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -51,7 +52,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-2835e0f73913eec7252cadeae3b8affa.css">
+  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-198b2b7c5c13bbbc36cbf7718c54d563.css">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -149,23 +150,46 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Optimal Control, Planning and Intelligent vehicles</h1>
-  <p class="subtitle">From motorcycle MLT to autonomous driving and beyond</p>
+  <h1 class="title">Optimal Control, Planning, and Intelligent Vehicles</h1>
+  <p class="subtitle">Leveraging optimal control and sampling-based methods for motion planning in autonomous driving</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Mattia Piazza 
 </div>
+<div class="quarto-title-author-email">
+<a href="mailto:mattia.piazza@unitn.it">mattia.piazza@unitn.it</a>
 </div>
+        <p class="quarto-title-affiliation">
+            PhD Candidate
+          </p>
+    </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Supervisor: Prof.&nbsp;Francesco Biral 
+Prof.&nbsp;Francesco Biral 
 </div>
+<div class="quarto-title-author-email">
+<a href="mailto:francesco.biral@unitn.it">francesco.biral@unitn.it</a>
 </div>
+        <p class="quarto-title-affiliation">
+            Supervisor
+          </p>
+    </div>
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Prof.&nbsp;Mauro Da Lio 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:mauro.dalio@unitn.it">mauro.dalio@unitn.it</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Co-supervisor
+          </p>
+    </div>
 </div>
 
-  <p class="date">4 February 2025</p>
+  <p class="date">5 February 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
@@ -506,8 +530,8 @@ Supervisor: Prof.&nbsp;Francesco Biral
 </ul>
 <p>Flexible approach, specialized for <strong>autonomous urban</strong> and <strong>racing</strong> scenarios.</p>
 </section>
-<section id="framkeork-overview" class="slide level2">
-<h2>Framkeork overview</h2>
+<section id="framework-overview" class="slide level2">
+<h2>Framework overview</h2>
 <!-- ```{dot}
 digraph finite_state_machine {
     fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"
@@ -903,7 +927,7 @@ digraph finite_state_machine {
   </video>
 </div>
 </section>
-<section id="real-vehicle-testing-1" class="slide level2">
+<section id="real-vehicle-testing-1" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Real vehicle testing</h2>
 <h3 id="vil-velocity-profiles">VIL velocity profiles</h3>
 <div class="columns">
@@ -930,7 +954,7 @@ digraph finite_state_machine {
 </figure>
 </div>
 </section>
-<section id="performance-and-limits" class="slide level2">
+<section id="performance-and-limits" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Performance and limits</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
@@ -953,37 +977,14 @@ digraph finite_state_machine {
 </ul>
 </div>
 </section>
-<section id="limits-and-future-works" class="slide level2">
+<section id="limits-and-future-works" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Limits and future works</h2>
 <h3 id="monte-carlo-tree-search">Monte Carlo Tree Search</h3>
 </section></section>
 <section>
 <section id="other-projects" class="title-slide slide level1 center">
 <h1>Other projects</h1>
-<!-- ## SUNRISE - Safety Assurance Framework
 
-::: {.tbbox}
-
-::: {.titlebox}
-Goals 
-:::
-
-::: {.columns}
-:::: {.column width="70%"}
-
-- Test vehicle **CCAM** and applications.
-- Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
-- Propose a method to **evaluate and rank** autonomous agents.
-
-::::
-
-:::: {.column width="28%"}
-![](./data/third_party/Sunrise-Logo.jpeg)
-::::
-
-::: 
-
-::: -->
 </section>
 <section id="sunrise---safety-assurance-framework" class="slide level2">
 <h2>SUNRISE - Safety Assurance Framework</h2>
@@ -1001,16 +1002,54 @@ Goals
 </figure>
 </div>
 </div><div class="column" style="width:70%;">
+<!-- ![](./data/img_ODD/exit.png){width=50% fig-align="center"} -->
 <ul>
 <li>Test vehicle <strong>CCAM</strong> and applications.</li>
 <li>Define common <strong>metrics</strong>, <strong>KPIs</strong>, <strong>test cases</strong>, and <strong>logical parameters</strong></li>
 <li>Propose a method to <strong>evaluate and rank</strong> autonomous agents.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./data/img_ODD/exit.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
-</div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Variable</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: left;">unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(v_0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(25.0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(m/s\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(v_1 - v_0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-5.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(m/s\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(T\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.5\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(s\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(a_1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(m/s^2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-20.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(40.0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(m\)</span></td>
+</tr>
+</tbody>
+</table>
 </div></div>
 </div>
 </section>
@@ -1047,9 +1086,148 @@ Goals
 <h3 id="suggested-speed">Suggested speed</h3>
 
 <img data-src="./data/img_ODD/safe_speed.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
-<section id="mlt-for-motogp" class="slide level2">
+<section id="mlt-for-motogp" class="slide level2" data-background-image="data/MLT/Moto/MotoLeanSimple.png" data-background-opacity="0.08">
 <h2>MLT for MotoGP</h2>
-<h4 id="figures">FIGURES</h4>
+<h3 id="problem-statement">Problem statement</h3>
+<!-- {.background-image="data/MLT/Moto/MotoLeanSimple.png"} -->
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="tbbox">
+<div class="titlebox">
+<p>OCP</p>
+</div>
+<p><span class="math display">\[
+  \begin{aligned}
+    \min \; T &amp; = \min \int_0^L \frac{w_T}{\dot{s}} \, \mathrm{d}\zeta \\
+    \mathrm{s.t.} \quad &amp;\mathbf{A}(\mathbf{x},\mathbf{u}) \, \mathbf{\dot{x}} = \mathbf{b}(\mathbf{x},\mathbf{u}) \\
+    \mathrm{Cyclic} \; \mathrm{b.c.} \quad &amp;\mathbf{x}(0) = \mathbf{x}(L)\\
+    % &amp;\dot{s}(\zeta) = \frac{u(\zeta) \cos(\xi(\zeta)) - v(\zeta) \sin(\xi(\zeta))}{1-\kappa(\zeta) n(\zeta)} )
+  \end{aligned}
+\]</span></p>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="tbbox">
+<div class="titlebox">
+<p>Vehicle Dynamics</p>
+</div>
+<ul>
+<li>Rigid body model, internal DoF, slip dynamics (<span class="math inline">\(30\)</span> states).</li>
+<li>Engine torque envelope + chain tensioning effect.</li>
+<li>Soft penetration (tyre ground).</li>
+<li>Full tyre model (MF-MCTyre 1.1).</li>
+<li>Aerodynamic maps for drag lift and application point.</li>
+</ul>
+</div>
+</div></div>
+<aside class="notes">
+<p>(suspensions, steer, rider body position, wheels).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mlt-for-motogp-1" class="slide level2" data-background-image="data/MLT/Moto/bikestraigth_flank.png" data-background-opacity="0.05">
+<h2>MLT for MotoGP</h2>
+<h3 id="how-to-initialize-the-problem">How to initialize the problem</h3>
+<aside class="notes">
+<p>Everithyng work right out of the box? No, for sure this is a perfect recipe for a disaster. So, Idea… Solve a similar problem more threatable (less complex), convex and quadratic. Then solve iteratively a problem converging to the original one.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="tbbox">
+<div class="titlebox">
+<p>Initialization</p>
+</div>
+<ul>
+<li><strong>Convex</strong> and <strong>quadratic</strong> problem</li>
+<li><strong>Simple</strong> and <strong>fast</strong> solution</li>
+<li><strong>Iterative</strong> solution</li>
+<li><strong>Convergence</strong> to the original problem</li>
+<li><strong>Warm start</strong> for the original problem</li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<p><span class="math display">\[
+  \min \int_0^L \frac{w_T}{\dot{s}} \, \mathrm{d}\zeta
+\]</span></p>
+<p>Tranformed into a “more” <strong>quadratic</strong> problem</p>
+<aside class="notes">
+<p>Other terms might be added</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><span class="math display">\[
+  \min \int_0^L \left( \frac{w_T}{\dot{s}} + (\mathbf{x}-\mathbf{x_{qss}})^T \mathbf{W_{qss}}  (\mathbf{x}-\mathbf{x_{qss}})  \right) \, \mathrm{d}\zeta
+\]</span></p>
+</div></div>
+</section>
+<section id="mlt-for-motogp-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy">Continuation - Homotopy</h3>
+<p>Start by taking <span class="math inline">\(w_T\)</span> small and <span class="math inline">\(\mathbf{W_{qss}}\)</span> big (Constant linear velocity). Fixed initial conditions and free final conditions</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem0.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-1">Continuation - Homotopy</h3>
+<p>Increase <span class="math inline">\(w_T\)</span> to 1 small and decrese <span class="math inline">\(\mathbf{W_{qss}}\)</span> to <span class="math inline">\(0\)</span>. Fixed initial conditions and free final conditions</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-4" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-2">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Fixed initial conditions and final conditions equal to the initial conditions.</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-5" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-3">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same).</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-6" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-4">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same). Push the penality values on constraints.</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem4.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-7" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-auto-animate-duration="1.0">
+<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-5">Continuation - Homotopy</h3>
+<p>Compare solutions</p>
+
+<img data-src="./data/MLT/OCI/Track_problemCompare.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-8" class="slide level2">
+<h2>MLT for MotoGP</h2>
+<h3 id="solution-example-catalunya-rsv1000">Solution example Catalunya RSV1000</h3>
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+<iframe data-external="1" src="https://www.youtube.com/embed/b1tqsGL5tgA?rel=0" width="100%" height="87%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 </section>
 <section id="points-dubins-path-piazza2024efficientpiazza2024non" class="slide level2">
 <h2>3 Points Dubins Path <span class="citation" data-cites="piazza2024efficient piazza2024non">(<a href="#/references" role="doc-biblioref" onclick="">Piazza, Bertolazzi, and Frego 2024b</a>, <a href="#/references" role="doc-biblioref" onclick="">2024a</a>)</span></h2>
@@ -1119,14 +1297,17 @@ Goals
 </div></div>
 </section></section>
 <section>
-<section id="future-works" class="title-slide slide level1 center">
+<section id="future-works" class="title-slide slide level1 center" data-background-color="var(--secondary-color)">
 <h1>Future works</h1>
 
 </section>
-<section id="sampling-based-initialization-of-mpc" class="slide level2">
+<section id="monte-carlo-tree-search-on-scale-vehicles" class="slide level2" data-background-color="var(--secondary-color)">
+<h2>Monte Carlo Tree Search on scale vehicles</h2>
+</section>
+<section id="sampling-based-initialization-of-mpc" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Sampling based initialization of MPC</h2>
 </section>
-<section id="mlt-motorcyle" class="slide level2">
+<section id="mlt-motorcyle" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>MLT Motorcyle</h2>
 <h3 id="free-rider-position-gearbox-and-cfd-aerodynamic-maps">Free rider position, gearbox and CFD aerodynamic maps</h3>
 </section>
