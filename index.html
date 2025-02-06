@@ -12,7 +12,7 @@
   <meta name="author" content="Mattia Piazza">
   <meta name="author" content="Prof.&nbsp;Francesco Biral">
   <meta name="author" content="Prof.&nbsp;Mauro Da Lio">
-  <meta name="dcterms.date" content="2025-02-05">
+  <meta name="dcterms.date" content="2025-02-11">
   <title>Optimal Control, Planning, and Intelligent Vehicles</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -52,7 +52,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-198b2b7c5c13bbbc36cbf7718c54d563.css">
+  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-ccfa4285e13d23b152eac99a4259b0f3.css">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -189,7 +189,7 @@ Prof.&nbsp;Mauro Da Lio
     </div>
 </div>
 
-  <p class="date">5 February 2025</p>
+  <p class="date">11 February 2025</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Contents</h2>
@@ -750,7 +750,7 @@ digraph finite_state_machine {
 </section>
 <section id="cost-function" class="slide level2">
 <h2>Cost Function</h2>
-<h3 id="urban-multi-objective-negotiation">Urban multi-objective + negotiation</h3>
+<h3 id="urban-multi-objective-negotiation-piazza2024mptree-piazza2025emergent">Urban multi-objective + negotiation <span class="citation" data-cites="piazza2024mptree piazza2025emergent">(<a href="#/references" role="doc-biblioref" onclick="">Piazza et al. 2024</a>, <a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></h3>
 <div class="columns">
 <div class="column" style="width:35%;">
 <p><img data-src="./data/MPT_Piazza/Cooperative_approach.png"></p>
@@ -770,13 +770,19 @@ digraph finite_state_machine {
 <p>+ negotiation</p>
 </div>
 <p><span class="math display">\[
-  J=J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ J_{\mathrm{Neg}}} \right)
-\]</span> <span class="citation" data-cites="piazza2025emergent">(<a href="#/references" role="doc-biblioref" onclick="">Piazza et al. 2025</a>)</span></p>
+\begin{aligned}
+  J=&amp;J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ \sum_{i=0}^N\int_{0}^{T}\Gamma_{\mathrm{des}}(d_{\mathrm{des}_i})\mathrm{d}t} \right) \\
+  \Gamma_{\mathrm{des}}(d_{\mathrm{des}_i})=&amp; \left\{
+    \begin{array}{ll}
+      1 &amp; d_{\mathrm{des}_i} \le 0\\
+      1 - \frac{d_{\mathrm{des}_i}}{d_{\mathrm{des_{\mathrm{safe}}}}} &amp; 0&lt;d_{\mathrm{des}_i}&lt;d_{\mathrm{des_{\mathrm{safe}}}}\\
+      0 &amp; d_{\mathrm{des}_i} \ge d_{\mathrm{des_{\mathrm{safe}}}}
+    \end{array}
+  \right.
+\end{aligned}
+\]</span></p>
 </div>
 </div></div>
-<p><span class="math display">\[
-  J_{\mathrm{Neg}}= \displaystyle\int_0^T (\mathrm{Act}(\Gamma_{\mathrm{obj_{des}}}(t) - \Gamma_{\mathrm{ego_{plan}}}(t),d_{th}))^2 \, \mathrm{d}t
-\]</span></p>
 </section>
 <section id="cost-function-1" class="slide level2">
 <h2>Cost Function</h2>
@@ -854,45 +860,18 @@ digraph finite_state_machine {
 <div id="contentframe" style="position:relative; left: 2.5%; width: 100%; height: 90%">
 <iframe data-external="1" src="https://www.youtube.com/embed/2HqBKIeUNFc?rel=0" width="100%" height="90.40%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
-</section>
-<section id="c-integration-and-closed-loop-testing" class="slide level2" data-background-color="var(--secondary-color)">
-<h2>C++ integration and closed loop testing</h2>
-<h3 id="single-track-model-and-c-library">Single-track model and C++ library</h3>
+<!-- ## C++ integration and closed loop testing {background-color="var(--secondary-color)"} -->
+<!-- ### Single-track model and C++ library -->
 <!-- the average number of iteration average explored nodes with one obstacle two or 3 -->
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Obstacles</th>
-<th>N. Iterations</th>
-<th>N. Explored nodes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Free</td>
-<td>~800</td>
-<td>~TBD</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>~600</td>
-<td>~TBD</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>~500</td>
-<td>~TBD</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>~400</td>
-<td>~TBD</td>
-</tr>
-</tbody>
-</table>
-<div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
-<iframe data-external="1" src="https://www.youtube.com/embed/K4SPfdwC154?rel=0" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</div>
+<!-- | Obstacles | N. Iterations | N. Explored nodes |
+|-----------|---------------|-------------------|
+| Free      | ~800          | ~TBD              |
+| 1         | ~600          | ~TBD              |
+| 2         | ~500          | ~TBD              |
+| 3         | ~400          | ~TBD              | -->
+<!-- <div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
+ 
+</div>  -->
 </section>
 <section id="integration-in-carmaker" class="slide level2">
 <h2>Integration in CarMaker</h2>
@@ -910,14 +889,8 @@ digraph finite_state_machine {
 </div><div class="column" style="width:41.6%;">
 <iframe data-external="1" src="https://www.youtube.com/embed/5qmvcFmvGVE?rel=0" width="100%" height="600" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div></div>
-<!-- <div id="contentframe" style="position:relative; left: 0%; width: 60%; height: 90%">
-
-</div>
-<div id="contentframe" style="position:relative; left: 60%; width: 40%; height: 90%">
-
-</div> -->
 </section>
-<section id="real-vehicle-testing" class="slide level2">
+<section id="real-vehicle-testing" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Real vehicle testing</h2>
 <h3 id="vil-testing">VIL testing</h3>
 <!-- add video -->
@@ -927,9 +900,9 @@ digraph finite_state_machine {
   </video>
 </div>
 </section>
-<section id="real-vehicle-testing-1" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="real-vehicle-testing-1" class="slide level2">
 <h2>Real vehicle testing</h2>
-<h3 id="vil-velocity-profiles">VIL velocity profiles</h3>
+<!-- ### VIL velocity profiles -->
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="tbbox">
@@ -937,7 +910,11 @@ digraph finite_state_machine {
 <div class="titlebox">
 <p>Camera</p>
 </div>
-<p><img data-src="./data/Figures_UniTN_onlyCAM/speed_vs_dist_at30kmh.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/Figures_UniTN_onlyCAM/speed_vs_dist_at30kmh.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="tbbox">
@@ -945,7 +922,11 @@ digraph finite_state_machine {
 <div class="titleboxL">
 <p>V2X</p>
 </div>
-<p><img data-src="./data/Figures_UniTN_onlyV2X/speed_vs_dist_at30kmh.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./data/Figures_UniTN_onlyV2X/speed_vs_dist_at30kmh.png" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="quarto-figure quarto-figure-center">
@@ -954,7 +935,7 @@ digraph finite_state_machine {
 </figure>
 </div>
 </section>
-<section id="performance-and-limits" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="performance-and-limits" class="slide level2">
 <h2>Performance and limits</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
@@ -963,6 +944,9 @@ digraph finite_state_machine {
 </div>
 <ul>
 <li><strong>Asimptotic</strong> optimality.</li>
+<li><strong>Complex</strong> manouvres combinations.</li>
+<li><strong>Feasible</strong> solution for the vehicle model.</li>
+<li><span class="math inline">\(\sim600\)</span> MP in <span class="math inline">\(50\,ms\)</span> with 2-3 obstacles (C++ on Intel i5 @ 4.5 GHz).</li>
 </ul>
 </div>
 <div class="tbbox">
@@ -971,9 +955,16 @@ digraph finite_state_machine {
 <p>Limits</p>
 </div>
 <ul>
-<li><strong>Computational</strong> time.</li>
-<li><strong>Quality</strong> of the solution <strong>highly</strong> depends on the harware (Processor frequency).</li>
-<li>Time lost to evaluate useless solutions (No information cost forward).</li>
+<li><strong>Computational</strong> time could be enhanced.</li>
+<li><strong>Quality</strong> of the solution <strong>highly</strong> depends on the harware.
+<ul>
+<li><span class="math inline">\(\sim200\)</span> MP on dSPace Autera (Intel Xeon 12 cores @ 2.0 GHz)</li>
+</ul></li>
+<li>Time lost to evaluate useless solutions
+<ul>
+<li>Manouvre cost is evaluated up to the node</li>
+<li>No matrics to evalaute solution forward.</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -1008,6 +999,7 @@ digraph finite_state_machine {
 <li>Define common <strong>metrics</strong>, <strong>KPIs</strong>, <strong>test cases</strong>, and <strong>logical parameters</strong></li>
 <li>Propose a method to <strong>evaluate and rank</strong> autonomous agents.</li>
 </ul>
+<div class="custom-small">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1050,6 +1042,7 @@ digraph finite_state_machine {
 </tr>
 </tbody>
 </table>
+</div>
 </div></div>
 </div>
 </section>
@@ -1081,11 +1074,6 @@ digraph finite_state_machine {
 <h3 id="suggested-distance">Suggested distance</h3>
 
 <img data-src="./data/img_ODD/safe_charts.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
-<section id="sunrise-3" class="slide level2">
-<h2>SUNRISE</h2>
-<h3 id="suggested-speed">Suggested speed</h3>
-
-<img data-src="./data/img_ODD/safe_speed.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
 <section id="mlt-for-motogp" class="slide level2" data-background-image="data/MLT/Moto/MotoLeanSimple.png" data-background-opacity="0.08">
 <h2>MLT for MotoGP</h2>
 <h3 id="problem-statement">Problem statement</h3>
@@ -1186,43 +1174,19 @@ digraph finite_state_machine {
 \]</span></p>
 </div></div>
 </section>
-<section id="mlt-for-motogp-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
+<section id="mlt-for-motogp-2" class="slide level2">
+<h2>MLT for MotoGP</h2>
 <h3 id="continuation---homotopy">Continuation - Homotopy</h3>
-<p>Start by taking <span class="math inline">\(w_T\)</span> small and <span class="math inline">\(\mathbf{W_{qss}}\)</span> big (Constant linear velocity). Fixed initial conditions and free final conditions</p>
-
-<img data-src="./data/MLT/OCI/Track_Problem0.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
-<h3 id="continuation---homotopy-1">Continuation - Homotopy</h3>
-<p>Increase <span class="math inline">\(w_T\)</span> to 1 small and decrese <span class="math inline">\(\mathbf{W_{qss}}\)</span> to <span class="math inline">\(0\)</span>. Fixed initial conditions and free final conditions</p>
-
-<img data-src="./data/MLT/OCI/Track_Problem1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-4" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
-<h3 id="continuation---homotopy-2">Continuation - Homotopy</h3>
-<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Fixed initial conditions and final conditions equal to the initial conditions.</p>
-
-<img data-src="./data/MLT/OCI/Track_Problem2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-5" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
-<h3 id="continuation---homotopy-3">Continuation - Homotopy</h3>
-<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same).</p>
-
-<img data-src="./data/MLT/OCI/Track_Problem3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-6" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
-<h3 id="continuation---homotopy-4">Continuation - Homotopy</h3>
-<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same). Push the penalty values on constraints.</p>
-
-<img data-src="./data/MLT/OCI/Track_Problem4.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-7" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out" data-auto-animate-duration="1.0">
-<h2 data-id="quarto-animate-title">MLT for MotoGP</h2>
-<h3 id="continuation---homotopy-5">Continuation - Homotopy</h3>
-<p>Compare solutions</p>
+<ol start="0" type="1">
+<li><span class="math inline">\(w_T &lt;&lt; 1\)</span>, <span class="math inline">\(\mathbf{W_{qss}} = 1\)</span> (Constant velocity). Fixed initial conditions and free final conditions</li>
+<li><span class="math inline">\(w_T =  1\)</span>, <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span> (Optimal time). Fixed initial conditions and free final conditions</li>
+<li>Fixed initial conditions and final conditions equal to the initial conditions</li>
+<li>Cyclic conditions</li>
+<li>Push the penalty values on constraints</li>
+</ol>
 
 <img data-src="./data/MLT/OCI/Track_problemCompare.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
-<section id="mlt-for-motogp-8" class="slide level2">
+<section id="mlt-for-motogp-3" class="slide level2">
 <h2>MLT for MotoGP</h2>
 <h3 id="solution-example-catalunya-rsv1000">Solution example Catalunya RSV1000</h3>
 <div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
@@ -1297,19 +1261,53 @@ digraph finite_state_machine {
 </div></div>
 </section></section>
 <section>
-<section id="future-works" class="title-slide slide level1 center" data-background-color="var(--secondary-color)">
+<section id="future-works" class="title-slide slide level1 center">
 <h1>Future works</h1>
 
 </section>
-<section id="monte-carlo-tree-search-on-scale-vehicles" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="monte-carlo-tree-search-on-scale-vehicles" class="slide level2">
 <h2>Monte Carlo Tree Search on scale vehicles</h2>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Next steps</p>
+</div>
+<ul>
+<li>Finish Software test with commercial simulator <strong>IPG CarMaker</strong>.</li>
+<li>Test the planner with several <strong>scenarios datasets</strong> (i.e.&nbsp;nuScene).</li>
+<li>Implement the planner on scale vehicles.</li>
+</ul>
+</div>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Future goals</p>
+</div>
+<ul>
+<li>Introduce <strong>learning</strong> of planner parameters.</li>
+<li>Specialize planner with different primitives.</li>
+<li><strong>Real and/or scale vehicle</strong> testing</li>
+</ul>
+</div>
 </section>
 <section id="sampling-based-initialization-of-mpc" class="slide level2" data-background-color="var(--secondary-color)">
 <h2>Sampling based initialization of MPC</h2>
 </section>
-<section id="mlt-motorcycle" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="mlt-motorcycle" class="slide level2">
 <h2>MLT Motorcycle</h2>
-<h3 id="free-rider-position-gearbox-and-cfd-aerodynamic-maps">Free rider position, gearbox, and CFD aerodynamic maps</h3>
+<h3 id="motogp-team-collaboration">MotoGP team collaboration</h3>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Goals</p>
+</div>
+<ul>
+<li>Include <strong>rider</strong> position as additional control.</li>
+<li>Gearshift and <strong>gear selection</strong> for optimal engine brake.</li>
+<li>CFD <strong>aerodynamic maps</strong>.</li>
+<li>Compare results with last year <strong>telemetry data</strong>.</li>
+</ul>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -1339,8 +1337,55 @@ Piazza, Mattia, Mattia Piccinini, Sebastiano Taddei, and Francesco Biral. 2024. 
 <h5 id="thank-you-for-your-attention">Thank you for your attention!</h5>
 <!-- ##### Danke für Ihre Aufmerksamkeit! -->
 </div>
-
+<!-- backup -->
 </section></section>
+<section>
+<section id="backup" class="title-slide slide level1 appendix unnumbered unlisted center" data-visibility="uncounted">
+<h1>Backup</h1>
+
+</section>
+<section id="sunrise-3" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>SUNRISE</h2>
+<h3 id="suggested-speed">Suggested speed</h3>
+
+<img data-src="./data/img_ODD/safe_speed.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="mlt-for-motogp-4" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-1">Continuation - Homotopy</h3>
+<p>Start by taking <span class="math inline">\(w_T\)</span> small and <span class="math inline">\(\mathbf{W_{qss}}\)</span> big (Constant linear velocity). Fixed initial conditions and free final conditions</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem0.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-5" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-2">Continuation - Homotopy</h3>
+<p>Increase <span class="math inline">\(w_T\)</span> to 1 small and decrese <span class="math inline">\(\mathbf{W_{qss}}\)</span> to <span class="math inline">\(0\)</span>. Fixed initial conditions and free final conditions</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-6" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-3">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Fixed initial conditions and final conditions equal to the initial conditions.</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-7" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-4">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same).</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-8" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-5">Continuation - Homotopy</h3>
+<p><span class="math inline">\(w_T = 1\)</span> and <span class="math inline">\(\mathbf{W_{qss}} = 0\)</span>. Cyclic conditions (Initial and final conditions are the same). Push the penalty values on constraints.</p>
+
+<img data-src="./data/MLT/OCI/Track_Problem4.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="mlt-for-motogp-9" class="slide level2 unnumbered unlisted" data-visibility="uncounted">
+<h2>MLT for MotoGP</h2>
+<h3 id="continuation---homotopy-6">Continuation - Homotopy</h3>
+<p>Compare solutions</p>
+
+
+<img data-src="./data/MLT/OCI/Track_problemCompare.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -13,7 +13,8 @@ author:
   - name: "Prof. Mauro Da Lio"
     email: "mauro.dalio@unitn.it"
     affiliation: "Co-supervisor"
-date: today
+# date: today
+date: "2025-02-11"
 # date-format: long
 date-format: "D MMMM YYYY"
 resources: data
@@ -50,6 +51,7 @@ format:
       method: mathjax
     code-fold: true
     # chalkboard: true
+    filters: [custom.lua]
 ---
 
 # Background
@@ -594,7 +596,7 @@ $$
 
 ## Cost Function
 
-### Urban multi-objective + negotiation
+### Urban multi-objective + negotiation [@piazza2024mptree ;@piazza2025emergent]
 
 :::{.columns}
 :::: {.column width="35%"}
@@ -616,18 +618,22 @@ $$
 ::: {.titlebox}
 \+ negotiation 
 :::
-
 $$
-  J=J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ J_{\mathrm{Neg}}} \right)
+\begin{aligned}
+  J=&J_{MO} + {\displaystyle\sum_{i=1}^{N_s}} \left({ W_{\mathrm{Neg}}~ \sum_{i=0}^N\int_{0}^{T}\Gamma_{\mathrm{des}}(d_{\mathrm{des}_i})\mathrm{d}t} \right) \\
+  \Gamma_{\mathrm{des}}(d_{\mathrm{des}_i})=& \left\{
+    \begin{array}{ll}
+      1 & d_{\mathrm{des}_i} \le 0\\
+      1 - \frac{d_{\mathrm{des}_i}}{d_{\mathrm{des_{\mathrm{safe}}}}} & 0<d_{\mathrm{des}_i}<d_{\mathrm{des_{\mathrm{safe}}}}\\
+      0 & d_{\mathrm{des}_i} \ge d_{\mathrm{des_{\mathrm{safe}}}}
+    \end{array}
+  \right.
+\end{aligned}
 $$
-[@piazza2025emergent]
 :::
-
 ::::
 :::
-$$
-  J_{\mathrm{Neg}}= \displaystyle\int_0^T (\mathrm{Act}(\Gamma_{\mathrm{obj_{des}}}(t) - \Gamma_{\mathrm{ego_{plan}}}(t),d_{th}))^2 \, \mathrm{d}t
-$$
+
 
 ## Cost Function
 
@@ -727,27 +733,22 @@ Goals
 </div>
 
 
-## C++ integration and closed loop testing {background-color="var(--secondary-color)"}
+<!-- ## C++ integration and closed loop testing {background-color="var(--secondary-color)"} -->
 
-### Single-track model and C++ library
+<!-- ### Single-track model and C++ library -->
 
 <!-- the average number of iteration average explored nodes with one obstacle two or 3 -->
 
-| Obstacles | N. Iterations | N. Explored nodes |
+<!-- | Obstacles | N. Iterations | N. Explored nodes |
 |-----------|---------------|-------------------|
 | Free      | ~800          | ~TBD              |
 | 1         | ~600          | ~TBD              |
 | 2         | ~500          | ~TBD              |
-| 3         | ~400          | ~TBD              |
+| 3         | ~400          | ~TBD              | -->
 
-<div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
+<!-- <div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
 {{< video https://www.youtube.com/embed/K4SPfdwC154?rel=0 width="100%" height=100% autoplay="true" loop="true" muted="true">}} 
-</div>
-
-
-
-
-
+</div>  -->
 
 
 ## Integration in CarMaker
@@ -772,15 +773,7 @@ Goals
 :::
 
 
-<!-- <div id="contentframe" style="position:relative; left: 0%; width: 60%; height: 90%">
-{{< video https://www.youtube.com/embed/R3iCVDXGoao?rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
-</div>
-<div id="contentframe" style="position:relative; left: 60%; width: 40%; height: 90%">
-{{< video https://www.youtube.com/embed/5qmvcFmvGVE?rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
-</div> -->
-
-
-## Real vehicle testing 
+## Real vehicle testing {background-color="var(--secondary-color)"}
 
 ### VIL testing
 
@@ -794,9 +787,9 @@ Goals
 ```
 
 
-## Real vehicle testing {background-color="var(--secondary-color)"}
+## Real vehicle testing
 
-### VIL velocity profiles
+<!-- ### VIL velocity profiles -->
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -805,7 +798,7 @@ Goals
 ::: {.titlebox}
 Camera
 :::
-![](./data/Figures_UniTN_onlyCAM/speed_vs_dist_at30kmh.png)
+![](./data/Figures_UniTN_onlyCAM/speed_vs_dist_at30kmh.png){width=90% fig-align="center"}
 :::
 ::::
 :::: {.column width="50%"}
@@ -814,24 +807,24 @@ Camera
 ::: {.titleboxL}
 V2X
 :::
-![](./data/Figures_UniTN_onlyV2X/speed_vs_dist_at30kmh.png)
+![](./data/Figures_UniTN_onlyV2X/speed_vs_dist_at30kmh.png){width=90% fig-align="center"}
 :::
 ::::
 :::
-
 ![](./data/Vadena/VadenaIntersection_traj_crop.png){width=50% fig-align="center"}
 
 
-## Performance and limits {background-color="var(--secondary-color)"}
+## Performance and limits
 
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
 Performance
 :::
-
 - **Asimptotic** optimality.
-
+- **Complex** manouvres combinations.
+- **Feasible** solution for the vehicle model.
+- $\sim600$ MP in $50\,ms$ with 2-3 obstacles (C++ on Intel i5 @ 4.5 GHz).
 :::
 
 :::{.tbbox}
@@ -839,14 +832,17 @@ Performance
 ::: {.titlebox}
 Limits
 :::
-
-- **Computational** time.
-- **Quality** of the solution **highly** depends on the harware (Processor frequency).
-- Time lost to evaluate useless solutions (No information cost forward).
+- **Computational** time could be enhanced.
+- **Quality** of the solution **highly** depends on the harware.
+  - $\sim200$ MP on dSPace Autera (Intel Xeon 12 cores @ 2.0 GHz)
+- Time lost to evaluate useless solutions
+  - Manouvre cost is evaluated up to the node
+  - No matrics to evalaute solution forward.
 :::
 
 ## Limits and future works {background-color="var(--secondary-color)"}
 ### Monte Carlo Tree Search
+
 
 
 
@@ -873,7 +869,7 @@ Logical scenario
 - Define common **metrics**, **KPIs**, **test cases**, and **logical parameters**
 - Propose a method to **evaluate and rank** autonomous agents.
 
-
+:::{.custom-small}
 | Variable    | min     | max    | unit    |
 |:-----------:|--------:|-------:|:--------|
 | $v_0$       | $10.0$  | $25.0$ | $m/s$   |
@@ -881,6 +877,7 @@ Logical scenario
 | $T$         | $1.5$   | $7.5$  | $s$     |
 | $a_1$       | $-6.0$  | $3.0$  | $m/s^2$ |
 | $d$         | $-20.0$ | $40.0$ | $m$     |
+:::
 
 ::::
 :::
@@ -907,11 +904,6 @@ Logical scenario
 ### Suggested distance 
 
 ![](./data/img_ODD/safe_charts.png){width=70% fig-align="center"}
-
-## SUNRISE
-### Suggested speed
-
-![](./data/img_ODD/safe_speed.png){width=70% fig-align="center"}
 
 
 ## MLT for MotoGP {background-image="data/MLT/Moto/MotoLeanSimple.png" background-opacity="0.08"}
@@ -998,52 +990,14 @@ $$
 :::
 
 
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
+## MLT for MotoGP 
 ### Continuation - Homotopy
 
-Start by taking $w_T$ small and $\mathbf{W_{qss}}$ big (Constant linear velocity). 
-Fixed initial conditions and free final conditions
-
-![](./data/MLT/OCI/Track_Problem0.png){width=100% fig-align="center"}
-
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
-### Continuation - Homotopy
-
-Increase $w_T$ to 1 small and decrese $\mathbf{W_{qss}}$ to $0$.
-Fixed initial conditions and free final conditions
-
-![](./data/MLT/OCI/Track_Problem1.png){width=100% fig-align="center"}
-
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
-### Continuation - Homotopy
-
-$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
-Fixed initial conditions and final conditions equal to the initial conditions.
-
-![](./data/MLT/OCI/Track_Problem2.png){width=100% fig-align="center"}
-
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
-### Continuation - Homotopy
-
-$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
-Cyclic conditions (Initial and final conditions are the same).
-
-![](./data/MLT/OCI/Track_Problem3.png){width=100% fig-align="center"}
-
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out"}
-### Continuation - Homotopy
-
-$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
-Cyclic conditions (Initial and final conditions are the same).
-Push the penalty values on constraints.
-
-![](./data/MLT/OCI/Track_Problem4.png){width=100% fig-align="center"}
-
-
-## MLT for MotoGP {auto-animate=true auto-animate-easing="ease-in-out" auto-animate-duration=1.0}
-### Continuation - Homotopy
-
-Compare solutions
+0. $w_T << 1$, $\mathbf{W_{qss}} = 1$ (Constant velocity). Fixed initial conditions and free final conditions
+1. $w_T =  1$, $\mathbf{W_{qss}} = 0$ (Optimal time). Fixed initial conditions and free final conditions
+2. Fixed initial conditions and final conditions equal to the initial conditions
+3. Cyclic conditions
+4. Push the penalty values on constraints
 
 ![](./data/MLT/OCI/Track_problemCompare.png){width=100% fig-align="center"}
 
@@ -1053,7 +1007,6 @@ Compare solutions
 <div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
 {{< video https://www.youtube.com/embed/b1tqsGL5tgA?rel=0  width="100%" height="87%" autoplay="true" loop="true" muted="true">}}
 </div>
-
 
 ## 3 Points Dubins Path [@piazza2024efficient;@piazza2024non]
 
@@ -1076,14 +1029,50 @@ An efficient algorithm to solve the 3PDP problem.
 :::
 
 
-# Future works {background-color="var(--secondary-color)"}
+# Future works 
 
-## Monte Carlo Tree Search on scale vehicles {background-color="var(--secondary-color)"}
+## Monte Carlo Tree Search on scale vehicles
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Next steps
+:::
+- Finish Software test with commercial simulator **IPG CarMaker**.
+- Test the planner with several **scenarios datasets** (i.e. nuScene).
+- Implement the planner on scale vehicles.
+:::
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Future goals
+:::
+- Introduce **learning** of planner parameters.
+- Specialize planner with different primitives.
+- **Real and/or scale vehicle** testing
+:::
+
 
 ## Sampling based initialization of MPC {background-color="var(--secondary-color)"}
 
-## MLT Motorcycle {background-color="var(--secondary-color)"}
-### Free rider position, gearbox, and CFD aerodynamic maps
+
+
+
+## MLT Motorcycle
+### MotoGP team collaboration
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Goals
+:::
+
+- Include **rider** position as additional control.
+- Gearshift and **gear selection** for optimal engine brake.
+- CFD **aerodynamic maps**.
+- Compare results with last year **telemetry data**.
+:::
 
 
 ## References
@@ -1103,3 +1092,69 @@ An efficient algorithm to solve the 3PDP problem.
 ##### Thank you for your attention!
 <!-- ##### Danke für Ihre Aufmerksamkeit! -->
 :::
+
+
+
+<!-- backup -->
+
+
+
+
+# Backup {.appendix .unnumbered .unlisted}
+
+
+## SUNRISE {.unnumbered .unlisted}
+### Suggested speed
+
+![](./data/img_ODD/safe_speed.png){width=70% fig-align="center"}
+
+
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+Start by taking $w_T$ small and $\mathbf{W_{qss}}$ big (Constant linear velocity). 
+Fixed initial conditions and free final conditions
+
+![](./data/MLT/OCI/Track_Problem0.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+Increase $w_T$ to 1 small and decrese $\mathbf{W_{qss}}$ to $0$.
+Fixed initial conditions and free final conditions
+
+![](./data/MLT/OCI/Track_Problem1.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Fixed initial conditions and final conditions equal to the initial conditions.
+
+![](./data/MLT/OCI/Track_Problem2.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Cyclic conditions (Initial and final conditions are the same).
+
+![](./data/MLT/OCI/Track_Problem3.png){width=100% fig-align="center"}
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+$w_T = 1$ and $\mathbf{W_{qss}} = 0$.
+Cyclic conditions (Initial and final conditions are the same).
+Push the penalty values on constraints.
+
+![](./data/MLT/OCI/Track_Problem4.png){width=100% fig-align="center"}
+
+
+## MLT for MotoGP {.unnumbered .unlisted}
+### Continuation - Homotopy
+
+Compare solutions
+
+![](./data/MLT/OCI/Track_problemCompare.png){width=100% fig-align="center"}
