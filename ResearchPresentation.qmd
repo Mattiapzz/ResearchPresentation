@@ -773,7 +773,7 @@ Goals
 :::
 
 
-## Real vehicle testing {background-color="var(--secondary-color)"}
+## Real vehicle testing
 
 ### VIL testing
 
@@ -1114,7 +1114,10 @@ Goals
 
 ::: {.tbbox style="text-align: center;" }
 <!-- #### Q & A -->
-##### Thank you for your attention!
+::: {.r-fit-text style="font-weight: bold;"}
+Thank you for your attention
+:::
+Reach me at: [**mattia.piazza@unitn.it**](mailto:*mattia.piazza@unitn.it)
 <!-- ##### Danke für Ihre Aufmerksamkeit! -->
 :::
 
