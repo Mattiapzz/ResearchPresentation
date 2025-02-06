@@ -22,44 +22,15 @@
 }
 
 .reveal h2 {
-  color: #0f6e91;
+  color: var(--primary-color);
 }
-
-/* Define the tbbox style */
-
-// .tbboxh {
-//     position: relative;
-//     background-color: #ffffff; /* Box background color */
-//     border: 10px solid #0f6e91; /* Border color */
-//     border-radius: 15px; /* Rounded corners */
-//     padding: 20px;
-//     margin-top: 30px; /* Space between the box and previous content */
-//     margin-bottom: 40px; /* Space below the box */
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-// }
-
-// /* Title Styling */
-// .tbboxh-title {
-//     position: absolute;
-//     top: -40px; /* Position above the border */
-//     left: 20px; /* Align horizontally */
-//     background-color: #0f6e91; /* Title background */
-//     color: white; /* Title text color */
-//     padding: 10px 10px;
-//     font-weight: bold;
-//     font-size: x-large;
-//     border-radius: 15px; /* Slightly rounded title corners */
-//     white-space: nowrap; /* Prevent text wrapping */
-//     margin-bottom: -20px; /* Creates negative margin to ensure space outside the border */
-// }
-
 
 
 /* Define the tbbox style */
 .tbbox {
   position: relative;
   background-color: #ffffff; /* Box background color */
-  border: 8px solid #0f6e91; /* Border color */
+  border: 8px solid var(--primary-color); /* Border color */
   border-radius: 25px; /* Rounded corners */
   padding: 20px;
   padding-top: 30px;
@@ -73,7 +44,7 @@
   position: absolute;
   top: -40px; /* Position above the border */
   left: 20px; /* Align horizontally */
-  background-color: #0f6e91; /* Title background */
+  background-color: var(--primary-color); /* Title background */
   color: white; /* Title text color */
   padding: 10px 10px;
   font-weight: bold;
@@ -88,7 +59,7 @@
   position: absolute;
   top: -40px; /* Position above the border */
   left: 20px; /* Align horizontally */
-  background-color: #0f6e91; /* Title background */
+  background-color: var(--primary-color); /* Title background */
   color: white; /* Title text color */
   padding: 0px 20px;
   font-weight: bold;
@@ -101,7 +72,7 @@
   position: absolute;
   top: -40px; /* Position above the border */
   right: 20px; /* Align horizontally */
-  background-color: #0f6e91; /* Title background */
+  background-color: var(--primary-color); /* Title background */
   color: white; /* Title text color */
   padding: 0px 20px;
   font-weight: bold;
@@ -130,7 +101,7 @@
   // margin-bottom: 20px;
   aspect-ratio: 1 / 1;
   filter: grayscale(100%);
-  border: 5px solid #0f6e91;
+  border: 5px solid var(--primary-color);
 }
 
 
@@ -153,13 +124,13 @@
   // margin-bottom: 20px;
   aspect-ratio: 1 / 1;
   filter: grayscale(100%);
-  border: 5px solid #0f6e91;
+  border: 5px solid var(--primary-color);
 }
 
 
 .columns .column .team-entry .name {
   width: 100%;
-  color: #0f6e91;
+  color: var(--primary-color); /* Set text color */
   margin-bottom: 5px;
   text-align: center; /* Center align text */
   height: 2.8em; /* Set height to accommodate two lines */
@@ -182,7 +153,7 @@
 .reveal .title:first-of-type {
   text-align: right; /* Center the title */
   width: 70%;
-  color: #0f6e91;  /* Title color */
+  color: var(--primary-color);  /* Title color */
   // position: absolute;
   // right: 0px;
   float: right;
@@ -195,7 +166,7 @@
 .reveal .subtitle:first-of-type {
   text-align: right; /* Center the title */
   width: 70%;
-  color: #0f6e91;  /* Title color */
+  color: var(--primary-color);  /* Title color */
   float: right;
   display: flex;
   flex-direction: column;
@@ -214,21 +185,28 @@
 
 .reveal .quarto-title-author {
   text-align: right; /* Center the title */
-  color: #0f6e91;  /* Title color */
+  color: var(--primary-color);  /* Title color */
   padding-right: 0 !important;
-  font-size: 35px;
+  font-size: 40px;
 }
 
+.reveal .quarto-title-authors .quarto-title-author:first-of-type .quarto-title-author-name {
+  text-align: right; /* Center the title */
+  color: var(--primary-color);  /* Title color */
+  padding-right: 0 !important;
+  font-size: 50px;
+  font-weight: bold;
+}
 
 
 .reveal .date {
   text-align: right; /* Center the title */
   width: 80%;
-  color: #0f6e91;  /* Title color */
+  color: var(--primary-color);  /* Title color */
   float: right;
   display: flex;
   flex-direction: column;
-  font-size: 25px;
+  font-size: 35px;
   padding-right: 1% !important;
 }
 
@@ -241,11 +219,11 @@
 // }
 
 .reveal .progress {
-  color: #0f6e91;
+  color: var(--primary-color) !important;
 }
 
 .reveal .slide-menu-button {
-  color: #0f6e91;
+  color: var(--primary-color) !important;
 }
 
 .reveal .slide-background:first-of-type {
@@ -259,15 +237,15 @@
 
 
 .reveal ul > li > a{
-  color: #0f6e91;
+  color: var(--primary-color) !important;
 }
 
 .reveal .slide-menu-button a{
-  color: #0f6e91 !important;
+  color: var(--primary-color) !important;
 }
 
 .reveal .slide-menu-button a i{
-  color: #0f6e91 !important;
+  color: var(--primary-color) !important;
 }
 
 .reveal ul {list-style-type: square;}

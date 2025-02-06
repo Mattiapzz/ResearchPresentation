@@ -52,7 +52,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-ccfa4285e13d23b152eac99a4259b0f3.css">
+  <link rel="stylesheet" href="ResearchPresentation_files/libs/revealjs/dist/theme/quarto-5e0f31fcb90a8a399592fce79f15409b.css">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="ResearchPresentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -169,9 +169,6 @@ Mattia Piazza
 <div class="quarto-title-author-name">
 Prof.&nbsp;Francesco Biral 
 </div>
-<div class="quarto-title-author-email">
-<a href="mailto:francesco.biral@unitn.it">francesco.biral@unitn.it</a>
-</div>
         <p class="quarto-title-affiliation">
             Supervisor
           </p>
@@ -179,9 +176,6 @@ Prof.&nbsp;Francesco Biral
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Prof.&nbsp;Mauro Da Lio 
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:mauro.dalio@unitn.it">mauro.dalio@unitn.it</a>
 </div>
         <p class="quarto-title-affiliation">
             Co-supervisor
@@ -968,9 +962,17 @@ digraph finite_state_machine {
 </ul>
 </div>
 </section>
-<section id="limits-and-future-works" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="limits-and-future-works" class="slide level2">
 <h2>Limits and future works</h2>
 <h3 id="monte-carlo-tree-search">Monte Carlo Tree Search</h3>
+
+<img data-src="./data/MCTS/MCTS.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="limits-and-future-works-1" class="slide level2">
+<h2>Limits and future works</h2>
+<h3 id="monte-carlo-tree-search-1">Monte Carlo Tree Search</h3>
+<div id="contentframe" style="position:relative; left: 22%; width: 56%; height: 90%">
+<iframe data-external="1" src="https://www.youtube.com/embed/PwzN7FfxiCc?rel=0" width="100%" height="95%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 </section></section>
 <section>
 <section id="other-projects" class="title-slide slide level1 center">
@@ -1290,8 +1292,29 @@ digraph finite_state_machine {
 </ul>
 </div>
 </section>
-<section id="sampling-based-initialization-of-mpc" class="slide level2" data-background-color="var(--secondary-color)">
+<section id="sampling-based-initialization-of-mpc" class="slide level2">
 <h2>Sampling based initialization of MPC</h2>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>MPC needs and problems</p>
+</div>
+<ul>
+<li>Sistematically reliable initial guess.</li>
+<li>Well-posed final conditions or reference trajectory to track.</li>
+<li>Problems may also arise with obstacles ( non-convexity).</li>
+</ul>
+</div>
+<div class="tbbox">
+<!-- #### My Custom Title -->
+<div class="titlebox">
+<p>Core idea</p>
+</div>
+<ul>
+<li>Perform a rapid exporation with ad-hoc motion primitives (i.e.&nbsp;MP able to satify the MPC constraints).</li>
+<li>Get one or few possible solutions and use as initial guess for the MPC.</li>
+</ul>
+</div>
 </section>
 <section id="mlt-motorcycle" class="slide level2">
 <h2>MLT Motorcycle</h2>

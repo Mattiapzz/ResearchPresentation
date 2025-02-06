@@ -8,10 +8,10 @@ author:
     email: "mattia.piazza@unitn.it"
     affiliation: "PhD Candidate"
   - name: "Prof. Francesco Biral"
-    email: "francesco.biral@unitn.it"
+    # email: "francesco.biral@unitn.it"
     affiliation: "Supervisor"
   - name: "Prof. Mauro Da Lio"
-    email: "mauro.dalio@unitn.it"
+    # email: "mauro.dalio@unitn.it"
     affiliation: "Co-supervisor"
 # date: today
 date: "2025-02-11"
@@ -840,11 +840,18 @@ Limits
   - No matrics to evalaute solution forward.
 :::
 
-## Limits and future works {background-color="var(--secondary-color)"}
+## Limits and future works 
 ### Monte Carlo Tree Search
 
+![](./data/MCTS/MCTS.png){width=90% fig-align="center"}
 
 
+## Limits and future works 
+### Monte Carlo Tree Search
+
+<div id="contentframe" style="position:relative; left: 22%; width: 56%; height: 90%">
+{{< video https://www.youtube.com/embed/PwzN7FfxiCc?rel=0  width="100%" height="95%" autoplay="true" loop="true" muted="true">}}
+</div>
 
 
 
@@ -1054,9 +1061,27 @@ Future goals
 :::
 
 
-## Sampling based initialization of MPC {background-color="var(--secondary-color)"}
+## Sampling based initialization of MPC 
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+MPC needs and problems
+:::
+- Sistematically reliable initial guess.
+- Well-posed final conditions or reference trajectory to track.
+- Problems may also arise with obstacles ( non-convexity).
+:::
 
 
+:::{.tbbox} 
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Core idea
+:::
+- Perform a rapid exporation with ad-hoc motion primitives (i.e. MP able to satify the MPC constraints).
+- Get one or few possible solutions and use as initial guess for the MPC.
+:::
 
 
 ## MLT Motorcycle
