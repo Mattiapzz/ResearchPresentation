@@ -1112,10 +1112,14 @@ Goals
 <br>
 <br>
 
-::: {.tbbox style="text-align: center;" }
+::: {.tbbox style="text-align: center;"}
 <!-- #### Q & A -->
-::: {.r-fit-text style="font-weight: bold;"}
+::: {.columns}
+:::: {.column width="90%"}
+::: {.r-fit-text style="font-weight: bold; font-size: 2em;"}
 Thank you for your attention
+:::
+::::
 :::
 Reach me at: [**mattia.piazza@unitn.it**](mailto:*mattia.piazza@unitn.it)
 <!-- ##### Danke für Ihre Aufmerksamkeit! -->
