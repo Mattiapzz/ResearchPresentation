@@ -5,7 +5,7 @@ bibliography: bibliography.bib
 cls: IEEEtran.cls
 author: 
   - name: "Mattia Piazza"
-    email: "mattia.piazza@unitn.it"
+    # email: "mattia.piazza@unitn.it"
     affiliation: "PhD Candidate"
   - name: "Prof. Francesco Biral"
     # email: "francesco.biral@unitn.it"
@@ -55,10 +55,18 @@ format:
 ---
 
 # Background
+:::{.notes}
+Hello everyone, thank you for having me today. I am Mattia Piazza, a Ph.D. candidate at the University of Trento in Italy supervised by Prof. Francesco Biral (same supervisor of your newly acquired Postdoc) and co-supervised by Prof. Mauro Da Lio.
+I am here to present my research focusing on a sampling-based method for motion planning in autonomous driving where we employ also optimal control techniques. I will also present some of my recent projects and future works.
+:::
 
 ## My Background 
-
 ### Personal experience and research activity
+
+:::{.notes}
+Let me start by briefly introducing myself. I have a Bachelor's degree in Mechanical Engineering from the University of Udine and a Master's degree in Mechatronics Engineering from the University of Trento. During my master's, I focused on optimal control for minimum lap time focusing on racing motorcycle with Professor Biral. This preliminary research caught the attention of a MotoGP racing team, and we started collaborating on a research project during a research fellowship. Currently, I am a Ph.D. candidate at the University of Trento, working on optimal control, planning, and autonomous driving. I am also involved in some industrial collaborations and projects funded by the Italian Ministry of Economic Development and Horizon Europe. 
+As near future goals, I plan to spend a period abroad and start some fruitful collaborations, and of course finish my Ph.D. I am here today to discuss possible collaborations with your group.
+:::
 
 :::{.round-img-gray style="width: 20%; position: absolute; top: -10%; left: 80%;"}
 ![](./data/people/mattia_piazza.jpeg)
@@ -146,15 +154,16 @@ now-future
 ::: 
 <!-- timeline end -->
 
-::: {.notes}
-Quick self-introduction (your background, relevant experience, and motivation for the visit).
-A brief overview of your research trajectory (motorsport → optimal control → planning for AVs).
-Mention your goal for this visit: Collaboration with planners or working with F1tenth.
-Ask a rhetorical question or reference their work in RL and plan to set the stage for engagement.
-:::
 
 
 ## VeDi2025 and SUNRISE Goals 
+
+:::{.notes}
+Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. 
+VeDi2025 is a project funded by the Italian Govern, where we aim to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated vehicles. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing. 
+On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim  is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.
+:::
+
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
@@ -207,6 +216,10 @@ Safety Assurance Framework for the test and safety validation of CCAM systems.
 
 ## Autonomous Driving
 
+:::{.notes}
+A bit about the motivation behind my research. The main goal of autonomous driving is to improve safety and sustainability. According to the European Commission, 90% of road accidents are due to human errors and furthermore, the EU target is to reach zero road fatalities by 2050. However, there are still some open challenges to overcome, such as safe and robust planning and control, operation in emergency scenarios, human-like driving behavior, and cooperation and negotiation with other agents. (in this field there is no common agreement on the preferred and more sustainable solution)
+:::
+
 :::{.columns}
 :::: {.column width="50%"}
 :::{.tbbox}
@@ -252,6 +265,10 @@ Open Challenges
 
 ### Semi-structured RRT* planner
 
+:::{.notes}
+Therefore in this field we bring as a contribution a semi-structured RRT* planner, hence a sampling based planner that embeds optimal control primitives insides. The planner is able to compute feasible trajectories in real-time, handle dynamic obstacles, and provide finite-time guarantees. The planner is specialized for autonomous urban and racing scenarios.
+:::
+
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
@@ -289,6 +306,11 @@ Specialized Framework
 
 ## Contributions
 ### C++ implementation and commercial software integration, SIL and HIL testing
+
+:::{.notes}
+It is not just that we went beyond the first idea and implementation and I coded the planner in a C++ library which was then integrated inside IPG CarMaker (Industrial simulator) and RTMaps to properly perform SIL testing with all the car subsystems. Furthermore, we tested the planner with real-world testing with Stellantis.
+:::
+
 :::{.tbbox}
 :::{.columns}
 :::: {.column width="70%"}
@@ -821,8 +843,8 @@ V2X
 ::: {.titlebox}
 Performance
 :::
-- **Asimptotic** optimality.
-- **Complex** manouvres combinations.
+- **Asymptotic** optimality.
+- **Complex** maneuvers combinations.
 - **Feasible** solution for the vehicle model.
 - $\sim600$ MP in $50\,ms$ with 2-3 obstacles (C++ on Intel i5 @ 4.5 GHz).
 :::
@@ -833,11 +855,11 @@ Performance
 Limits
 :::
 - **Computational** time could be enhanced.
-- **Quality** of the solution **highly** depends on the harware.
+- **Quality** of the solution **highly** depends on the hardware.
   - $\sim200$ MP on dSPace Autera (Intel Xeon 12 cores @ 2.0 GHz)
 - Time lost to evaluate useless solutions
-  - Manouvre cost is evaluated up to the node
-  - No matrics to evalaute solution forward.
+  - Maneuver cost is evaluated up to the node
+  - No metrics to evaluate solution forward.
 :::
 
 ## Limits and future works 

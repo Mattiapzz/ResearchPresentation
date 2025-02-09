@@ -158,9 +158,6 @@
 <div class="quarto-title-author-name">
 Mattia Piazza 
 </div>
-<div class="quarto-title-author-email">
-<a href="mailto:mattia.piazza@unitn.it">mattia.piazza@unitn.it</a>
-</div>
         <p class="quarto-title-affiliation">
             PhD Candidate
           </p>
@@ -199,11 +196,36 @@ Prof.&nbsp;Mauro Da Lio
 <section>
 <section id="background" class="title-slide slide level1 center">
 <h1>Background</h1>
-
+<aside class="notes">
+<p>Hello everyone, thank you for having me today. I am Mattia Piazza, a Ph.D.&nbsp;candidate at the University of Trento in Italy supervised by Prof.&nbsp;Francesco Biral (same supervisor of your newly acquired Postdoc) and co-supervised by Prof.&nbsp;Mauro Da Lio. I am here to present my research focusing on a sampling-based method for motion planning in autonomous driving where we employ also optimal control techniques. I will also present some of my recent projects and future works.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="my-background" class="slide level2">
 <h2>My Background</h2>
 <h3 id="personal-experience-and-research-activity">Personal experience and research activity</h3>
+<aside class="notes">
+<p>Let me start by briefly introducing myself. I have a Bachelor’s degree in Mechanical Engineering from the University of Udine and a Master’s degree in Mechatronics Engineering from the University of Trento. During my master’s, I focused on optimal control for minimum lap time focusing on racing motorcycle with Professor Biral. This preliminary research caught the attention of a MotoGP racing team, and we started collaborating on a research project during a research fellowship. Currently, I am a Ph.D.&nbsp;candidate at the University of Trento, working on optimal control, planning, and autonomous driving. I am also involved in some industrial collaborations and projects funded by the Italian Ministry of Economic Development and Horizon Europe. As near future goals, I plan to spend a period abroad and start some fruitful collaborations, and of coure finish my Ph.D.&nbsp;I am here today to discuss possible collaborations with your group.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="round-img-gray" style="width: 20%; position: absolute; top: -10%; left: 80%;">
 <p><img data-src="./data/people/mattia_piazza.jpeg"></p>
 </div>
@@ -284,8 +306,11 @@ Prof.&nbsp;Mauro Da Lio
 </div>
 </div>
 <!-- timeline end -->
+</section>
+<section id="vedi2025-and-sunrise-goals" class="slide level2">
+<h2>VeDi2025 and SUNRISE Goals</h2>
 <aside class="notes">
-<p>Quick self-introduction (your background, relevant experience, and motivation for the visit). A brief overview of your research trajectory (motorsport → optimal control → planning for AVs). Mention your goal for this visit: Collaboration with planners or working with F1tenth. Ask a rhetorical question or reference their work in RL and plan to set the stage for engagement.</p>
+<p>Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. VeDi2025 is a project funded by the Italian Govern, where we aim to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated vehicles. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing. On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -297,9 +322,6 @@ Prof.&nbsp;Mauro Da Lio
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="vedi2025-and-sunrise-goals" class="slide level2">
-<h2>VeDi2025 and SUNRISE Goals</h2>
 <div class="tbbox">
 <!-- #### My Custom Title -->
 <div class="titlebox">
@@ -348,6 +370,19 @@ Prof.&nbsp;Mauro Da Lio
 </section>
 <section id="autonomous-driving" class="slide level2">
 <h2>Autonomous Driving</h2>
+<aside class="notes">
+<p>A bit about the motivation behind my research. The main goal of autonomous driving is to improve safety and sustainability. According to the European Commission, 90% of road accidents are due to human errors and furthermore, the EU target is to reach zero road fatalities by 2050. However, there are still some open challenges to overcome, such as safe and robust planning and control, operation in emergency scenarios, human-like driving behavior, and cooperation and negotiation with other agents. (in this field there is no common agreement on the preferred and more sustainable solution)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="tbbox">
@@ -394,6 +429,19 @@ Prof.&nbsp;Mauro Da Lio
 <section id="contributions" class="slide level2">
 <h2>Contributions</h2>
 <h3 id="semi-structured-rrt-planner">Semi-structured RRT* planner</h3>
+<aside class="notes">
+<p>Therefore in this field we bring as a contribution a semi-structured RRT* planner, hence a sampling based planner that embeds optimal control primitives insides. The planner is able to compute feasible trajectories in real-time, handle dynamic obstacles, and provide finite-time guarantees. The planner is specialized for autonomous urban and racing scenarios.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="tbbox">
 <!-- #### My Custom Title -->
 <div class="titlebox">
@@ -425,6 +473,19 @@ Prof.&nbsp;Mauro Da Lio
 <section id="contributions-1" class="slide level2">
 <h2>Contributions</h2>
 <h3 id="c-implementation-and-commercial-software-integration-sil-and-hil-testing">C++ implementation and commercial software integration, SIL and HIL testing</h3>
+<aside class="notes">
+<p>It is not just that we went beyond the first idea and implementation and I coded the planner in a C++ library which was then integrated inside IPG CarMaker (Industrial simulator) and RTMaps to properly perform SIL testing with all the car subsystems. Furthermore, we tested the planner with real-world testing with Stellantis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="tbbox">
 <div class="columns">
 <div class="column" style="width:70%;">
