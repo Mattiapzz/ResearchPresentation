@@ -156,16 +156,16 @@ now-future
 
 
 
-## VeDi2025 and SUNRISE Goals 
+<!-- ## VeDi2025 and SUNRISE Goals {.hidden}
 
 :::{.notes}
 Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. 
 VeDi2025 is a project funded by the Italian Govern, where we aim to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated vehicles. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing. 
-On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim  is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.
+On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.
 :::
 
 :::{.tbbox}
-<!-- #### My Custom Title -->
+
 ::: {.titlebox}
 VeDi2025
 :::
@@ -179,18 +179,18 @@ VeDi2025
 - **Validate** the planner with real-world testing.
 
 ::::
-<!--- end column -->
+
 :::: {.column width="20%"}
 ![](./data/third_party/VeDi2025-logo.png)
 ![](./data/third_party/StellantisLogoshort.png)
 ::::
 
 ::: 
-<!-- end columns -->
+
 :::
 
 :::{.tbbox}
-<!-- #### My Custom Title -->
+
 ::: {.titlebox}
 SUNRISE
 :::
@@ -205,11 +205,11 @@ Safety Assurance Framework for the test and safety validation of CCAM systems.
 - Run simulations to collect results.
 - Propose a method to **evaluate and rank** autonomous agents.
 ::::
-<!--- end column -->
+
 
 ::: 
-<!-- end columns -->
-:::
+
+::: -->
 
 
 # Research motivations and contributions
@@ -342,6 +342,10 @@ It is not just that we went beyond the first idea and implementation and I coded
 ## State-of-the-Art 
 ### Planning Approaches
 
+:::{.notes}
+Stepping back, let me give you a brief overview of pros and cons of the two methods used in motion planning. Optimization-based planning is local, fast, and accurate but has limited obstacle handling and no finite-time guarantees. On the other hand, sampling-based methods are global, usually slow, and have limited dynamics but are flexible, anytime, and have better obstacle handling.
+:::
+
 |                   | Optimization-based planning              | Sampling/Graph-based planning        |
 |-------------------|------------------------------------------|--------------------------------------|
 | Optimum           | [**Local**]{style="color:red;"}          | [**Global**]{style="color:green;"}   |
@@ -355,6 +359,10 @@ It is not just that we went beyond the first idea and implementation and I coded
 ## Planner idea
 ### Combine the best of both worlds
 
+:::{.notes}
+Hence, our idea is to take the best of the two words, combine them and overcome the limitations of each. We developed a planner that is able to compute feasible and optimal trajectories in real-time, handle dynamic obstacles, and provide finite-time guarantees. This is done combining RRT* with optimal control solutions. The planner is specialized for autonomous urban and racing scenarios.
+:::
+
 Combine **OC** and **sampling-based** methods ensuring **dynamic obstacle avoidance**.
 
 - RRT $^*$ with semi-structured tree exploration (sampling)
@@ -364,46 +372,10 @@ Flexible approach, specialized for **autonomous urban** and **racing** scenarios
 
 ## Framework Overview
 
-<!-- ```{dot}
-digraph finite_state_machine {
-	fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"
-	node [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
-	edge [fontname="Roboto,Menlo,Computer Modern,Helvetica,Arial,sans-serif"]
-	// rankdir=LR;
-  node [shape=box];
-	Environment -> Perceive [label = "SS(a)"];
-
-  subgraph cluster_plan {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		update -> prediction -> RRT -> OptimalTrajectory;
-		label = "Planning";
-	}
-
-  subgraph cluster_int_update {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		prediction_obs -> road -> mesh;
-		label = "Update";
-	}
-
-  subgraph cluster_RRT {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		RRT -> sample -> chooseParent -> rewire -> sample;
-		label = "RRT*";
-	}
-	// node [shape = doublecircle]; Perceive LowLevel Environment;
-	// node [shape = circle];
-  update -> prediction_obs [label = "SS(a)"];
-	Perceive -> update [label = "SS(B)"];
-	OptimalTrajectory -> LowLevel [label = "SS(S)"];
-	LowLevel -> Environment [label = "SS(b)"];
-}
-``` -->
+:::{.notes}
+Our framework operates in the classic perception action control paradigm. We receive information from the environment (sensors and communication) and compute the best maneuver every 50 ms. 
+Inside the planning phase we update the internal representation of road and obstacles. We update the mesh with information regarding the road and obstacles, and then we perform a tree exploration with by sampling new points choosing the best connection in a neighborhood, and look for possible rewire at every iteration.
+:::
 
 <br>
 ![](./data/Diagrams/fig-MPTree-architecture.png)
@@ -411,6 +383,10 @@ digraph finite_state_machine {
 
 
 ## Mesh environment
+
+:::{.notes}
+Before I spoke about meshing, We represent the road with clothoids (piecewise continuous in curvature). Inside that we cut virtually the road in sections (waylines) and nodes (waypoints) The sampling phase can happen offline (racing) or online (urban) and we can update the mesh with new information. The meshing phase can embed information about the road topology as well as the obstacles.
+:::
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -435,6 +411,12 @@ Road Representation
 
 
 ## Obstacle Handling
+
+:::{.notes}
+One important key aspect is the obstacle handling in the urban scenario. In the initial phase of the plan we predict the obstacle motion, and we compute intersection points and time. Moreover, we compute regions of the space (lateral coordinate time) that are inhibited for the vehicle. We also add additional waylines at the intersection to avoid collisions.
+We defined our approach as semi-structured RRT* because we use a finite-time solution, our sampling policy is not only random but combines a first phase that is structured and deterministic. Furthermore, we start the sampling using the previous solution (as you will do in a warm start) then we proceed with sampling in a schematic order following a common logic (maneuver in lane center at target speed).
+Last important aspect is the connection between nodes that is done with optimal motion primitives, we use a mixed sampling policy to avoid useless iterations. The application we develop is very time-sensitive therefore all useless iterations must be avoided if possible.
+:::
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -471,6 +453,11 @@ Semi-structured RRT*
 ## Motion Primitives
 
 ### Common Lateral
+
+:::{.notes}
+We employ a set of common lateral motion primitives both for the racing application and the urban.
+The motion primitives adopted are G2 clothoids that are a solution of this optimal control problem. Minimize the Length of a curved path by controlling the curvature rate, given the simple dynamic and with prescribed boundary conditions. The solution is semi-analytical. And it is completely independent of the road curve
+:::
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -525,6 +512,11 @@ $$
 ## Motion Primitives
 ### Urban longitudinal (Analytical)
 
+:::{.notes}
+The longitudinal motion primitive for the urban case is again the solution of an optimal control problem where we minimize both the time and the jerk squared, subjected to this double integrator dynamics. (controlled in jerk) subjected to initial and final conditions. This problem yields a closed-form polynomial solution and the final unknown time can be computed semi-analytically. This can allow us to define family of solutions going from A to B by changing the weight associated to the minimum time cost.
+These primitives do not embed directly the limits of the vehicles. Hence, Longitudinal and lateral maximum acceleration are computed after and values that exceed the limits are discarded or strongly penalized in the cost function.
+:::
+
 :::{.columns}
 :::: {.column width="50%"}
 :::{.tbbox}
@@ -571,6 +563,10 @@ $$
 
 ## Motion Primitives
 ### Racing longitudinal (Forward-Backward)
+
+:::{.notes}
+For the racing application, we employ a different primitive. It is again an optimal control solution. but the dynamics is a bit more complex and takes directly into account the curvature of the profile. In this case we do not minimize the jerk but just the time. And we obtain a solution at the maximum performance.
+:::
 
 :::{.columns}
 :::: {.column width="50%"}
@@ -620,6 +616,11 @@ $$
 
 ### Urban multi-objective + negotiation [@piazza2024mptree ;@piazza2025emergent]
 
+:::{.notes}
+We also employ different cost functions for urban and racing scenarios. In the urban case, the cost function, is composed of a weighted sum of different objectives. The objectives are the minimum travel time, the lateral and longitudinal jerk, the deviation from the target speed, from the target lateral position. The weights are chosen to balance the different objectives. 
+Furthermore, we also added a negotiation term that computes the distance from the desired trajectory of a CCAM vehicle and the planned one. All costs are normalized hence the cost function is one under 0 and 0 when the two trajectories are distant more than a safety distance.
+:::
+
 :::{.columns}
 :::: {.column width="35%"}
 ![](./data/MPT_Piazza/Cooperative_approach.png)
@@ -661,6 +662,10 @@ $$
 
 ### Racing
 
+:::{.notes}
+In the racing case the cost function is only one and it is the minimum travel time. However other objectives may be introduced to improve safety, robustness, and continuity with the previous solution.
+:::
+
 :::{.columns}
 :::: {.column width="40%"}
 <br>
@@ -697,6 +702,10 @@ $$
 
 ### MPTree race
 
+:::{.notes}
+Here we have some results for the racing implementation where the vehicle is able to overtake all slow opponents in front in this circuit section.
+:::
+
 <div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
 {{< video https://www.youtube.com/embed/INeFcYHTh58?rel=0  width="90%" height="90%" autoplay="true" loop="true" muted="true">}}
 </div>
@@ -707,11 +716,21 @@ $$
 
 ### MPTree Urban (Matlab)
 
+:::{.notes}
+And here some Matlab simulation as well of an urban case where the vehicle is able to vehicle crossing an unsigned orthogonal intersection.
+:::
+
 <div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
 {{< video https://www.youtube.com/embed/pt_zcB4BlT4?rel=0  width="90%" height="94.45%" autoplay="true" loop="true" muted="true">}}
 </div>
 
 ## Projects VeDi 2025
+
+:::{.notes}
+Let me briefly talk about the VeDi 2025 Project before moving on with the results.
+VeDi was a project funded by the Italian Government where I was heavily involved. The aim was to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated agents. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing hence the negotiate cost introduced some slides before.
+Inside this project we specialize this planner specially for urban scenario, and we validate both with SIL and VIL testing.
+:::
 
 ::: {.tbbox}
 <!-- #### My Custom Title -->
@@ -742,6 +761,10 @@ Goals
 
 ### MPTree urban uncooperative negotiation (Matlab)
 
+:::{.notes}
+So here I have an example of an orthogonal intersection without communication where our agent needs to slow down much going from 40 km/h to 20 km/h to avoid a collision.
+:::
+
 <div id="contentframe" style="position:relative; left: 2.5%; width: 100%; height: 90%">
 {{< video https://www.youtube.com/embed/ZGPrtMU95nA?rel=0  width="100%" height=90.40% autoplay="true" loop="true" muted="true">}} 
 </div>
@@ -750,40 +773,34 @@ Goals
 
 ### MPTree urban cooperative negotiation (Matlab)
 
+:::{.notes}
+On the other hand, when comunication is enambled the agent need to slow down much less and the negotiation is successful. Ego need to slow down just to 30 km/h
+:::
+
 <div id="contentframe" style="position:relative; left: 2.5%; width: 100%; height: 90%">
 {{< video https://www.youtube.com/embed/2HqBKIeUNFc?rel=0  width="100%" height=90.40% autoplay="true" loop="true" muted="true">}}
 </div>
 
 
-<!-- ## C++ integration and closed loop testing {background-color="var(--secondary-color)"} -->
-
-<!-- ### Single-track model and C++ library -->
-
-<!-- the average number of iteration average explored nodes with one obstacle two or 3 -->
-
-<!-- | Obstacles | N. Iterations | N. Explored nodes |
-|-----------|---------------|-------------------|
-| Free      | ~800          | ~TBD              |
-| 1         | ~600          | ~TBD              |
-| 2         | ~500          | ~TBD              |
-| 3         | ~400          | ~TBD              | -->
-
-<!-- <div id="contentframe" style="position:relative; left: 23%; width: 55.75%; height: 55%">
-{{< video https://www.youtube.com/embed/K4SPfdwC154?rel=0 width="100%" height=100% autoplay="true" loop="true" muted="true">}} 
-</div>  -->
-
-
-## Integration in CarMaker
+<!-- ## Integration in CarMaker {.hidden}
 
 ### SIL testing in IPG CarMaker and validated vehicle model
 
+:::{.notes}
+After demonstrating the potential of the approach in Matlab we implemented the planner in C++ and integrated it in IPG CarMaker. Here we have some results of the planner in action in the SIL testing.
+:::
+
 <div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
 {{< video https://www.youtube.com/embed/xxCWsTfNBKY?rel=0  width="100%" height="95%" autoplay="true" loop="true" muted="true">}}
-</div>
+</div> -->
 
 ## Integration in carmaker
 
 ### SIL testing for negotiation
+
+:::{.notes}
+After demonstrating the potential of the approach in Matlab we implemented the planner in C++ and integrated it in IPG CarMaker. Here we have some results of the planner in action with complete real vehicle model and other subsystems simulated
+:::
 
 :::{.columns}
 :::: {.column width="58.4%"}
@@ -799,6 +816,10 @@ Goals
 
 ### VIL testing
 
+:::{.notes}
+Here I can only show this frames with my planner running and driving Stellantis car inside the test site in Bolzano.
+:::
+
 ```{=html}
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
@@ -810,6 +831,10 @@ Goals
 
 
 ## Real vehicle testing
+
+:::{.notes}
+But I can show you some real vehicle telemetry regarding the vehicle testing of the intersection with the communication and cooperation and without. Left is when Agents do not share information about intentions and right is when they do.
+:::
 
 <!-- ### VIL velocity profiles -->
 
@@ -838,6 +863,11 @@ V2X
 
 ## Performance and limits
 
+:::{.notes}
+Let me now talk about the performance and limits of the planner. The planner is asymptotically optimal, can handle complex maneuvers combinations, and provides feasible solutions for the vehicle model. However, the computational time could be enhanced, and the quality of the solution highly depends on the hardware. For example, we can compute around 600 maneuvers in 50 ms with 2-3 obstacles on an Intel i5 at 4.5 GHz. However, on dSpace Autera with an Intel Xeon 12 cores at 2.0 GHz, we can compute around 200 maneuvers in the same time.
+We notice that the planner was losing performance when it was not able to find a connection up to the last wayline and was considering good solution leading to potential impacts because have no information about the future.
+:::
+
 :::{.tbbox}
 <!-- #### My Custom Title -->
 ::: {.titlebox}
@@ -862,14 +892,18 @@ Limits
   - No metrics to evaluate solution forward.
 :::
 
+<!-- ## Limits and future works {.hidden}
+### Monte Carlo Tree Search
+
+![](./data/MCTS/MCTS.png){width=90% fig-align="center"} -->
+
+
 ## Limits and future works 
 ### Monte Carlo Tree Search
 
-![](./data/MCTS/MCTS.png){width=90% fig-align="center"}
-
-
-## Limits and future works 
-### Monte Carlo Tree Search
+:::{.notes}
+We wanted to overcome some of the limitation of our approach by avoiding the random sampling of the RRT* and we implemented a Monte Carlo Tree Search approach also using the same primitives but evaluating both the cost to a node and a metric for a rollout policy. This allows us to have a cleaner solution with an implementation that can support multithreading.
+:::
 
 <div id="contentframe" style="position:relative; left: 22%; width: 56%; height: 90%">
 {{< video https://www.youtube.com/embed/PwzN7FfxiCc?rel=0  width="100%" height="95%" autoplay="true" loop="true" muted="true">}}
@@ -881,6 +915,10 @@ Limits
 
 ## SUNRISE - Safety Assurance Framework 
 ### Agents comparison and evaluation [@cherubini2024bootstrapped]
+
+:::{.notes}
+A fast note about SUNRISE. Siunrire is an European project i was marginally involved in. The aim of the whole project is to devise a common framework for testing and ensuring safety of autonomous systems and ADAS. The framework should define critical testing scenarios for each ODD and define parameters to be tested as well as metrics to evaluate the performance. The project is still ongoing and the results are not yet available. However, I wanted to mention Some result we achieve by comparing different available planners in his particular scenario. A Highway cut-in. We propose to variate 5 parameters inside. The initial speed, the speed difference, the time to cut-in, the acceleration of the cut-in vehicle, and the distance of the cut-in vehicle. We evaluate the performance of different planners by comparing the time to collision and the distance to collision. We use a bootstrapped method to evaluate the performance of the planners.
+:::
 
 :::{.tbbox}
 <!-- #### My Custom Title -->
@@ -915,22 +953,21 @@ Logical scenario
 ## SUNRISE 
 ### Agents comparison [@cherubini2024bootstrapped]
 
+
+:::{.notes}
+We performed a hundred of testing and train neural network to categorize outcome in collision, safe and near miss depending on the above-mentioned parameters. Here you can appreciate different results for two different scenarios and different planners. Left is Prof Da Lio human-like planner middle is the intelligent driver model and right is the MPTree planner. We can definitely see many differences already in the performance of the tree. In this case we cannot conclude anything about the three. But we can definitely tell that they behave in a very different manner.
+:::
+
 ![](./data/img_ODD/slices.png){width=70% fig-align="center"}
 
-## SUNRISE
-### Possible usage
 
-:::{.columns}
-:::: {.column width="50%"}
-![](./data/img_ODD/Stochastic model.png){width=100% fig-align="center"}
-::::
-:::: {.column width="50%"}
-![](./data/img_ODD/consensus_data_1.png){width=80% fig-align="center"}
-::::
-:::
 
 ## SUNRISE
 ### Suggested distance 
+
+:::{.notes}
+Then we suggested training multiple neural networks to predict collision and near miss and propose a consensus formula where we accept the decision of the majority of the networks or a certain threshold of them. Then this networks can be used to suggest either a safe distance or a safe speed. This will correspond to the distance safe for the majority of unanimous of the NNs.
+:::
 
 ![](./data/img_ODD/safe_charts.png){width=70% fig-align="center"}
 
@@ -1006,7 +1043,7 @@ $$
   \min \int_0^L \frac{w_T}{\dot{s}} \, \mathrm{d}\zeta
 $$
 
-Tranformed into a "more" **quadratic** problem
+Transformed into a "more" **quadratic** problem
 
 :::{.notes}
 Other terms might be added
@@ -1037,25 +1074,7 @@ $$
 {{< video https://www.youtube.com/embed/b1tqsGL5tgA?rel=0  width="100%" height="87%" autoplay="true" loop="true" muted="true">}}
 </div>
 
-## 3 Points Dubins Path [@piazza2024efficient;@piazza2024non]
 
-:::{.columns}
-:::: {.column width="50%"}
-An efficient algorithm to solve the 3PDP problem.
-
-| Algorithm | Iterations | Time ($ms$) | N. Dubins calls |
-|-----------|------------|-------------|-----------------|
-| PS        | 88.35      | 0.217       | $\sim$ 176       |
-| PS + 748  | 77.70      | 0.187       | $\sim$ 155       |
-| PT        | 74.78      | 0.179       | $\sim$ 149       |
-| [PT + 748]{style="color: red;"}  | [68.54]{style="color: red;"}      | 0.163       | $\sim$ 137       |
-| DBM       | 360        | 55.577      | 720             |
-| iDPP      | 128        | 19.720      | 256             |
-::::
-:::: {.column width="50%"}
-![](./data/Tikz/onepoint_final_rev.png){width=70% fig-align="center"}
-::::
-:::
 
 
 # Future works 
@@ -1212,3 +1231,36 @@ Push the penalty values on constraints.
 Compare solutions
 
 ![](./data/MLT/OCI/Track_problemCompare.png){width=100% fig-align="center"}
+
+
+## SUNRISE {.unnumbered .unlisted}
+### Possible usage
+
+:::{.columns}
+:::: {.column width="50%"}
+![](./data/img_ODD/Stochastic model.png){width=100% fig-align="center"}
+::::
+:::: {.column width="50%"}
+![](./data/img_ODD/consensus_data_1.png){width=80% fig-align="center"}
+::::
+:::
+
+## 3 Points Dubins Path [@piazza2024efficient;@piazza2024non] {.unnumbered .unlisted}
+
+:::{.columns}
+:::: {.column width="50%"}
+An efficient algorithm to solve the 3PDP problem.
+
+| Algorithm | Iterations | Time ($ms$) | N. Dubins calls |
+|-----------|------------|-------------|-----------------|
+| PS        | 88.35      | 0.217       | $\sim$ 176       |
+| PS + 748  | 77.70      | 0.187       | $\sim$ 155       |
+| PT        | 74.78      | 0.179       | $\sim$ 149       |
+| [PT + 748]{style="color: red;"}  | [68.54]{style="color: red;"}      | 0.163       | $\sim$ 137       |
+| DBM       | 360        | 55.577      | 720             |
+| iDPP      | 128        | 19.720      | 256             |
+::::
+:::: {.column width="50%"}
+![](./data/Tikz/onepoint_final_rev.png){width=70% fig-align="center"}
+::::
+:::
