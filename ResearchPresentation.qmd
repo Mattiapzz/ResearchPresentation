@@ -316,7 +316,7 @@ It is not just that we went beyond the first idea and implementation and I coded
 :::: {.column width="70%"}
 - Fast **C++** implementation of the planner.
 - Integration with **IPG CarMaker**.
-- Integration inside **RTMaps** and **dSpace** authera.
+- Integration inside **RTMaps** and **dSpace** Autera.
 - Real-world testing with **Stellantis**.
 ::::
 :::: {.column width="30%"}
@@ -663,7 +663,7 @@ $$
 ### Racing
 
 :::{.notes}
-In the racing case the cost function is only one and it is the minimum travel time. However other objectives may be introduced to improve safety, robustness, and continuity with the previous solution.
+In the racing case the cost function is only one, and it is the minimum travel time. However, other objectives may be introduced to improve safety, robustness, and continuity with the previous solution.
 :::
 
 :::{.columns}
@@ -728,7 +728,7 @@ And here some Matlab simulation as well of an urban case where the vehicle is ab
 
 :::{.notes}
 Let me briefly talk about the VeDi 2025 Project before moving on with the results.
-VeDi was a project funded by the Italian Government where I was heavily involved. The aim was to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated agents. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing hence the negotiate cost introduced some slides before.
+VeDi was a project funded by the Italian Government where I was heavily involved. The aim was to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated agents. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing hence to negotiate cost introduced some slides before.
 Inside this project we specialize this planner specially for urban scenario, and we validate both with SIL and VIL testing.
 :::
 
@@ -917,7 +917,7 @@ We wanted to overcome some of the limitation of our approach by avoiding the ran
 ### Agents comparison and evaluation [@cherubini2024bootstrapped]
 
 :::{.notes}
-A fast note about SUNRISE. Siunrire is an European project i was marginally involved in. The aim of the whole project is to devise a common framework for testing and ensuring safety of autonomous systems and ADAS. The framework should define critical testing scenarios for each ODD and define parameters to be tested as well as metrics to evaluate the performance. The project is still ongoing and the results are not yet available. However, I wanted to mention Some result we achieve by comparing different available planners in his particular scenario. A Highway cut-in. We propose to variate 5 parameters inside. The initial speed, the speed difference, the time to cut-in, the acceleration of the cut-in vehicle, and the distance of the cut-in vehicle. We evaluate the performance of different planners by comparing the time to collision and the distance to collision. We use a bootstrapped method to evaluate the performance of the planners.
+A fast note about SUNRISE. Sunrise is a European project I was marginally involved in. The aim of the whole project is to devise a common framework for testing and ensuring safety of autonomous systems and ADAS. The framework should define critical testing scenarios for each ODD and define parameters to be tested as well as metrics to evaluate the performance. The project is still ongoing, and the results are not yet available. However, I wanted to mention Some result we achieve by comparing different available planners in his particular scenario. A Highway cut-in. We propose to variate 5 parameters inside. The initial speed, the speed difference, the time to cut-in, the acceleration of the cut-in vehicle, and the distance of the cut-in vehicle. We evaluate the performance of different planners by comparing the time to collision and the distance to collision. We use a bootstrapped method to evaluate the performance of the planners.
 :::
 
 :::{.tbbox}
@@ -1109,9 +1109,9 @@ Future goals
 ::: {.titlebox}
 MPC needs and problems
 :::
-- Sistematically reliable initial guess.
+- Systematically reliable initial guess.
 - Well-posed final conditions or reference trajectory to track.
-- Problems may also arise with obstacles ( non-convexity).
+- Problems may also arise with obstacles (non-convexity).
 :::
 
 
@@ -1120,7 +1120,7 @@ MPC needs and problems
 ::: {.titlebox}
 Core idea
 :::
-- Perform a rapid exporation with ad-hoc motion primitives (i.e. MP able to satify the MPC constraints).
+- Perform a rapid exploration with ad-hoc motion primitives (i.e. MP able to satisfy the MPC constraints).
 - Get one or few possible solutions and use as initial guess for the MPC.
 :::
 
