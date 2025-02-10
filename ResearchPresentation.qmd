@@ -824,7 +824,8 @@ Here I can only show this frames with my planner running and driving Stellantis 
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
   <video width="80%" height="70%" autoplay loop muted controls padding="0px">
-    <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
+    <!-- <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4"> -->
+    <source src="/Users/mattiapiazza/git/Personal/ResearchPresentation/data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
   </video>
 </div>
 ```
