@@ -68,6 +68,12 @@ Let me start by briefly introducing myself. I have a Bachelor's degree in Mechan
 As near future goals, I plan to spend a period abroad and start some fruitful collaborations, and of course finish my Ph.D. I am here today to discuss possible collaborations with your group.
 :::
 
+:::{.notes}
+Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. 
+VeDi2025 is a project funded by the Italian Govern, where we aim to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated vehicles. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing. 
+On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.
+:::
+
 :::{.round-img-gray style="width: 20%; position: absolute; top: -10%; left: 80%;"}
 ![](./data/people/mattia_piazza.jpeg)
 :::
@@ -145,9 +151,9 @@ As near future goals, I plan to spend a period abroad and start some fruitful co
 now-future
 :::
 :::{.text}
-- Finish my PhD 
 - Spend a period abroad
 - Start some fruitful collaborations
+- Finish my PhD 
 :::
 :::
 
@@ -155,13 +161,7 @@ now-future
 <!-- timeline end -->
 
 
-## VeDi2025 and SUNRISE Goals
-
-:::{.notes}
-Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. 
-VeDi2025 is a project funded by the Italian Govern, where we aim to exploit V2X communication to create cooperation and furthermore negotiation between connected and automated vehicles. Our task was to develop a real-time local planner with dynamic obstacle avoidance and cooperative negotiation and validate it with real-world testing. 
-On the other hand, SUNRISE is a project funded by Horizon Europe, where the aim is the development of a safety assurance framework for the test and safety validation of CCAM systems. Our goal was to test some of the defined logical scenarios and KPIs, run simulations to collect results, and propose a method to evaluate and rank autonomous agents.
-:::
+<!-- ## VeDi2025 and SUNRISE Goals
 
 :::{.tbbox}
 
@@ -208,7 +208,7 @@ Safety Assurance Framework for the test and safety validation of CCAM systems.
 
 ::: 
 
-:::
+::: -->
 
 
 # Research motivations and contributions
@@ -387,6 +387,9 @@ Inside the planning phase we update the internal representation of road and obst
 Before I spoke about meshing, We represent the road with clothoids (piecewise continuous in curvature). Inside that we cut virtually the road in sections (waylines) and nodes (waypoints) The sampling phase can happen offline (racing) or online (urban) and we can update the mesh with new information. The meshing phase can embed information about the road topology as well as the obstacles.
 :::
 
+<br>
+<br>
+
 :::{.columns}
 :::: {.column width="50%"}
 ![](./data/Diagrams/fig-MPTree-map.png)
@@ -399,7 +402,7 @@ Before I spoke about meshing, We represent the road with clothoids (piecewise co
 Road Representation
 :::
 
-- **Curvilinear coordinates:** employ clothoid (Frénet frame).
+- **Curvilinear coordinates:** employ clothoid.
 - **Waylines:** road cross section.
 - **Waypoints:** sampled in the waylines.
 - **Topology aware meshing**
@@ -466,7 +469,7 @@ The motion primitives adopted are G2 clothoids that are a solution of this optim
 Formulation
 :::
 
-**$G^2$ clothoids** and **Continuous curvature** MP (closed-form solution).
+**$G^2$ clothoids** and **continuous curvature**.
 
 
 $$
@@ -587,7 +590,6 @@ $$
       a_{y_{\mathrm{max}}} &\geq |a_y| = \kappa~v_x^2
     \end{aligned}
     \right.\;\\
-    \\
     &\mathrm{b.c.}& \left\{
     \begin{aligned}
       s(0)&=0\\
@@ -803,9 +805,13 @@ After demonstrating the potential of the approach in Matlab we implemented the p
 :::{.columns}
 :::: {.column width="58.4%"}
 {{< video https://www.youtube.com/embed/R3iCVDXGoao?rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+
+EGO 0
 ::::
 ::::{.column width="41.6%"}
 {{< video https://www.youtube.com/embed/5qmvcFmvGVE?rel=0  width="100%" height=600 autoplay="true" loop="true" muted="true">}}
+
+EGO 1
 ::::
 :::
 
@@ -863,7 +869,7 @@ V2X
 ## Performance and limits
 
 :::{.notes}
-Let me now talk about the performance and limits of the planner. The planner is asymptotically optimal, can handle complex maneuvers combinations, and provides feasible solutions for the vehicle model. However, the computational time could be enhanced, and the quality of the solution highly depends on the hardware. For example, we can compute around 600 maneuvers in 50 ms with 2-3 obstacles on an Intel i5 at 4.5 GHz. However, on dSpace Autera with an Intel Xeon 12 cores at 2.0 GHz, we can compute around 200 maneuvers in the same time.
+Let me now talk about the performance and limits of the planner. The planner is asymptotically optimal, can handle complex maneuvers combinations, and provides feasible solutions for the vehicle model. However, the computational time could be enhanced, and the quality of the solution highly depends on the hardware. For example, we can compute around 600 maneuvers in 50 ms with 2-3 obstacles on an Intel i5 at 4.5 GHz. However, on dSpace Autera with an Intel Xeon at 2.0 GHz, we can compute around 200 maneuvers in the same time.
 We notice that the planner was losing performance when it was not able to find a connection up to the last wayline and was considering good solution leading to potential impacts because have no information about the future.
 :::
 
@@ -885,7 +891,7 @@ Limits
 :::
 - **Computational** time could be enhanced.
 - **Quality** of the solution **highly** depends on the hardware.
-  - $\sim200$ MP on dSPace Autera (Intel Xeon 12 cores @ 2.0 GHz)
+  - $\sim200$ MP on dSPace Autera (Intel Xeon @ 2.0 GHz)
 - Time lost to evaluate useless solutions
   - Maneuver cost is evaluated up to the node
   - No metrics to evaluate solution forward.
@@ -960,17 +966,6 @@ We performed a hundred of testing and train neural network to categorize outcome
 ![](./data/img_ODD/slices.png){width=70% fig-align="center"}
 
 
-
-## SUNRISE
-### Suggested distance 
-
-:::{.notes}
-Then we suggested training multiple neural networks to predict collision and near miss and propose a consensus formula where we accept the decision of the majority of the networks or a certain threshold of them. Then this networks can be used to suggest either a safe distance or a safe speed. This will correspond to the distance safe for the majority of unanimous of the NNs.
-:::
-
-![](./data/img_ODD/safe_charts.png){width=70% fig-align="center"}
-
-
 ## MLT for MotoGP {background-image="data/MLT/Moto/MotoLeanSimple.png" background-opacity="0.08"}
 ### Problem statement
 
@@ -1012,7 +1007,103 @@ Vehicle Dynamics
 (suspensions, steer, rider body position, wheels).
 :::
 
-## MLT for MotoGP {background-image="data/MLT/Moto/bikestraigth_flank.png" background-opacity="0.05"}
+
+## MLT for MotoGP
+### Solution example Catalunya RSV1000
+
+<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
+{{< video https://www.youtube.com/embed/b1tqsGL5tgA?rel=0  width="100%" height="87%" autoplay="true" loop="true" muted="true">}}
+</div>
+
+
+
+
+# Future works 
+
+## Moving forward
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Next steps
+:::
+- Finish Software test with commercial simulator **IPG CarMaker**.
+- Test the planner with several **scenarios datasets** (i.e. nuScene).
+- Implement the planner on scale vehicles.
+:::
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Future goals
+:::
+- Introduce **learning** of planner parameters for MCTS
+- Specialize MCTS planner with different primitives.
+- Use our framework for MPC initialization.
+- Complete the analysis of motorcycle optimal control with telemetry data.
+:::
+
+
+
+
+## References
+
+::: {#refs}
+:::
+
+
+## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
+
+<br>
+<br>
+<br>
+
+::: {.tbbox style="text-align: center;"}
+<!-- #### Q & A -->
+::: {.columns}
+:::: {.column width="90%"}
+::: {.r-fit-text style="font-weight: bold; font-size: 2em;"}
+Thank you for your attention
+:::
+::::
+:::
+Reach me at: [**mattia.piazza@unitn.it**](mailto:*mattia.piazza@unitn.it)
+<!-- ##### Danke für Ihre Aufmerksamkeit! -->
+:::
+
+
+
+<!-- backup -->
+
+
+
+
+# Backup {.appendix .unnumbered .unlisted}
+
+
+## Sampling based initialization of MPC {.unnumbered .unlisted}
+
+:::{.tbbox}
+<!-- #### My Custom Title -->
+::: {.titlebox}
+MPC needs and problems
+:::
+- Systematically reliable initial guess.
+- Well-posed final conditions or reference trajectory to track.
+- Problems may also arise with obstacles (non-convexity).
+:::
+
+
+:::{.tbbox} 
+<!-- #### My Custom Title -->
+::: {.titlebox}
+Core idea
+:::
+- Perform a rapid exploration with ad-hoc motion primitives (i.e. MP able to satisfy the MPC constraints).
+- Get one or few possible solutions and use as initial guess for the MPC.
+:::
+
+## MLT for MotoGP {background-image="data/MLT/Moto/bikestraigth_flank.png" background-opacity="0.05" .unnumbered .unlisted}
 ### How to initialize the problem 
 
 :::{.notes}
@@ -1055,7 +1146,7 @@ $$
 :::
 
 
-## MLT for MotoGP 
+## MLT for MotoGP {.unnumbered .unlisted}
 ### Continuation - Homotopy
 
 0. $w_T << 1$, $\mathbf{W_{qss}} = 1$ (Constant velocity). Fixed initial conditions and free final conditions
@@ -1066,65 +1157,7 @@ $$
 
 ![](./data/MLT/OCI/Track_problemCompare.png){width=100% fig-align="center"}
 
-## MLT for MotoGP
-### Solution example Catalunya RSV1000
-
-<div id="contentframe" style="position:relative; left: 10%; width: 90%; height: 90%">
-{{< video https://www.youtube.com/embed/b1tqsGL5tgA?rel=0  width="100%" height="87%" autoplay="true" loop="true" muted="true">}}
-</div>
-
-
-
-
-# Future works 
-
-## Monte Carlo Tree Search on scale vehicles
-
-:::{.tbbox}
-<!-- #### My Custom Title -->
-::: {.titlebox}
-Next steps
-:::
-- Finish Software test with commercial simulator **IPG CarMaker**.
-- Test the planner with several **scenarios datasets** (i.e. nuScene).
-- Implement the planner on scale vehicles.
-:::
-
-:::{.tbbox}
-<!-- #### My Custom Title -->
-::: {.titlebox}
-Future goals
-:::
-- Introduce **learning** of planner parameters.
-- Specialize planner with different primitives.
-- **Real and/or scale vehicle** testing
-:::
-
-
-## Sampling based initialization of MPC 
-
-:::{.tbbox}
-<!-- #### My Custom Title -->
-::: {.titlebox}
-MPC needs and problems
-:::
-- Systematically reliable initial guess.
-- Well-posed final conditions or reference trajectory to track.
-- Problems may also arise with obstacles (non-convexity).
-:::
-
-
-:::{.tbbox} 
-<!-- #### My Custom Title -->
-::: {.titlebox}
-Core idea
-:::
-- Perform a rapid exploration with ad-hoc motion primitives (i.e. MP able to satisfy the MPC constraints).
-- Get one or few possible solutions and use as initial guess for the MPC.
-:::
-
-
-## MLT Motorcycle
+## MLT Motorcycle {.unnumbered .unlisted}
 ### MotoGP team collaboration
 
 :::{.tbbox}
@@ -1140,40 +1173,14 @@ Goals
 :::
 
 
-## References
+## SUNRISE {.unnumbered .unlisted}
+### Suggested distance 
 
-::: {#refs}
+:::{.notes}
+Then we suggested training multiple neural networks to predict collision and near miss and propose a consensus formula where we accept the decision of the majority of the networks or a certain threshold of them. Then this networks can be used to suggest either a safe distance or a safe speed. This will correspond to the distance safe for the majority of unanimous of the NNs.
 :::
 
-
-## {background-video="data/third_party/end.mov" background-video-loop="true" background-video-muted="true" background-video-autoplay="true" }
-
-<br>
-<br>
-<br>
-
-::: {.tbbox style="text-align: center;"}
-<!-- #### Q & A -->
-::: {.columns}
-:::: {.column width="90%"}
-::: {.r-fit-text style="font-weight: bold; font-size: 2em;"}
-Thank you for your attention
-:::
-::::
-:::
-Reach me at: [**mattia.piazza@unitn.it**](mailto:*mattia.piazza@unitn.it)
-<!-- ##### Danke für Ihre Aufmerksamkeit! -->
-:::
-
-
-
-<!-- backup -->
-
-
-
-
-# Backup {.appendix .unnumbered .unlisted}
-
+![](./data/img_ODD/safe_charts.png){width=70% fig-align="center"}
 
 ## SUNRISE {.unnumbered .unlisted}
 ### Suggested speed
