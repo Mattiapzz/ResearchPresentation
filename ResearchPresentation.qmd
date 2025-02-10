@@ -155,8 +155,7 @@ now-future
 <!-- timeline end -->
 
 
-
-<!-- ## VeDi2025 and SUNRISE Goals {.hidden}
+## VeDi2025 and SUNRISE Goals
 
 :::{.notes}
 Previously I mentioned some of the projects I am involved in. Let me give you a brief overview of the projects. 
@@ -209,7 +208,7 @@ Safety Assurance Framework for the test and safety validation of CCAM systems.
 
 ::: 
 
-::: -->
+:::
 
 
 # Research motivations and contributions
@@ -724,7 +723,7 @@ And here some Matlab simulation as well of an urban case where the vehicle is ab
 {{< video https://www.youtube.com/embed/pt_zcB4BlT4?rel=0  width="90%" height="94.45%" autoplay="true" loop="true" muted="true">}}
 </div>
 
-## Projects VeDi 2025
+<!-- ## Projects VeDi 2025
 
 :::{.notes}
 Let me briefly talk about the VeDi 2025 Project before moving on with the results.
@@ -733,7 +732,6 @@ Inside this project we specialize this planner specially for urban scenario, and
 :::
 
 ::: {.tbbox}
-<!-- #### My Custom Title -->
 ::: {.titlebox}
 Goals 
 :::
@@ -749,17 +747,17 @@ Goals
 - Test vehicle cooperation and **negotiation with CCAV** and V2X.
 
 ::::
-<!--- end column -->
+
 :::: {.column width="28%"}
 ![](./data/third_party/VeDi2025-logo.png)
 ![](./data/third_party/StellantisLogoshort.png)
 ::::
 :::
-:::
+::: -->
 
 ## Simulation results 
 
-### MPTree urban uncooperative negotiation (Matlab)
+### MPTree urban uncooperative negotiation (Matlab) [VeDi 2025]
 
 :::{.notes}
 So here I have an example of an orthogonal intersection without communication where our agent needs to slow down much going from 40 km/h to 20 km/h to avoid a collision.
@@ -771,7 +769,7 @@ So here I have an example of an orthogonal intersection without communication wh
 
 ## Simulation results 
 
-### MPTree urban cooperative negotiation (Matlab)
+### MPTree urban cooperative negotiation (Matlab) [VeDi 2025]
 
 :::{.notes}
 On the other hand, when comunication is enambled the agent need to slow down much less and the negotiation is successful. Ego need to slow down just to 30 km/h
@@ -794,7 +792,7 @@ After demonstrating the potential of the approach in Matlab we implemented the p
 {{< video https://www.youtube.com/embed/xxCWsTfNBKY?rel=0  width="100%" height="95%" autoplay="true" loop="true" muted="true">}}
 </div> -->
 
-## Integration in carmaker
+## Integration in carmaker (VeDi 2025)
 
 ### SIL testing for negotiation
 
@@ -812,9 +810,9 @@ After demonstrating the potential of the approach in Matlab we implemented the p
 :::
 
 
-## Real vehicle testing
+## Real vehicle testing (VeDi 2025)
 
-### VIL testing
+### VIL testing 
 
 :::{.notes}
 Here I can only show this frames with my planner running and driving Stellantis car inside the test site in Bolzano.
@@ -824,14 +822,14 @@ Here I can only show this frames with my planner running and driving Stellantis 
 <!-- add video -->
 <div style="display: flex; justify-content: center; padding: 0px;">
   <video width="80%" height="70%" autoplay loop muted controls padding="0px">
-    <!-- <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4"> -->
-    <source src="/Users/mattiapiazza/git/Personal/ResearchPresentation/data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
+    <source src="data/videos/videoVadenaAutonomous.mp4" type="video/mp4">
+    <!-- <source src="/Users/mattiapiazza/git/Personal/ResearchPresentation/data/videos/videoVadenaAutonomous.mp4" type="video/mp4"> -->
   </video>
 </div>
 ```
 
 
-## Real vehicle testing
+## Real vehicle testing (VeDi 2025)
 
 :::{.notes}
 But I can show you some real vehicle telemetry regarding the vehicle testing of the intersection with the communication and cooperation and without. Left is when Agents do not share information about intentions and right is when they do.
